@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		37B78AB71D20827F007DF94D /* UncommonCrypto.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 373611991D1F44EF006409A4 /* UncommonCrypto.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		37B78ABC1D2086AF007DF94D /* UncommonCrypto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37B78ABA1D2085C5007DF94D /* UncommonCrypto.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -28,25 +28,12 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		37930D3B1D2081F10054FF43 /* Copy Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				37B78AB71D20827F007DF94D /* UncommonCrypto.framework in Copy Frameworks */,
-			);
-			name = "Copy Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
 		068C01B85AE14CCF72DDF2C7 /* Pods-UncommonCrypto_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UncommonCrypto_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UncommonCrypto_Tests/Pods-UncommonCrypto_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		333087372017925D2916D34F /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		373611991D1F44EF006409A4 /* UncommonCrypto.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UncommonCrypto.framework; path = "../../../../Library/Developer/Xcode/DerivedData/UncommonCrypto-eowpgnrvclcoemhdrpohpmfhpdjc/Build/Products/Debug-iphonesimulator/UncommonCrypto/UncommonCrypto.framework"; sourceTree = "<group>"; };
 		3736119B1D1F4500006409A4 /* Pods_UncommonCrypto_Example.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_UncommonCrypto_Example.framework; path = "../../../../Library/Developer/Xcode/DerivedData/UncommonCrypto-eowpgnrvclcoemhdrpohpmfhpdjc/Build/Products/Debug-iphonesimulator/Pods_UncommonCrypto_Example.framework"; sourceTree = "<group>"; };
+		37B78ABA1D2085C5007DF94D /* UncommonCrypto.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UncommonCrypto.framework; path = "../../../../Library/Developer/Xcode/DerivedData/UncommonCrypto-bqefayrwsdcfncfcrnpjtizdjgry/Build/Products/Debug-iphonesimulator/UncommonCrypto/UncommonCrypto.framework"; sourceTree = "<group>"; };
 		47EEDEA016FF1167D9F90A75 /* Pods_UncommonCrypto_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UncommonCrypto_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5801473D8E78F0D071924936 /* UncommonCrypto.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = UncommonCrypto.podspec; path = ../UncommonCrypto.podspec; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* UncommonCrypto_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UncommonCrypto_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37B78ABC1D2086AF007DF94D /* UncommonCrypto.framework in Frameworks */,
 				FE81B9D080FC743F5C24E557 /* Pods_UncommonCrypto_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -89,6 +77,7 @@
 		48A3BACD64CEED9709907A81 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				37B78ABA1D2085C5007DF94D /* UncommonCrypto.framework */,
 				3736119B1D1F4500006409A4 /* Pods_UncommonCrypto_Example.framework */,
 				373611991D1F44EF006409A4 /* UncommonCrypto.framework */,
 				47EEDEA016FF1167D9F90A75 /* Pods_UncommonCrypto_Example.framework */,
@@ -209,7 +198,6 @@
 				607FACE11AFB9204008FA782 /* Sources */,
 				607FACE21AFB9204008FA782 /* Frameworks */,
 				607FACE31AFB9204008FA782 /* Resources */,
-				37930D3B1D2081F10054FF43 /* Copy Frameworks */,
 				678C472A43F2EBDD80995730 /* [CP] Embed Pods Frameworks */,
 				6CD7AD2667E7E917EFA22BAF /* [CP] Copy Pods Resources */,
 			);
@@ -542,7 +530,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = Tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(FRAMEWORK_SEARCH_PATHS)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -557,7 +545,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = Tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(FRAMEWORK_SEARCH_PATHS)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
