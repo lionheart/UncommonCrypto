@@ -12,7 +12,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   UncommonCrypto:
-    :commit: 3eae8b83d8bfa51f64ed92af17ebab16a9153503
+    :commit: 1e0410172a70b8adfc9e9ef8ad7d74bbb2477653
     :git: "../"
 
 SPEC CHECKSUMS:

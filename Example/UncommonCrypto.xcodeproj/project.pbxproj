@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3736119F1D1F45BA006409A4 /* UncommonCrypto.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 373611991D1F44EF006409A4 /* UncommonCrypto.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		37B78AB71D20827F007DF94D /* UncommonCrypto.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 373611991D1F44EF006409A4 /* UncommonCrypto.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -29,13 +29,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		3736119E1D1F45A1006409A4 /* Copy Frameworks */ = {
+		37930D3B1D2081F10054FF43 /* Copy Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				3736119F1D1F45BA006409A4 /* UncommonCrypto.framework in Copy Frameworks */,
+				37B78AB71D20827F007DF94D /* UncommonCrypto.framework in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -209,7 +209,7 @@
 				607FACE11AFB9204008FA782 /* Sources */,
 				607FACE21AFB9204008FA782 /* Frameworks */,
 				607FACE31AFB9204008FA782 /* Resources */,
-				3736119E1D1F45A1006409A4 /* Copy Frameworks */,
+				37930D3B1D2081F10054FF43 /* Copy Frameworks */,
 				678C472A43F2EBDD80995730 /* [CP] Embed Pods Frameworks */,
 				6CD7AD2667E7E917EFA22BAF /* [CP] Copy Pods Resources */,
 			);
