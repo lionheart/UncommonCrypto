@@ -1,5 +1,5 @@
 #!/bin/sh
-# Source: https://github.com/sgl0v/SCrypto
+# Used with modifications from https://github.com/sgl0v/SCrypto
 #
 # The MIT License
 #
@@ -28,20 +28,23 @@ if [ "$#" -eq 2 ]; then
     BASE_DIR=$2
 else
     SDKS=( iphoneos iphonesimulator macosx watchsimulator appletvsimulator)
-    BASE_DIR=$(exec pwd)
+    BASE_DIR=`pwd`
 fi
 
 echo "BASE_DIR: ${BASE_DIR}"
 for SDK in "${SDKS[@]}"
 do
     MODULE_DIR="${BASE_DIR}/Frameworks/${SDK}/CommonCrypto.framework"
-    SDKPATH=$(eval "xcrun --sdk ${SDK} --show-sdk-path")
+    SDKPATH=`xcrun --sdk ${SDK} --show-sdk-path`
+    rm -rf "${MODULE_DIR}"
     mkdir -p "${MODULE_DIR}"
-    printf "module CommonCrypto [system] {\n\
-    header \"${SDKPATH}/usr/include/CommonCrypto/CommonCrypto.h\"\n\
-    header \"${SDKPATH}/usr/include/CommonCrypto/CommonRandom.h\"\n\
-    export *\n\
-    }" > "${MODULE_DIR}/module.map"
+    cat << EOF > ${MODULE_DIR}/module.map
+module CommonCrypto [system] {
+    header "${SDKPATH}/usr/include/CommonCrypto/CommonCrypto.h"
+    header "${SDKPATH}/usr/include/CommonCrypto/CommonRandom.h"
+    export *
+}
+EOF
     echo "Created module map for ${SDK}."
 done
 
