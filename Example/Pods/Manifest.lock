@@ -1,5 +1,5 @@
 PODS:
-  - Nimble (3.2.0)
+  - Nimble (4.1.0)
   - UncommonCrypto (1.0.0)
 
 DEPENDENCIES:
@@ -8,12 +8,17 @@ DEPENDENCIES:
 
 EXTERNAL SOURCES:
   UncommonCrypto:
-    :path: "../"
+    :git: "../"
+
+CHECKOUT OPTIONS:
+  UncommonCrypto:
+    :commit: 3eae8b83d8bfa51f64ed92af17ebab16a9153503
+    :git: "../"
 
 SPEC CHECKSUMS:
-  Nimble: 703854335d181df169bbca9c97117b5cf8c47c1d
+  Nimble: 97a0a4cae5124c117115634b2d055d8c97d0af19
   UncommonCrypto: e28771c4050fff24ae9a7b51ea606c761f17665f
 
-PODFILE CHECKSUM: 8ae0ec694801fe74d359a9d97df2b11bead8c097
+PODFILE CHECKSUM: 623ba9988d14a8556d33a6a3e8949fedd3bd1717
 
 COCOAPODS: 1.0.1
