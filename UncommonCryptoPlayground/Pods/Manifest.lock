@@ -1,0 +1,16 @@
+PODS:
+  - UncommonCrypto (1.0.0)
+
+DEPENDENCIES:
+  - UncommonCrypto (from `/Users/dan/Documents/Projects/UncommonCrypto`)
+
+EXTERNAL SOURCES:
+  UncommonCrypto:
+    :path: "/Users/dan/Documents/Projects/UncommonCrypto"
+
+SPEC CHECKSUMS:
+  UncommonCrypto: e28771c4050fff24ae9a7b51ea606c761f17665f
+
+PODFILE CHECKSUM: bbdbdecf8c56991615d107c12c96b4e14fbb7af5
+
+COCOAPODS: 1.0.1

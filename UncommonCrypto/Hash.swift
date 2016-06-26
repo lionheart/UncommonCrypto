@@ -7,14 +7,19 @@
 //
 
 import Foundation
+import CommonCrypto
 
 public struct Hash<Algorithm: CCHashAlgorithmProtocol>: Digestable {
     var data: NSMutableData
 
+    public typealias StringLiteralType = String
+    public typealias UnicodeScalarLiteralType = StringLiteralType
+    public typealias ExtendedGraphemeClusterLiteralType = StringLiteralType
+
     public var digest: [UInt8] {
-        var hash: [UInt8] = pointer(Int(Algorithm.length))
-        Algorithm.fun(data.bytes, UInt32(data.length), &hash)
-        return hash
+        var value = [UInt8](count: Int(Algorithm.length), repeatedValue: 0)
+        Algorithm.fun(data.bytes, CC_LONG(data.length), &value)
+        return value
     }
 
     // MARK: - 🚀 Initializers
@@ -25,6 +30,10 @@ public struct Hash<Algorithm: CCHashAlgorithmProtocol>: Digestable {
         }
 
         self.init(data: theData)
+    }
+
+    public init(bytes: [UInt8]) {
+        self.init(data: NSData(bytes: bytes))
     }
 
     public init(data theData: NSData) {

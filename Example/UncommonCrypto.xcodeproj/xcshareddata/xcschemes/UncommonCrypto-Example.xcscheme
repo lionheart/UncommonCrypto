@@ -51,14 +51,6 @@
                BlueprintName = "UncommonCrypto_Tests"
                ReferencedContainer = "container:UncommonCrypto.xcodeproj">
             </BuildableReference>
-            <SkippedTests>
-               <Test
-                  Identifier = "TableOfContentsSpec">
-               </Test>
-               <Test
-                  Identifier = "TableOfContentsSpec/Checksums__MD5()">
-               </Test>
-            </SkippedTests>
          </TestableReference>
       </Testables>
       <MacroExpansion>

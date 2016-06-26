@@ -1,0 +1,576 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		29068DB582A2B84959AB1643D6FADFC3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		390A29292DEB0F56669F73A888F685A3 /* NSData+Checksum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B43A92A36C2B9AAD28AB7A09E81394 /* NSData+Checksum.swift */; };
+		39992355F8CD659F21521D5940ECD936 /* Pods-UncommonCryptoPlayground-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A54454CB36F4662FAFF33A79A33BCD0 /* Pods-UncommonCryptoPlayground-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3DB0EC71CCD26F6D82FB8E1B300D5B30 /* Algorithms.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5527346D9E88FCAB98AFFC19BCE66F /* Algorithms.swift */; };
+		59E05F9E61D7B1DB9ADF5D90186C2D9A /* Pods-UncommonCryptoPlayground-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 006A7688860E5AA8CB7885918F4F015B /* Pods-UncommonCryptoPlayground-dummy.m */; };
+		5A53A5DDEC58F173196AD64E0207E6CC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		7A166593600775E9BC2D67DCB95D208D /* Hmac.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5686F5F3EE713B2C1C7B70935A6463 /* Hmac.swift */; };
+		7B40726A357ED8313087FB54B17DB912 /* UncommonCrypto-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 98C61E71235A50B5F369447D95AE6F22 /* UncommonCrypto-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84D800141368D3498DAAAC447EC752F0 /* UncommonCrypto-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CC8F9ECDC96EA79DEF41C830B63A805 /* UncommonCrypto-dummy.m */; };
+		89E47195ADDD25B36E49B360DC622799 /* String+Checksum.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA62B6CCCAFC04A7FD6618042AA32E0 /* String+Checksum.swift */; };
+		8B1AAE77F6A308C38CD0441ABCFB11A0 /* Hash.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE81947F714DBBE5268D23817E0E12FA /* Hash.swift */; };
+		98497AAAE2C6FC7F25854E28E61B40CF /* Support.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C64BE53AB476055689E0BF84D95BE3 /* Support.swift */; };
+		C4BFEF4A9C5BF7A70B4A31F15DE81B1F /* Cryptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F55B288E3F10BE4C5468461FBCE9624 /* Cryptor.swift */; };
+		C515229AC0A8B522594C0F27FB256DFF /* KeyDerivation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACD044B9FD001FAE984D6273981138B /* KeyDerivation.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0DDD6B2078E4020C71CC45B9E9831C67 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C964E5513DFA94DB84C37AA41DAA4102;
+			remoteInfo = UncommonCrypto;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		006A7688860E5AA8CB7885918F4F015B /* Pods-UncommonCryptoPlayground-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-UncommonCryptoPlayground-dummy.m"; sourceTree = "<group>"; };
+		09B43A92A36C2B9AAD28AB7A09E81394 /* NSData+Checksum.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "NSData+Checksum.swift"; sourceTree = "<group>"; };
+		0C2675BB0DB2BCDF70C72284E0D86B8D /* Pods_UncommonCryptoPlayground.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UncommonCryptoPlayground.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		156791DE7167A46C8655176D8A95A5C0 /* UncommonCrypto-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UncommonCrypto-prefix.pch"; sourceTree = "<group>"; };
+		2AB37EA3C38712359190210F659D58CF /* UncommonCrypto.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = UncommonCrypto.modulemap; sourceTree = "<group>"; };
+		2FE4142B0DC481EA316DEAD0E404F642 /* Pods-UncommonCryptoPlayground-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-UncommonCryptoPlayground-acknowledgements.markdown"; sourceTree = "<group>"; };
+		4A54454CB36F4662FAFF33A79A33BCD0 /* Pods-UncommonCryptoPlayground-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-UncommonCryptoPlayground-umbrella.h"; sourceTree = "<group>"; };
+		4B96F15D35B8025BE46CEF6C2075E93C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		51BE87258D48E355126B1048F0640FFE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52FD92FD2AF26ACC9F819CE5D56F3D90 /* Pods-UncommonCryptoPlayground-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-UncommonCryptoPlayground-resources.sh"; sourceTree = "<group>"; };
+		55C64BE53AB476055689E0BF84D95BE3 /* Support.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Support.swift; sourceTree = "<group>"; };
+		6F55B288E3F10BE4C5468461FBCE9624 /* Cryptor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Cryptor.swift; sourceTree = "<group>"; };
+		73669617CFCD69A2A6225BE3BB431FD2 /* UncommonCrypto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UncommonCrypto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8336A3991AB71F2AD45BE70B00613B4E /* Pods-UncommonCryptoPlayground-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-UncommonCryptoPlayground-frameworks.sh"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		98C61E71235A50B5F369447D95AE6F22 /* UncommonCrypto-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UncommonCrypto-umbrella.h"; sourceTree = "<group>"; };
+		9ACD044B9FD001FAE984D6273981138B /* KeyDerivation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KeyDerivation.swift; sourceTree = "<group>"; };
+		9CC8F9ECDC96EA79DEF41C830B63A805 /* UncommonCrypto-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UncommonCrypto-dummy.m"; sourceTree = "<group>"; };
+		9F92314184E0FAE11D80DF2E2EA504A8 /* UncommonCrypto.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = UncommonCrypto.xcconfig; sourceTree = "<group>"; };
+		A5D9EF2C7926AF9FEAE31B13E7E61C85 /* Pods-UncommonCryptoPlayground.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-UncommonCryptoPlayground.modulemap"; sourceTree = "<group>"; };
+		BDA62B6CCCAFC04A7FD6618042AA32E0 /* String+Checksum.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "String+Checksum.swift"; sourceTree = "<group>"; };
+		BE5527346D9E88FCAB98AFFC19BCE66F /* Algorithms.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Algorithms.swift; sourceTree = "<group>"; };
+		CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		E99FB147FFC8355A10B7E7429C917B87 /* Pods-UncommonCryptoPlayground-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-UncommonCryptoPlayground-acknowledgements.plist"; sourceTree = "<group>"; };
+		EE81947F714DBBE5268D23817E0E12FA /* Hash.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Hash.swift; sourceTree = "<group>"; };
+		F0C098E9DE77A24A7084EC187DA52E5B /* Pods-UncommonCryptoPlayground.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-UncommonCryptoPlayground.release.xcconfig"; sourceTree = "<group>"; };
+		F4F5616CF3A93EF85A76C2DB11EC8AA0 /* Pods-UncommonCryptoPlayground.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-UncommonCryptoPlayground.debug.xcconfig"; sourceTree = "<group>"; };
+		FF5686F5F3EE713B2C1C7B70935A6463 /* Hmac.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Hmac.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2D769B3D5C6C95EF0F6D6F16F0FBFDE3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A53A5DDEC58F173196AD64E0207E6CC /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DBDBDCAC6626D65BEFC1D29224FA2D0F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29068DB582A2B84959AB1643D6FADFC3 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3205EC4A09C380CA83907D0BAACFF77A /* UncommonCrypto */ = {
+			isa = PBXGroup;
+			children = (
+				BE5527346D9E88FCAB98AFFC19BCE66F /* Algorithms.swift */,
+				6F55B288E3F10BE4C5468461FBCE9624 /* Cryptor.swift */,
+				EE81947F714DBBE5268D23817E0E12FA /* Hash.swift */,
+				FF5686F5F3EE713B2C1C7B70935A6463 /* Hmac.swift */,
+				9ACD044B9FD001FAE984D6273981138B /* KeyDerivation.swift */,
+				55C64BE53AB476055689E0BF84D95BE3 /* Support.swift */,
+				510646A98985C2088E3368FE006E63A6 /* Extensions */,
+			);
+			path = UncommonCrypto;
+			sourceTree = "<group>";
+		};
+		3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		510646A98985C2088E3368FE006E63A6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				09B43A92A36C2B9AAD28AB7A09E81394 /* NSData+Checksum.swift */,
+				BDA62B6CCCAFC04A7FD6618042AA32E0 /* String+Checksum.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		5C3A04CBB65416110E58E0C41C913332 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				4B96F15D35B8025BE46CEF6C2075E93C /* Info.plist */,
+				2AB37EA3C38712359190210F659D58CF /* UncommonCrypto.modulemap */,
+				9F92314184E0FAE11D80DF2E2EA504A8 /* UncommonCrypto.xcconfig */,
+				9CC8F9ECDC96EA79DEF41C830B63A805 /* UncommonCrypto-dummy.m */,
+				156791DE7167A46C8655176D8A95A5C0 /* UncommonCrypto-prefix.pch */,
+				98C61E71235A50B5F369447D95AE6F22 /* UncommonCrypto-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "UncommonCryptoPlayground/Pods/Target Support Files/UncommonCrypto";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				9931CC96443DC164C7E8741D18262DD5 /* Development Pods */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				CA837923BD3E3BB1D7A03F5EA979BD60 /* Products */,
+				DDAC425D2DFAA43BD4A928004F6698B3 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		9931CC96443DC164C7E8741D18262DD5 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EE2F4E84F8AB59711EED3C9219867B25 /* UncommonCrypto */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CA837923BD3E3BB1D7A03F5EA979BD60 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0C2675BB0DB2BCDF70C72284E0D86B8D /* Pods_UncommonCryptoPlayground.framework */,
+				73669617CFCD69A2A6225BE3BB431FD2 /* UncommonCrypto.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D11CD19C0D26305C8939A7008840AE86 /* Pods-UncommonCryptoPlayground */ = {
+			isa = PBXGroup;
+			children = (
+				51BE87258D48E355126B1048F0640FFE /* Info.plist */,
+				A5D9EF2C7926AF9FEAE31B13E7E61C85 /* Pods-UncommonCryptoPlayground.modulemap */,
+				2FE4142B0DC481EA316DEAD0E404F642 /* Pods-UncommonCryptoPlayground-acknowledgements.markdown */,
+				E99FB147FFC8355A10B7E7429C917B87 /* Pods-UncommonCryptoPlayground-acknowledgements.plist */,
+				006A7688860E5AA8CB7885918F4F015B /* Pods-UncommonCryptoPlayground-dummy.m */,
+				8336A3991AB71F2AD45BE70B00613B4E /* Pods-UncommonCryptoPlayground-frameworks.sh */,
+				52FD92FD2AF26ACC9F819CE5D56F3D90 /* Pods-UncommonCryptoPlayground-resources.sh */,
+				4A54454CB36F4662FAFF33A79A33BCD0 /* Pods-UncommonCryptoPlayground-umbrella.h */,
+				F4F5616CF3A93EF85A76C2DB11EC8AA0 /* Pods-UncommonCryptoPlayground.debug.xcconfig */,
+				F0C098E9DE77A24A7084EC187DA52E5B /* Pods-UncommonCryptoPlayground.release.xcconfig */,
+			);
+			name = "Pods-UncommonCryptoPlayground";
+			path = "Target Support Files/Pods-UncommonCryptoPlayground";
+			sourceTree = "<group>";
+		};
+		DDAC425D2DFAA43BD4A928004F6698B3 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				D11CD19C0D26305C8939A7008840AE86 /* Pods-UncommonCryptoPlayground */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		EE2F4E84F8AB59711EED3C9219867B25 /* UncommonCrypto */ = {
+			isa = PBXGroup;
+			children = (
+				5C3A04CBB65416110E58E0C41C913332 /* Support Files */,
+				3205EC4A09C380CA83907D0BAACFF77A /* UncommonCrypto */,
+			);
+			name = UncommonCrypto;
+			path = /Users/dan/Documents/Projects/UncommonCrypto;
+			sourceTree = "<absolute>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		8CDC204CCD25B7C7EA6040B79D163C18 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7B40726A357ED8313087FB54B17DB912 /* UncommonCrypto-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDB14E711A7CAD70188830777CAE6E71 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				39992355F8CD659F21521D5940ECD936 /* Pods-UncommonCryptoPlayground-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		67C23C7DAB55A20A8E1E5205D0E97FD4 /* Pods-UncommonCryptoPlayground */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 69691FA72862F1C84999095EE811BAD6 /* Build configuration list for PBXNativeTarget "Pods-UncommonCryptoPlayground" */;
+			buildPhases = (
+				16F2D2341BC4C1E5146DC1A488B95B69 /* Sources */,
+				DBDBDCAC6626D65BEFC1D29224FA2D0F /* Frameworks */,
+				DDB14E711A7CAD70188830777CAE6E71 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7A863FCDAB0CC34158811D4FA9CCB3C8 /* PBXTargetDependency */,
+			);
+			name = "Pods-UncommonCryptoPlayground";
+			productName = "Pods-UncommonCryptoPlayground";
+			productReference = 0C2675BB0DB2BCDF70C72284E0D86B8D /* Pods_UncommonCryptoPlayground.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		C964E5513DFA94DB84C37AA41DAA4102 /* UncommonCrypto */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BBDE23E803D4B421AC5FCE30D8F8F7D9 /* Build configuration list for PBXNativeTarget "UncommonCrypto" */;
+			buildPhases = (
+				B5206A42E720EA7CC9BFBCD30B27D776 /* Sources */,
+				2D769B3D5C6C95EF0F6D6F16F0FBFDE3 /* Frameworks */,
+				8CDC204CCD25B7C7EA6040B79D163C18 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UncommonCrypto;
+			productName = UncommonCrypto;
+			productReference = 73669617CFCD69A2A6225BE3BB431FD2 /* UncommonCrypto.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = CA837923BD3E3BB1D7A03F5EA979BD60 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				67C23C7DAB55A20A8E1E5205D0E97FD4 /* Pods-UncommonCryptoPlayground */,
+				C964E5513DFA94DB84C37AA41DAA4102 /* UncommonCrypto */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		16F2D2341BC4C1E5146DC1A488B95B69 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				59E05F9E61D7B1DB9ADF5D90186C2D9A /* Pods-UncommonCryptoPlayground-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5206A42E720EA7CC9BFBCD30B27D776 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3DB0EC71CCD26F6D82FB8E1B300D5B30 /* Algorithms.swift in Sources */,
+				C4BFEF4A9C5BF7A70B4A31F15DE81B1F /* Cryptor.swift in Sources */,
+				8B1AAE77F6A308C38CD0441ABCFB11A0 /* Hash.swift in Sources */,
+				7A166593600775E9BC2D67DCB95D208D /* Hmac.swift in Sources */,
+				C515229AC0A8B522594C0F27FB256DFF /* KeyDerivation.swift in Sources */,
+				390A29292DEB0F56669F73A888F685A3 /* NSData+Checksum.swift in Sources */,
+				89E47195ADDD25B36E49B360DC622799 /* String+Checksum.swift in Sources */,
+				98497AAAE2C6FC7F25854E28E61B40CF /* Support.swift in Sources */,
+				84D800141368D3498DAAAC447EC752F0 /* UncommonCrypto-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7A863FCDAB0CC34158811D4FA9CCB3C8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = UncommonCrypto;
+			target = C964E5513DFA94DB84C37AA41DAA4102 /* UncommonCrypto */;
+			targetProxy = 0DDD6B2078E4020C71CC45B9E9831C67 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		289BB81A56A88F5CA99F298A95534D18 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9F92314184E0FAE11D80DF2E2EA504A8 /* UncommonCrypto.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CONFIGURATION_BUILD_DIR = $PODS_CONFIGURATION_BUILD_DIR;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PODS_ROOT)/UncommonCrypto/Frameworks/$(PLATFORM_NAME)/**",
+				);
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/UncommonCrypto/UncommonCrypto-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/UncommonCrypto/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/UncommonCrypto/UncommonCrypto.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = UncommonCrypto;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		2B15128C4A5EC9D02AA67E54DEEEBF3B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F0C098E9DE77A24A7084EC187DA52E5B /* Pods-UncommonCryptoPlayground.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CONFIGURATION_BUILD_DIR = $PODS_CONFIGURATION_BUILD_DIR;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-UncommonCryptoPlayground/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-UncommonCryptoPlayground/Pods-UncommonCryptoPlayground.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_UncommonCryptoPlayground;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		3FA451D268613890FA8A5A03801E11D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5E62115DE8C09934BF8D2FE5D15FED1E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		885BD49D312BCF9E27D99B10676E181C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4F5616CF3A93EF85A76C2DB11EC8AA0 /* Pods-UncommonCryptoPlayground.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CONFIGURATION_BUILD_DIR = $PODS_CONFIGURATION_BUILD_DIR;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-UncommonCryptoPlayground/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-UncommonCryptoPlayground/Pods-UncommonCryptoPlayground.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_UncommonCryptoPlayground;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		ECEA888C2AA3F6877EBCD97D89D36065 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9F92314184E0FAE11D80DF2E2EA504A8 /* UncommonCrypto.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CONFIGURATION_BUILD_DIR = $PODS_CONFIGURATION_BUILD_DIR;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PODS_ROOT)/UncommonCrypto/Frameworks/$(PLATFORM_NAME)/**",
+				);
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/UncommonCrypto/UncommonCrypto-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/UncommonCrypto/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/UncommonCrypto/UncommonCrypto.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = UncommonCrypto;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5E62115DE8C09934BF8D2FE5D15FED1E /* Debug */,
+				3FA451D268613890FA8A5A03801E11D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		69691FA72862F1C84999095EE811BAD6 /* Build configuration list for PBXNativeTarget "Pods-UncommonCryptoPlayground" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				885BD49D312BCF9E27D99B10676E181C /* Debug */,
+				2B15128C4A5EC9D02AA67E54DEEEBF3B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BBDE23E803D4B421AC5FCE30D8F8F7D9 /* Build configuration list for PBXNativeTarget "UncommonCrypto" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				289BB81A56A88F5CA99F298A95534D18 /* Debug */,
+				ECEA888C2AA3F6877EBCD97D89D36065 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
