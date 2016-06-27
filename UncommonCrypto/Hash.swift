@@ -8,6 +8,7 @@
 
 import Foundation
 import CommonCrypto
+import ZLib
 
 public struct Hash<Algorithm: SecureHashAlgorithm>: Digestable {
     public var data: NSMutableData

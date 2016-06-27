@@ -8,8 +8,10 @@
 
 import Foundation
 import CommonCrypto
+import ZLib
 
 public typealias CCSecureHashAlgorithmTypeSignature = (UnsafePointer<Void>, CC_LONG, UnsafeMutablePointer<UInt8>) -> UnsafeMutablePointer<UInt8>
+public typealias ZLibSecureHashAlgorithmTypeSignature = (uLong, UnsafePointer<Bytef>, uInt) -> uLong
 public typealias CCAlgorithmParameters = (fun: CCSecureHashAlgorithmTypeSignature, length: Int32)
 
 public typealias LibZSecureHashAlgorithmTypeSignature = (UnsafePointer<Void>, CC_LONG, UnsafeMutablePointer<UInt8>) -> UnsafeMutablePointer<UInt8>
@@ -36,6 +38,10 @@ public protocol SecureHashAlgorithm {
 
 public protocol CCSecureHashAlgorithm: SecureHashAlgorithm {
     associatedtype SecureHashAlgorithmTypeSignature = CCSecureHashAlgorithmTypeSignature
+}
+
+public protocol ZLibSecureHashAlgorithm: SecureHashAlgorithm {
+    associatedtype SecureHashAlgorithmTypeSignature = ZLibSecureHashAlgorithmTypeSignature
 }
 
 protocol CCHMACAlgorithmProtocol: SecureHashAlgorithm {

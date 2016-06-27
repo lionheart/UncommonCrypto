@@ -8,11 +8,13 @@
 
 import Foundation
 import CommonCrypto
+import ZLib
 
 // MARK: - Full List
 
+public struct Adler32 {}
+public struct CRC32 {}
 public struct MD2 {}
-
 public struct MD4 {}
 public struct MD5 {}
 public struct SHA1 {}
@@ -31,6 +33,16 @@ public struct Blowfish {}
 typealias AES = AES128
 
 // MARK: - Hash
+
+extension Adler32: ZLibSecureHashAlgorithm {
+    public static var fun: ZLibSecureHashAlgorithmTypeSignature { return ZLib.adler32 }
+    public static var length: Int32 { return 32 }
+}
+
+extension CRC32: ZLibSecureHashAlgorithm {
+    public static var fun: ZLibSecureHashAlgorithmTypeSignature { return crc32 }
+    public static var length: Int32 { return 32 }
+}
 
 extension MD2: CCSecureHashAlgorithm {
     public static var fun: CCSecureHashAlgorithmTypeSignature { return CC_MD2 }
