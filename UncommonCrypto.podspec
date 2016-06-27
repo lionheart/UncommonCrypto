@@ -28,6 +28,7 @@ TODO: Add long description of the pod here.
   s.xcconfig = {
     "SWIFT_INCLUDE_PATHS" => "$(PODS_ROOT)/UncommonCrypto/Frameworks/$(PLATFORM_NAME)",
     "FRAMEWORK_SEARCH_PATHS" => "$(PODS_ROOT)/UncommonCrypto/Frameworks/$(PLATFORM_NAME)",
-    "OTHER_LDFLAGS" => "-all_load"
   }
+
+  s.libraries = 'z'
 end
