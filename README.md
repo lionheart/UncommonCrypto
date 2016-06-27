@@ -53,6 +53,18 @@ print(digest.hexdigest)
 // 440ac85892ca43ad26d44c7ad9d47d3e
 ```
 
+You can also generate digests using the Hash object.
+
+```swift
+let digest = Hash<MD5>(text: "abc")
+```
+
+or
+
+```swift
+let digest = Hash<MD5>(data: data)
+```
+
 #### hexdigest
 
 ```swift
