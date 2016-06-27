@@ -49,7 +49,7 @@ protocol CCPseudoRandomHmacAlgorithmProtocol {
     static var pseudoRandomAlgorithm: Int { get }
 }
 
-protocol Digestable {
+public protocol Digestable {
     var digest: [UInt8] { get }
     var hexdigest: String { get }
 }
@@ -101,7 +101,7 @@ extension CCHMACAlgorithmProtocol {
 }
 
 extension Digestable {
-    var hexdigest: String {
+    public var hexdigest: String {
         return digest.reduce("") { carry, byte in
             return carry + String(format: "%02x", byte)
         }

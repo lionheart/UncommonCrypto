@@ -10,7 +10,7 @@ import Foundation
 import CommonCrypto
 
 public struct Hash<Algorithm: CCHashAlgorithmProtocol>: Digestable {
-    var data: NSMutableData
+    public var data: NSMutableData
 
     public typealias StringLiteralType = String
     public typealias UnicodeScalarLiteralType = StringLiteralType
