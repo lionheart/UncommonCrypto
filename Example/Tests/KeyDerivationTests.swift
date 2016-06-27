@@ -11,8 +11,6 @@ import XCTest
 import Nimble
 @testable import UncommonCrypto
 
-
-
 struct PBKDF2TestData {
     var password: String
     var salt: String

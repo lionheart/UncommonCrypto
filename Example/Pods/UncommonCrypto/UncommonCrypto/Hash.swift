@@ -8,17 +8,23 @@
 
 import Foundation
 import CommonCrypto
+import CZLib
 
-public struct Hash<Algorithm: CCHashAlgorithmProtocol>: Digestable {
+public struct Hash<Algorithm: SecureHashAlgorithm>: Digestable {
     public var data: NSMutableData
 
     public typealias StringLiteralType = String
     public typealias UnicodeScalarLiteralType = StringLiteralType
     public typealias ExtendedGraphemeClusterLiteralType = StringLiteralType
 
-    public var digest: [UInt8] {
+    public var bytes: [UInt8] {
         var value = [UInt8](count: Int(Algorithm.length), repeatedValue: 0)
-        Algorithm.fun(data.bytes, CC_LONG(data.length), &value)
+        if let fun = Algorithm.fun as? CCSecureHashAlgorithmTypeSignature {
+            fun(data.bytes, CC_LONG(data.length), &value)
+        }
+        else if let fun = Algorithm.fun as? LibZSecureHashAlgorithmTypeSignature {
+            
+        }
         return value
     }
 
@@ -33,6 +39,7 @@ public struct Hash<Algorithm: CCHashAlgorithmProtocol>: Digestable {
     }
 
     public init(text: String) {
+        // All text can be UTF8-encoded, so this won't be an optional.
         self.init(text: text, textEncoding: NSUTF8StringEncoding)!
     }
 
@@ -47,6 +54,7 @@ public struct Hash<Algorithm: CCHashAlgorithmProtocol>: Digestable {
     // MARK: -
 
     public mutating func update(text: String) {
+        // All text can be UTF8-encoded, so this won't be an optional.
         try! update(text, textEncoding: NSUTF8StringEncoding)
     }
 

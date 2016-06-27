@@ -80,12 +80,6 @@ func ==(lhs: TestInput, rhs: TestInput) -> Bool {
     return lhs.value.isEqualToData(rhs.value)
 }
 
-func beChecksum<T: CCHashAlgorithmProtocol>(expectedValue: String) -> MatcherFunc<T> {
-    return MatcherFunc { actionExpression, failureMessage in
-        return false
-    }
-}
-
 protocol IETFMessageDigestSpec: class {
     associatedtype Algorithm
     var cases: [TestInput: String] { get }
@@ -93,7 +87,7 @@ protocol IETFMessageDigestSpec: class {
     var url: String { set get }
 }
 
-extension IETFMessageDigestSpec where Algorithm: CCHashAlgorithmProtocol {
+extension IETFMessageDigestSpec where Algorithm: SecureHashAlgorithm {
     func testIETFTestSuite() {
         for (key, checksum) in cases {
             expect(Hash<Algorithm>(data: key.value).hexdigest) == checksum

@@ -3,8 +3,8 @@ project "UncommonCrypto.xcodeproj"
 use_frameworks!
 
 target 'UncommonCrypto_Example' do
-  # pod 'UncommonCrypto', :git => '../'
-  pod 'UncommonCrypto', :path => '../'
+  pod 'UncommonCrypto', :git => '../'
+# pod 'UncommonCrypto', :path => '../'
 
   target 'UncommonCrypto_Tests' do
     inherit! :search_paths

@@ -8,9 +8,13 @@
 
 import Foundation
 import CommonCrypto
+import CZLib
 
-public typealias CCHashAlgorithmTypeSignature = (UnsafePointer<Void>, CC_LONG, UnsafeMutablePointer<UInt8>) -> UnsafeMutablePointer<UInt8>
-public typealias CCAlgorithmParameters = (fun: CCHashAlgorithmTypeSignature, length: Int32)
+public typealias CCSecureHashAlgorithmTypeSignature = (UnsafePointer<Void>, CC_LONG, UnsafeMutablePointer<UInt8>) -> UnsafeMutablePointer<UInt8>
+public typealias ZLibSecureHashAlgorithmTypeSignature = (uLong, UnsafePointer<Bytef>, uInt) -> uLong
+public typealias CCAlgorithmParameters = (fun: CCSecureHashAlgorithmTypeSignature, length: Int32)
+
+public typealias LibZSecureHashAlgorithmTypeSignature = (UnsafePointer<Void>, CC_LONG, UnsafeMutablePointer<UInt8>) -> UnsafeMutablePointer<UInt8>
 
 // MARK: - CryptoDefaults
 
@@ -26,12 +30,21 @@ public enum ChecksumError: ErrorType {
 
 // MARK: - Protocols
 
-public protocol CCHashAlgorithmProtocol {
-    static var fun: CCHashAlgorithmTypeSignature { get }
+public protocol SecureHashAlgorithm {
+    associatedtype SecureHashAlgorithmTypeSignature
+    static var fun: SecureHashAlgorithmTypeSignature { get }
     static var length: Int32 { get }
 }
 
-protocol CCHMACAlgorithmProtocol: CCHashAlgorithmProtocol {
+public protocol CCSecureHashAlgorithm: SecureHashAlgorithm {
+    associatedtype SecureHashAlgorithmTypeSignature = CCSecureHashAlgorithmTypeSignature
+}
+
+public protocol ZLibSecureHashAlgorithm: SecureHashAlgorithm {
+    associatedtype SecureHashAlgorithmTypeSignature = ZLibSecureHashAlgorithmTypeSignature
+}
+
+protocol CCHMACAlgorithmProtocol: SecureHashAlgorithm {
     static var hmac: Int { get }
     static var hmacAlgorithm: CCHmacAlgorithm { get }
 }
@@ -50,7 +63,8 @@ protocol CCPseudoRandomHmacAlgorithmProtocol {
 }
 
 public protocol Digestable {
-    var digest: [UInt8] { get }
+    var bytes: [UInt8] { get }
+    var digest: String { get }
     var hexdigest: String { get }
 }
 
@@ -101,27 +115,14 @@ extension CCHMACAlgorithmProtocol {
 }
 
 extension Digestable {
+    public var digest: String {
+        return String(bytes)
+    }
+
     public var hexdigest: String {
-        return digest.reduce("") { carry, byte in
+        return bytes.reduce("") { carry, byte in
             return carry + String(format: "%02x", byte)
         }
-    }
-}
-
-// MARK: - Extensions
-
-
-public extension NSData {
-    convenience init(bytes: [UInt8]) {
-        var bytes = bytes
-        self.init(bytes: &bytes, length: bytes.count)
-    }
-}
-
-public extension NSString {
-    convenience init?(bytes: [UInt8], encoding: UInt) {
-        var bytes = bytes
-        self.init(bytes: &bytes, length: bytes.count, encoding: encoding)
     }
 }
 
@@ -131,6 +132,10 @@ extension Int8: ZeroBit {
 
 extension UInt8: ZeroBit {
     public static var zero: UInt8 { return 0 }
+}
+
+extension Int: KeySizeContainer {
+    var value: Int { return self }
 }
 
 // MARK: - Functions

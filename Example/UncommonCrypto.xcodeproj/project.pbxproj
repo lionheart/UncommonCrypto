@@ -15,8 +15,8 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* HashTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* HashTests.swift */; };
-		D55516B52B32C3654C2AAF54 /* Pods_UncommonCrypto_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47EEDEA016FF1167D9F90A75 /* Pods_UncommonCrypto_Example.framework */; };
-		FE81B9D080FC743F5C24E557 /* Pods_UncommonCrypto_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8600DACC7C73591333645445 /* Pods_UncommonCrypto_Tests.framework */; };
+		B7AEE5FC6003924B94130890 /* Pods_UncommonCrypto_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DDB7CE6728B6413CC044B50 /* Pods_UncommonCrypto_Tests.framework */; };
+		D6DA8569B2AAB64C142F323D /* Pods_UncommonCrypto_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE30F2937A217626FD81623D /* Pods_UncommonCrypto_Example.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,13 +30,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		068C01B85AE14CCF72DDF2C7 /* Pods-UncommonCrypto_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UncommonCrypto_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UncommonCrypto_Tests/Pods-UncommonCrypto_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		1003E74035862AAC8DD47DC6 /* Pods-UncommonCrypto_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UncommonCrypto_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UncommonCrypto_Tests/Pods-UncommonCrypto_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		2DDB7CE6728B6413CC044B50 /* Pods_UncommonCrypto_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UncommonCrypto_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		333087372017925D2916D34F /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		372E96541D2156C4006D99A0 /* KeyDerivationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyDerivationTests.swift; sourceTree = "<group>"; };
 		373611991D1F44EF006409A4 /* UncommonCrypto.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UncommonCrypto.framework; path = "../../../../Library/Developer/Xcode/DerivedData/UncommonCrypto-eowpgnrvclcoemhdrpohpmfhpdjc/Build/Products/Debug-iphonesimulator/UncommonCrypto/UncommonCrypto.framework"; sourceTree = "<group>"; };
-		3736119B1D1F4500006409A4 /* Pods_UncommonCrypto_Example.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_UncommonCrypto_Example.framework; path = "../../../../Library/Developer/Xcode/DerivedData/UncommonCrypto-eowpgnrvclcoemhdrpohpmfhpdjc/Build/Products/Debug-iphonesimulator/Pods_UncommonCrypto_Example.framework"; sourceTree = "<group>"; };
 		37B78ABA1D2085C5007DF94D /* UncommonCrypto.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UncommonCrypto.framework; path = "../../../../Library/Developer/Xcode/DerivedData/UncommonCrypto-bqefayrwsdcfncfcrnpjtizdjgry/Build/Products/Debug-iphonesimulator/UncommonCrypto/UncommonCrypto.framework"; sourceTree = "<group>"; };
-		47EEDEA016FF1167D9F90A75 /* Pods_UncommonCrypto_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UncommonCrypto_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5801473D8E78F0D071924936 /* UncommonCrypto.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = UncommonCrypto.podspec; path = ../UncommonCrypto.podspec; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* UncommonCrypto_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UncommonCrypto_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -48,11 +47,11 @@
 		607FACE51AFB9204008FA782 /* UncommonCrypto_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UncommonCrypto_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* HashTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashTests.swift; sourceTree = "<group>"; };
-		76C220B78746B9DA371DEF94 /* Pods-UncommonCrypto_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UncommonCrypto_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-UncommonCrypto_Example/Pods-UncommonCrypto_Example.release.xcconfig"; sourceTree = "<group>"; };
-		8439D69324E95D580FA91AF9 /* Pods-UncommonCrypto_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UncommonCrypto_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UncommonCrypto_Example/Pods-UncommonCrypto_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		8600DACC7C73591333645445 /* Pods_UncommonCrypto_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UncommonCrypto_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		874C13D5F7422B69DA0347D6 /* Pods-UncommonCrypto_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UncommonCrypto_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UncommonCrypto_Example/Pods-UncommonCrypto_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		97133DD0853872C99C57EBA5 /* Pods-UncommonCrypto_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UncommonCrypto_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-UncommonCrypto_Tests/Pods-UncommonCrypto_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		ADAF22782FC600BC0B6948C5 /* Pods-UncommonCrypto_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UncommonCrypto_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-UncommonCrypto_Example/Pods-UncommonCrypto_Example.release.xcconfig"; sourceTree = "<group>"; };
 		C417AE162C2A4AB5FAC5AFC8 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		EFB8777FF49A4A99742C17BC /* Pods-UncommonCrypto_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UncommonCrypto_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-UncommonCrypto_Tests/Pods-UncommonCrypto_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		FE30F2937A217626FD81623D /* Pods_UncommonCrypto_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UncommonCrypto_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D55516B52B32C3654C2AAF54 /* Pods_UncommonCrypto_Example.framework in Frameworks */,
+				D6DA8569B2AAB64C142F323D /* Pods_UncommonCrypto_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,34 +68,33 @@
 			buildActionMask = 2147483647;
 			files = (
 				37B78ABC1D2086AF007DF94D /* UncommonCrypto.framework in Frameworks */,
-				FE81B9D080FC743F5C24E557 /* Pods_UncommonCrypto_Tests.framework in Frameworks */,
+				B7AEE5FC6003924B94130890 /* Pods_UncommonCrypto_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3C854BAF8AA2B8E6EDB689DC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				874C13D5F7422B69DA0347D6 /* Pods-UncommonCrypto_Example.debug.xcconfig */,
+				ADAF22782FC600BC0B6948C5 /* Pods-UncommonCrypto_Example.release.xcconfig */,
+				1003E74035862AAC8DD47DC6 /* Pods-UncommonCrypto_Tests.debug.xcconfig */,
+				97133DD0853872C99C57EBA5 /* Pods-UncommonCrypto_Tests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		48A3BACD64CEED9709907A81 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				37B78ABA1D2085C5007DF94D /* UncommonCrypto.framework */,
-				3736119B1D1F4500006409A4 /* Pods_UncommonCrypto_Example.framework */,
 				373611991D1F44EF006409A4 /* UncommonCrypto.framework */,
-				47EEDEA016FF1167D9F90A75 /* Pods_UncommonCrypto_Example.framework */,
-				8600DACC7C73591333645445 /* Pods_UncommonCrypto_Tests.framework */,
+				FE30F2937A217626FD81623D /* Pods_UncommonCrypto_Example.framework */,
+				2DDB7CE6728B6413CC044B50 /* Pods_UncommonCrypto_Tests.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		5E9871D6C259B75B7FB794CE /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				8439D69324E95D580FA91AF9 /* Pods-UncommonCrypto_Example.debug.xcconfig */,
-				76C220B78746B9DA371DEF94 /* Pods-UncommonCrypto_Example.release.xcconfig */,
-				068C01B85AE14CCF72DDF2C7 /* Pods-UncommonCrypto_Tests.debug.xcconfig */,
-				EFB8777FF49A4A99742C17BC /* Pods-UncommonCrypto_Tests.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 		607FACC71AFB9204008FA782 = {
@@ -106,8 +104,8 @@
 				607FACD21AFB9204008FA782 /* Example for UncommonCrypto */,
 				607FACE81AFB9204008FA782 /* Tests */,
 				607FACD11AFB9204008FA782 /* Products */,
-				5E9871D6C259B75B7FB794CE /* Pods */,
 				48A3BACD64CEED9709907A81 /* Frameworks */,
+				3C854BAF8AA2B8E6EDB689DC /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -497,7 +495,7 @@
 		};
 		607FACF01AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8439D69324E95D580FA91AF9 /* Pods-UncommonCrypto_Example.debug.xcconfig */;
+			baseConfigurationReference = 874C13D5F7422B69DA0347D6 /* Pods-UncommonCrypto_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = UncommonCrypto/Info.plist;
@@ -510,7 +508,7 @@
 		};
 		607FACF11AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 76C220B78746B9DA371DEF94 /* Pods-UncommonCrypto_Example.release.xcconfig */;
+			baseConfigurationReference = ADAF22782FC600BC0B6948C5 /* Pods-UncommonCrypto_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = UncommonCrypto/Info.plist;
@@ -523,7 +521,7 @@
 		};
 		607FACF31AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 068C01B85AE14CCF72DDF2C7 /* Pods-UncommonCrypto_Tests.debug.xcconfig */;
+			baseConfigurationReference = 1003E74035862AAC8DD47DC6 /* Pods-UncommonCrypto_Tests.debug.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -542,7 +540,7 @@
 		};
 		607FACF41AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EFB8777FF49A4A99742C17BC /* Pods-UncommonCrypto_Tests.release.xcconfig */;
+			baseConfigurationReference = 97133DD0853872C99C57EBA5 /* Pods-UncommonCrypto_Tests.release.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
