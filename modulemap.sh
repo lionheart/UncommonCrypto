@@ -54,7 +54,7 @@ EOF
     cat << EOF > ${MODULE_DIR}/module.map
 module ZLib [system] {
     header "${SDKPATH}/usr/include/zlib.h"
-    link z
+    link "z"
     export *
 }
 EOF
