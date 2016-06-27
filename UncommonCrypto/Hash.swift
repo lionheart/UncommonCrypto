@@ -16,7 +16,7 @@ public struct Hash<Algorithm: CCHashAlgorithmProtocol>: Digestable {
     public typealias UnicodeScalarLiteralType = StringLiteralType
     public typealias ExtendedGraphemeClusterLiteralType = StringLiteralType
 
-    public var digest: [UInt8] {
+    public var bytes: [UInt8] {
         var value = [UInt8](count: Int(Algorithm.length), repeatedValue: 0)
         Algorithm.fun(data.bytes, CC_LONG(data.length), &value)
         return value

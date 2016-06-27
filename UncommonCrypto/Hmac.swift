@@ -13,7 +13,7 @@ struct Hmac<Algorithm: CCHMACAlgorithmProtocol>: Digestable {
     var keyData: NSMutableData
     var messageData: NSMutableData
 
-    var digest: [UInt8] {
+    var bytes: [UInt8] {
         var hmac: [UInt8] = pointer(Int(Algorithm.length))
         CCHmac(Algorithm.hmacAlgorithm, keyData.bytes, keyData.length, messageData.bytes, messageData.length, &hmac)
         return hmac

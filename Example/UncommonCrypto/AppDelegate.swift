@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         var digest = "abc".MD2
         digest.update("abc")
-        print(digest.hexdigest)
+        print(digest.digest)
         let r = try! Random<String>.generate()
 
         return true

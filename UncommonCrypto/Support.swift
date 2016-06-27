@@ -50,7 +50,8 @@ protocol CCPseudoRandomHmacAlgorithmProtocol {
 }
 
 public protocol Digestable {
-    var digest: [UInt8] { get }
+    var bytes: [UInt8] { get }
+    var digest: String { get }
     var hexdigest: String { get }
 }
 
@@ -101,8 +102,12 @@ extension CCHMACAlgorithmProtocol {
 }
 
 extension Digestable {
+    public var digest: String {
+        return String(bytes)
+    }
+
     public var hexdigest: String {
-        return digest.reduce("") { carry, byte in
+        return bytes.reduce("") { carry, byte in
             return carry + String(format: "%02x", byte)
         }
     }
