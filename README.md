@@ -37,10 +37,12 @@ UncommonCrypto is a pure Swift wrapper for Apple's [CommonCrypto](https://openso
 
 ### Digest
 
-`MD2`, `MD4`, `MD5`, `SHA1`, `SHA224`, `SHA256`, `SHA384`, and `SHA512` can be substituted in the below examples.
+`MD2`, `MD4`, `MD5`, `SHA1`, `SHA224`, `SHA256`, `SHA384`, and `SHA512` are all available.
+
+### Example
 
 ```swift
-let digest = "abc".MD5!
+var digest = "abc".MD5!
 print(digest.hexdigest)
 // 900150983cd24fb0d6963f7d28e17f72
 
@@ -53,10 +55,10 @@ print(digest.hexdigest)
 // 440ac85892ca43ad26d44c7ad9d47d3e
 ```
 
-You can also generate digests using the Hash object.
+You can also generate message digests using the Digest object.
 
 ```swift
-let digest = Hash<MD5>(text: "abc")
+let digest = Digest<MD5>(text: "abc")
 ```
 
 or
