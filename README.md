@@ -5,11 +5,63 @@
 [![License](https://img.shields.io/cocoapods/l/UncommonCrypto.svg?style=flat)](http://cocoapods.org/pods/UncommonCrypto)
 [![Platform](https://img.shields.io/cocoapods/p/UncommonCrypto.svg?style=flat)](http://cocoapods.org/pods/UncommonCrypto)
 
+![](logo.png)
+
+--
+
+UncommonCrypto is a pure Swift wrapper for Apple's [CommonCrypto](https://opensource.apple.com/source/CommonCrypto/) cryptography library.
+
+## API Features
+
+* [x] Digests
+  * [x] MD5
+  * [x] SHA1
+  * [x] SHA224
+  * [x] SHA256
+  * [x] SHA384
+  * [x] SHA512
+* [x] HMAC
+  * [x] MD5
+  * [x] SHA1
+  * [x] SHA224
+  * [x] SHA256
+  * [x] SHA384
+  * [x] SHA512
+* [ ] Encryption
+  * [ ] AES128
+  * [ ] DES
+  * [ ] 3DES
+  * [ ] CAST
+* [x] PBKDF / Key Derivation
+* [x] Random Number Generation
+
+## Test Coverage
+
+* [x] Digests
+  * [x] MD5
+  * [x] SHA1
+  * [x] SHA224
+  * [x] SHA256
+  * [x] SHA384
+  * [x] SHA512
+* [ ] HMAC
+  * [ ] MD5
+  * [ ] SHA1
+  * [ ] SHA224
+  * [ ] SHA256
+  * [ ] SHA384
+  * [ ] SHA512
+* [ ] Encryption
+  * [ ] AES128
+  * [ ] DES
+  * [ ] 3DES
+  * [ ] CAST
+* [ ] PBKDF / Key Derivation
+* [ ] Random Number Generation
+
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
-
-## Requirements
 
 ## Installation
 
@@ -26,4 +78,5 @@ Dan Loewenherz, dan@lionheartsw.com
 
 ## License
 
-UncommonCrypto is available under the MIT license. See the LICENSE file for more info.
+UncommonCrypto is available under the Apache 2.0 license. See the [LICENSE](LICENSE) file for details.
+
