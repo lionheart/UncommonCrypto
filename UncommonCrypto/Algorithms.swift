@@ -12,6 +12,7 @@ import CommonCrypto
 // MARK: - Full List
 
 public struct MD2 {}
+
 public struct MD4 {}
 public struct MD5 {}
 public struct SHA1 {}
@@ -137,6 +138,10 @@ extension Blowfish: CCEncryptionAlgorithmProtocol {
 }
 
 // MARK: - Key Size
+
+extension SHA1: CCKeySizeProtocol {
+    typealias KeySize = Int
+}
 
 extension AES128: CCKeySizeProtocol {
     enum KeySize: KeySizeContainer {

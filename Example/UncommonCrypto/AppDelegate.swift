@@ -17,9 +17,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        var digest = "abc".MD5!
-        try! digest.update("abc")
+        
+        var digest = "abc".MD2
+        digest.update("abc")
         print(digest.hexdigest)
+        let r = try! Random<String>.generate()
+
         return true
     }
 

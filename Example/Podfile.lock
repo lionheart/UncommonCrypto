@@ -8,17 +8,12 @@ DEPENDENCIES:
 
 EXTERNAL SOURCES:
   UncommonCrypto:
-    :git: "../"
-
-CHECKOUT OPTIONS:
-  UncommonCrypto:
-    :commit: f96f1bb9aca054ecaf9aa10f73e689ade827f0bf
-    :git: "../"
+    :path: "../"
 
 SPEC CHECKSUMS:
   Nimble: 97a0a4cae5124c117115634b2d055d8c97d0af19
   UncommonCrypto: e28771c4050fff24ae9a7b51ea606c761f17665f
 
-PODFILE CHECKSUM: 623ba9988d14a8556d33a6a3e8949fedd3bd1717
+PODFILE CHECKSUM: 73cebced918ba869abe3f39ef53bc12af448441b
 
 COCOAPODS: 1.0.1

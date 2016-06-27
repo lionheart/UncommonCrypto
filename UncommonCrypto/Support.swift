@@ -108,29 +108,16 @@ extension Digestable {
     }
 }
 
-// MARK: - Extensions
-
-
-public extension NSData {
-    convenience init(bytes: [UInt8]) {
-        var bytes = bytes
-        self.init(bytes: &bytes, length: bytes.count)
-    }
-}
-
-public extension NSString {
-    convenience init?(bytes: [UInt8], encoding: UInt) {
-        var bytes = bytes
-        self.init(bytes: &bytes, length: bytes.count, encoding: encoding)
-    }
-}
-
 extension Int8: ZeroBit {
     public static var zero: Int8 { return 0 }
 }
 
 extension UInt8: ZeroBit {
     public static var zero: UInt8 { return 0 }
+}
+
+extension Int: KeySizeContainer {
+    var value: Int { return self }
 }
 
 // MARK: - Functions

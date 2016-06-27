@@ -94,7 +94,7 @@ cheksum.hexdigest
   * [ ] DES
   * [ ] 3DES
   * [ ] CAST
-* [ ] PBKDF / Key Derivation
+* [x] PBKDF / Key Derivation
 * [ ] Random Number Generation
 
 ## Installation

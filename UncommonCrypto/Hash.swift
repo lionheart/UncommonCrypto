@@ -33,6 +33,7 @@ public struct Hash<Algorithm: CCHashAlgorithmProtocol>: Digestable {
     }
 
     public init(text: String) {
+        // All text can be UTF8-encoded, so this won't be an optional.
         self.init(text: text, textEncoding: NSUTF8StringEncoding)!
     }
 
@@ -47,6 +48,7 @@ public struct Hash<Algorithm: CCHashAlgorithmProtocol>: Digestable {
     // MARK: -
 
     public mutating func update(text: String) {
+        // All text can be UTF8-encoded, so this won't be an optional.
         try! update(text, textEncoding: NSUTF8StringEncoding)
     }
 
