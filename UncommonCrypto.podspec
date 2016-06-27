@@ -19,7 +19,7 @@ TODO: Add long description of the pod here.
   s.source_files = 'UncommonCrypto/**/*.{swift,c,h,m}'
 
   # Create module.map files for CommonCrypto framework
-  s.preserve_paths = "Frameworks"
+  s.preserve_paths = "Frameworks", "modulemap.sh"
   s.prepare_command = <<-CMD
     sh ./modulemap.sh
   CMD
