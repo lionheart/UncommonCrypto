@@ -21,7 +21,10 @@
     "osx": "10.11"
   },
   "source_files": "UncommonCrypto/**/*.{swift,c,h,m}",
-  "preserve_paths": "Frameworks",
+  "preserve_paths": [
+    "Frameworks",
+    "modulemap.sh"
+  ],
   "prepare_command": "sh ./modulemap.sh",
   "xcconfig": {
     "SWIFT_INCLUDE_PATHS": "$(PODS_ROOT)/UncommonCrypto/Frameworks/$(PLATFORM_NAME)",

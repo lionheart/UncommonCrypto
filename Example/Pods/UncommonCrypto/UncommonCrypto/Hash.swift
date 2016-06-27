@@ -22,8 +22,11 @@ public struct Hash<Algorithm: SecureHashAlgorithm>: Digestable {
         if let fun = Algorithm.fun as? CCSecureHashAlgorithmTypeSignature {
             fun(data.bytes, CC_LONG(data.length), &value)
         }
-        else if let fun = Algorithm.fun as? LibZSecureHashAlgorithmTypeSignature {
-            
+        else if let fun = Algorithm.fun as? ZLibSecureHashAlgorithmTypeSignature {
+            var hash = fun(0, nil, 0)
+            var input = UnsafeMutablePointer<Bytef>(data.bytes)
+            fun(hash, input, UInt32(data.length))
+            value = [UInt8(hash)]
         }
         return value
     }

@@ -9,7 +9,7 @@
 import Foundation
 import CommonCrypto
 
-struct Hmac<Algorithm: CCHMACAlgorithmProtocol>: Digestable {
+struct Hmac<Algorithm: CCHMACAlgorithmProtocol> {
     var keyData: NSMutableData
     var messageData: NSMutableData
 

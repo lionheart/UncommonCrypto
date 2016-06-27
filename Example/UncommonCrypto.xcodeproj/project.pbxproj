@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		372854971D21D3E800071B98 /* NSData+CRC32.m in Sources */ = {isa = PBXBuildFile; fileRef = 372854961D21D3E800071B98 /* NSData+CRC32.m */; };
 		372E96551D2156C4006D99A0 /* KeyDerivationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372E96541D2156C4006D99A0 /* KeyDerivationTests.swift */; };
 		37B78ABC1D2086AF007DF94D /* UncommonCrypto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37B78ABA1D2085C5007DF94D /* UncommonCrypto.framework */; };
 		51A9C56B81D7BCC7830D7B69 /* Pods_UncommonCrypto_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FC3E3A21ABD3AAF9F9DA29F /* Pods_UncommonCrypto_Example.framework */; };
@@ -32,6 +33,9 @@
 /* Begin PBXFileReference section */
 		25CBB1875ADCD1095AF51E06 /* Pods-UncommonCrypto_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UncommonCrypto_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-UncommonCrypto_Tests/Pods-UncommonCrypto_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		333087372017925D2916D34F /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		372854941D21D3E800071B98 /* UncommonCrypto_Example-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UncommonCrypto_Example-Bridging-Header.h"; sourceTree = "<group>"; };
+		372854951D21D3E800071B98 /* NSData+CRC32.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+CRC32.h"; sourceTree = "<group>"; };
+		372854961D21D3E800071B98 /* NSData+CRC32.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+CRC32.m"; sourceTree = "<group>"; };
 		372E96541D2156C4006D99A0 /* KeyDerivationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyDerivationTests.swift; sourceTree = "<group>"; };
 		373611991D1F44EF006409A4 /* UncommonCrypto.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UncommonCrypto.framework; path = "../../../../Library/Developer/Xcode/DerivedData/UncommonCrypto-eowpgnrvclcoemhdrpohpmfhpdjc/Build/Products/Debug-iphonesimulator/UncommonCrypto/UncommonCrypto.framework"; sourceTree = "<group>"; };
 		37B78ABA1D2085C5007DF94D /* UncommonCrypto.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UncommonCrypto.framework; path = "../../../../Library/Developer/Xcode/DerivedData/UncommonCrypto-bqefayrwsdcfncfcrnpjtizdjgry/Build/Products/Debug-iphonesimulator/UncommonCrypto/UncommonCrypto.framework"; sourceTree = "<group>"; };
@@ -111,11 +115,14 @@
 			isa = PBXGroup;
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
+				372854951D21D3E800071B98 /* NSData+CRC32.h */,
+				372854961D21D3E800071B98 /* NSData+CRC32.m */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
+				372854941D21D3E800071B98 /* UncommonCrypto_Example-Bridging-Header.h */,
 			);
 			name = "Example for UncommonCrypto";
 			path = UncommonCrypto;
@@ -218,7 +225,7 @@
 		607FACC81AFB9204008FA782 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0720;
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
@@ -367,6 +374,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				372854971D21D3E800071B98 /* NSData+CRC32.m in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
@@ -498,11 +506,14 @@
 			baseConfigurationReference = DF0917867F7CB9FAFF9DE11B /* Pods-UncommonCrypto_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = UncommonCrypto/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "UncommonCrypto/UncommonCrypto_Example-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -511,11 +522,13 @@
 			baseConfigurationReference = 5F8678A054B4C845101E1E83 /* Pods-UncommonCrypto_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = UncommonCrypto/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "UncommonCrypto/UncommonCrypto_Example-Bridging-Header.h";
 			};
 			name = Release;
 		};

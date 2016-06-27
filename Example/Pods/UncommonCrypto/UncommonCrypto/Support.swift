@@ -14,8 +14,6 @@ public typealias CCSecureHashAlgorithmTypeSignature = (UnsafePointer<Void>, CC_L
 public typealias ZLibSecureHashAlgorithmTypeSignature = (uLong, UnsafePointer<Bytef>, uInt) -> uLong
 public typealias CCAlgorithmParameters = (fun: CCSecureHashAlgorithmTypeSignature, length: Int32)
 
-public typealias LibZSecureHashAlgorithmTypeSignature = (UnsafePointer<Void>, CC_LONG, UnsafeMutablePointer<UInt8>) -> UnsafeMutablePointer<UInt8>
-
 // MARK: - CryptoDefaults
 
 public struct CryptoDefaults {

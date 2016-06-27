@@ -29,6 +29,4 @@ TODO: Add long description of the pod here.
     "SWIFT_INCLUDE_PATHS" => "$(PODS_ROOT)/UncommonCrypto/Frameworks/$(PLATFORM_NAME)",
     "FRAMEWORK_SEARCH_PATHS" => "$(PODS_ROOT)/UncommonCrypto/Frameworks/$(PLATFORM_NAME)",
   }
-
-  s.libraries = 'z'
 end
