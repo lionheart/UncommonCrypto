@@ -26,12 +26,7 @@ TODO: Add long description of the pod here.
 
   # add the new module to Import Paths
   s.xcconfig = {
-    "SWIFT_INCLUDE_PATHS" => "$(PODS_ROOT)/UncommonCrypto/Frameworks/$(PLATFORM_NAME)", 
+    "SWIFT_INCLUDE_PATHS" => "$(PODS_ROOT)/UncommonCrypto/Frameworks/$(PLATFORM_NAME)",
     "FRAMEWORK_SEARCH_PATHS" => "$(PODS_ROOT)/UncommonCrypto/Frameworks/$(PLATFORM_NAME)"
   }
-
-#  s.ios.vendored_frameworks = "Frameworks/iphoneos/CommonCrypto.framework"
-#  s.osx.vendored_frameworks = "Frameworks/macos/CommonCrypto.framework"
-#  s.tvos.vendored_frameworks = "Frameworks/tvos/CommonCrypto.framework"
-#  s.watchos.vendored_frameworks = "Frameworks/watchsimulator/CommonCrypto.framework"
 end
