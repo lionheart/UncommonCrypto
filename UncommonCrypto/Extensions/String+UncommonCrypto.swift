@@ -22,7 +22,7 @@ public extension String {
     var SHA384: SHA384Hash { return checksum() }
     var SHA512: SHA512Hash { return checksum() }
 
-    private func checksum<T: CCHashAlgorithmProtocol>() -> Hash<T> {
+    private func checksum<T: SecureHashAlgorithm>() -> Hash<T> {
         return Hash<T>(text: self)
     }
 }

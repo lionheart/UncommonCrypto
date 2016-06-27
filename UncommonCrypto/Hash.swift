@@ -9,7 +9,7 @@
 import Foundation
 import CommonCrypto
 
-public struct Hash<Algorithm: CCHashAlgorithmProtocol>: Digestable {
+public struct Hash<Algorithm: SecureHashAlgorithm>: Digestable {
     public var data: NSMutableData
 
     public typealias StringLiteralType = String
@@ -18,7 +18,12 @@ public struct Hash<Algorithm: CCHashAlgorithmProtocol>: Digestable {
 
     public var bytes: [UInt8] {
         var value = [UInt8](count: Int(Algorithm.length), repeatedValue: 0)
-        Algorithm.fun(data.bytes, CC_LONG(data.length), &value)
+        if let fun = Algorithm.fun as? CCSecureHashAlgorithmTypeSignature {
+            fun(data.bytes, CC_LONG(data.length), &value)
+        }
+        else if let fun = Algorithm.fun as? LibZSecureHashAlgorithmTypeSignature {
+            
+        }
         return value
     }
 

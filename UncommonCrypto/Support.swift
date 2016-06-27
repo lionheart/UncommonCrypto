@@ -9,8 +9,10 @@
 import Foundation
 import CommonCrypto
 
-public typealias CCHashAlgorithmTypeSignature = (UnsafePointer<Void>, CC_LONG, UnsafeMutablePointer<UInt8>) -> UnsafeMutablePointer<UInt8>
-public typealias CCAlgorithmParameters = (fun: CCHashAlgorithmTypeSignature, length: Int32)
+public typealias CCSecureHashAlgorithmTypeSignature = (UnsafePointer<Void>, CC_LONG, UnsafeMutablePointer<UInt8>) -> UnsafeMutablePointer<UInt8>
+public typealias CCAlgorithmParameters = (fun: CCSecureHashAlgorithmTypeSignature, length: Int32)
+
+public typealias LibZSecureHashAlgorithmTypeSignature = (UnsafePointer<Void>, CC_LONG, UnsafeMutablePointer<UInt8>) -> UnsafeMutablePointer<UInt8>
 
 // MARK: - CryptoDefaults
 
@@ -26,12 +28,17 @@ public enum ChecksumError: ErrorType {
 
 // MARK: - Protocols
 
-public protocol CCHashAlgorithmProtocol {
-    static var fun: CCHashAlgorithmTypeSignature { get }
+public protocol SecureHashAlgorithm {
+    associatedtype SecureHashAlgorithmTypeSignature
+    static var fun: SecureHashAlgorithmTypeSignature { get }
     static var length: Int32 { get }
 }
 
-protocol CCHMACAlgorithmProtocol: CCHashAlgorithmProtocol {
+public protocol CCSecureHashAlgorithm: SecureHashAlgorithm {
+    associatedtype SecureHashAlgorithmTypeSignature = CCSecureHashAlgorithmTypeSignature
+}
+
+protocol CCHMACAlgorithmProtocol: SecureHashAlgorithm {
     static var hmac: Int { get }
     static var hmacAlgorithm: CCHmacAlgorithm { get }
 }

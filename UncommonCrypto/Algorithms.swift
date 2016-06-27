@@ -32,43 +32,43 @@ typealias AES = AES128
 
 // MARK: - Hash
 
-extension MD2: CCHashAlgorithmProtocol {
-    public static var fun: CCHashAlgorithmTypeSignature { return CC_MD2 }
+extension MD2: CCSecureHashAlgorithm {
+    public static var fun: CCSecureHashAlgorithmTypeSignature { return CC_MD2 }
     public static var length: Int32 { return CC_MD2_DIGEST_LENGTH }
 }
 
-extension MD4: CCHashAlgorithmProtocol {
-    public static var fun: CCHashAlgorithmTypeSignature { return CC_MD4 }
+extension MD4: CCSecureHashAlgorithm {
+    public static var fun: CCSecureHashAlgorithmTypeSignature { return CC_MD4 }
     public static var length: Int32 { return CC_MD4_DIGEST_LENGTH }
 }
 
-extension MD5: CCHashAlgorithmProtocol {
-    public static var fun: CCHashAlgorithmTypeSignature { return CC_MD5 }
+extension MD5: CCSecureHashAlgorithm {
+    public static var fun: CCSecureHashAlgorithmTypeSignature { return CC_MD5 }
     public static var length: Int32 { return CC_MD5_DIGEST_LENGTH }
 }
 
-extension SHA1: CCHashAlgorithmProtocol {
-    public static var fun: CCHashAlgorithmTypeSignature { return CC_SHA1 }
+extension SHA1: CCSecureHashAlgorithm {
+    public static var fun: CCSecureHashAlgorithmTypeSignature { return CC_SHA1 }
     public static var length: Int32 { return CC_SHA1_DIGEST_LENGTH }
 }
 
-extension SHA224: CCHashAlgorithmProtocol {
-    public static var fun: CCHashAlgorithmTypeSignature { return CC_SHA224 }
+extension SHA224: CCSecureHashAlgorithm {
+    public static var fun: CCSecureHashAlgorithmTypeSignature { return CC_SHA224 }
     public static var length: Int32 { return CC_SHA224_DIGEST_LENGTH }
 }
 
-extension SHA256: CCHashAlgorithmProtocol {
-    public static var fun: CCHashAlgorithmTypeSignature { return CC_SHA256 }
+extension SHA256: CCSecureHashAlgorithm {
+    public static var fun: CCSecureHashAlgorithmTypeSignature { return CC_SHA256 }
     public static var length: Int32 { return CC_SHA256_DIGEST_LENGTH }
 }
 
-extension SHA384: CCHashAlgorithmProtocol {
-    public static var fun: CCHashAlgorithmTypeSignature { return CC_SHA384 }
+extension SHA384: CCSecureHashAlgorithm {
+    public static var fun: CCSecureHashAlgorithmTypeSignature { return CC_SHA384 }
     public static var length: Int32 { return CC_SHA384_DIGEST_LENGTH }
 }
 
-extension SHA512: CCHashAlgorithmProtocol {
-    public static var fun: CCHashAlgorithmTypeSignature { return CC_SHA512 }
+extension SHA512: CCSecureHashAlgorithm {
+    public static var fun: CCSecureHashAlgorithmTypeSignature { return CC_SHA512 }
     public static var length: Int32 { return CC_SHA512_DIGEST_LENGTH }
 }
 
