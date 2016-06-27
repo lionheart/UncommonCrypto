@@ -33,6 +33,23 @@ UncommonCrypto is a pure Swift wrapper for Apple's [CommonCrypto](https://openso
 * [x] PBKDF / Key Derivation
 * [x] Random Number Generation
 
+## Usage
+
+### Digest
+
+`MD2`, `MD4`, `MD5`, `SHA1`, `SHA224`, `SHA256`, `SHA384`, and `SHA512` can be substituted in the below examples.
+
+```swift
+print("abc".MD5!.hexdigest)
+// 900150983cd24fb0d6963f7d28e17f72
+```
+
+#### hexdigest
+
+```swift
+cheksum.hexdigest
+```
+
 ## Test Coverage
 
 * [x] Digests
@@ -56,10 +73,6 @@ UncommonCrypto is a pure Swift wrapper for Apple's [CommonCrypto](https://openso
   * [ ] CAST
 * [ ] PBKDF / Key Derivation
 * [ ] Random Number Generation
-
-## Example
-
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 ## Installation
 

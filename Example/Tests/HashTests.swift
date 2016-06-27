@@ -155,6 +155,7 @@ class MD5Spec: XCTestCase, IETFMessageDigestSpec {
 
     func testExample() {
         testIETFTestSuite()
+        let checksum: String? = "123123".MD5?.digest
     }
 }
 
