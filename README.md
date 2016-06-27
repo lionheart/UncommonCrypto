@@ -42,7 +42,7 @@ UncommonCrypto is a pure Swift wrapper for Apple's [CommonCrypto](https://openso
 ### Example
 
 ```swift
-var hash = "abc".MD5!
+var hash = "abc".MD5
 print(hash.hexdigest)
 // 900150983cd24fb0d6963f7d28e17f72
 
