@@ -24,12 +24,16 @@ public struct Hash<Algorithm: CCHashAlgorithmProtocol>: Digestable {
 
     // MARK: - 🚀 Initializers
 
-    public init?(text: String, textEncoding encoding: UInt = NSUTF8StringEncoding) {
+    public init?(text: String, textEncoding encoding: UInt) {
         guard let theData = text.dataUsingEncoding(encoding) else {
             return nil
         }
 
         self.init(data: theData)
+    }
+
+    public init(text: String) {
+        self.init(text: text, textEncoding: NSUTF8StringEncoding)!
     }
 
     public init(bytes: [UInt8]) {
@@ -42,7 +46,11 @@ public struct Hash<Algorithm: CCHashAlgorithmProtocol>: Digestable {
 
     // MARK: -
 
-    public mutating func update(text: String, textEncoding encoding: UInt = NSUTF8StringEncoding) throws {
+    public mutating func update(text: String) {
+        try! update(text, textEncoding: NSUTF8StringEncoding)
+    }
+
+    public mutating func update(text: String, textEncoding encoding: UInt) throws {
         if let theData = text.dataUsingEncoding(encoding) {
             data.appendData(theData)
         }
