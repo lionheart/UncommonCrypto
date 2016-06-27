@@ -47,12 +47,12 @@ module CommonCrypto [system] {
 EOF
     echo "Created CommonCrypto module map for ${SDK}."
 
-    MODULE_DIR="${BASE_DIR}/Frameworks/${SDK}/ZLib.framework"
+    MODULE_DIR="${BASE_DIR}/Frameworks/${SDK}/CZLib.framework"
     SDKPATH=`xcrun --sdk ${SDK} --show-sdk-path`
     rm -rf "${MODULE_DIR}"
     mkdir -p "${MODULE_DIR}"
     cat << EOF > ${MODULE_DIR}/module.map
-module ZLib [system] {
+module CZLib [system] {
     header "${SDKPATH}/usr/include/zlib.h"
     export *
 }
