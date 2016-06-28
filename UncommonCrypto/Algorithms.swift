@@ -14,6 +14,7 @@ import CommonCrypto
 
 public struct Adler32 {}
 public struct CRC32 {}
+
 public struct MD2 {}
 public struct MD4 {}
 public struct MD5 {}
@@ -34,12 +35,14 @@ typealias AES = AES128
 
 // MARK: - Hash
 
-extension Adler32: ZLibHashAlgorithm {
+// MARK: TODO
+extension Adler32 {
     public static var fun: ZLibHashAlgorithmTypeSignature { return adler32 }
     public static var length: Int32 { return 32 }
 }
 
-extension CRC32: ZLibHashAlgorithm {
+// MARK: TODO
+extension CRC32 {
     public static var fun: ZLibHashAlgorithmTypeSignature { return crc32 }
     public static var length: Int32 { return 32 }
 }

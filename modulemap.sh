@@ -52,9 +52,9 @@ EOF
     rm -rf "${MODULE_DIR}"
     mkdir -p "${MODULE_DIR}"
     cat << EOF > ${MODULE_DIR}/module.map
-module ZLib [system] {
-    header "${SDKPATH}/usr/include/zlib.h"
-    link "z"
+framework module ZLib [system] [extern_c] {
+    umbrella header "${SDKPATH}/usr/include/zlib.h"
+    module * { export * }
     export *
 }
 EOF

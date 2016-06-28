@@ -11,7 +11,7 @@ import CommonCrypto
 import ZLib
 
 public typealias CCSecureHashAlgorithmTypeSignature = (UnsafePointer<Void>, CC_LONG, UnsafeMutablePointer<UInt8>) -> UnsafeMutablePointer<UInt8>
-public typealias ZLibSecureHashAlgorithmTypeSignature = (uLong, UnsafePointer<Bytef>, uInt) -> uLong
+public typealias ZLibHashAlgorithmTypeSignature = (uLong, UnsafePointer<Bytef>, uInt) -> uLong
 public typealias CCAlgorithmParameters = (fun: CCSecureHashAlgorithmTypeSignature, length: Int32)
 
 // MARK: - CryptoDefaults
@@ -28,21 +28,19 @@ public enum ChecksumError: ErrorType {
 
 // MARK: - Protocols
 
-public protocol SecureHashAlgorithm {
-    associatedtype SecureHashAlgorithmTypeSignature
-    static var fun: SecureHashAlgorithmTypeSignature { get }
+public protocol HashAlgorithm {
     static var length: Int32 { get }
 }
 
-public protocol CCSecureHashAlgorithm: SecureHashAlgorithm {
-    associatedtype SecureHashAlgorithmTypeSignature = CCSecureHashAlgorithmTypeSignature
+public protocol CCSecureHashAlgorithm: HashAlgorithm {
+    static var fun: CCSecureHashAlgorithmTypeSignature { get }
 }
 
-public protocol ZLibSecureHashAlgorithm: SecureHashAlgorithm {
-    associatedtype SecureHashAlgorithmTypeSignature = ZLibSecureHashAlgorithmTypeSignature
+public protocol ZLibHashAlgorithm: HashAlgorithm {
+    static var fun: ZLibHashAlgorithmTypeSignature { get }
 }
 
-protocol CCHMACAlgorithmProtocol: SecureHashAlgorithm {
+protocol CCHMACAlgorithmProtocol: HashAlgorithm {
     static var hmac: Int { get }
     static var hmacAlgorithm: CCHmacAlgorithm { get }
 }
@@ -58,12 +56,6 @@ public protocol CCEncryptionAlgorithmProtocol {
 
 protocol CCPseudoRandomHmacAlgorithmProtocol {
     static var pseudoRandomAlgorithm: Int { get }
-}
-
-public protocol Digestable {
-    var bytes: [UInt8] { get }
-    var digest: String { get }
-    var hexdigest: String { get }
 }
 
 public protocol ZeroBit {
@@ -110,18 +102,6 @@ enum VariableKeySize<T where T: VariableKeySizeContainer>: KeySizeContainer {
 
 extension CCHMACAlgorithmProtocol {
     static var hmacAlgorithm: UInt32 { return CCHmacAlgorithm(hmac) }
-}
-
-extension Digestable {
-    public var digest: String {
-        return String(bytes)
-    }
-
-    public var hexdigest: String {
-        return bytes.reduce("") { carry, byte in
-            return carry + String(format: "%02x", byte)
-        }
-    }
 }
 
 extension Int8: ZeroBit {

@@ -8,6 +8,7 @@
 
 import UIKit
 import UncommonCrypto
+import ZLib
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,11 +17,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
 
-        let h = Hash<CRC32>(text: "testing 123")
-        print(h.checksum)
+        let h = Hash<SHA1>(text: "testing 123")
+        print(h.hexdigest)
 
         let d = "testing 123".dataUsingEncoding(NSUTF8StringEncoding)!
-        print(d.CRC32Value())
 
         var digest = "abc".MD2
         digest.update("abc")
