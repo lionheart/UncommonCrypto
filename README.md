@@ -9,15 +9,27 @@
 
 UncommonCrypto is a pure Swift wrapper for Apple's [CommonCrypto](https://opensource.apple.com/source/CommonCrypto/) cryptography library.
 
+## Features
+
+* [x] iOS, macOS, watchOS, and tvOS support
+* [x] Comprehensive documentation
+* [x] IETF cryptographic testing
+* [x] Cocoapods support
+* [ ] Carthage support
+* [ ] Swift Package Manager support
+
 ## API Features
 
-* [x] Digests
+* [x] Secure Hashes
   * [x] MD5
   * [x] SHA1
   * [x] SHA224
   * [x] SHA256
   * [x] SHA384
   * [x] SHA512
+* [ ] Checksums
+  * [ ] CRC32
+  * [ ] Adler32
 * [x] HMAC
   * [x] MD5
   * [x] SHA1
@@ -39,10 +51,10 @@ UncommonCrypto is a pure Swift wrapper for Apple's [CommonCrypto](https://openso
 
 `MD2`, `MD4`, `MD5`, `SHA1`, `SHA224`, `SHA256`, `SHA384`, and `SHA512` are all available.
 
-### Example
+### Encrypt
 
 ```swift
-var hash = "Hello, world".MD5
+var hash = "Hello, world".MD5.hexdigest
 print(hash.hexdigest)
 // 900150983cd24fb0d6963f7d28e17f72
 
@@ -97,6 +109,8 @@ UncommonCrypto is available through [CocoaPods](http://cocoapods.org). To instal
 it, simply add the following line to your Podfile:
 
 ```ruby
+platform :ios, '9.0'
+
 pod "UncommonCrypto"
 ```
 

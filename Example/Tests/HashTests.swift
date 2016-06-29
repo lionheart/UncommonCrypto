@@ -90,7 +90,7 @@ protocol IETFMessageDigestSpec: class {
 extension IETFMessageDigestSpec where Algorithm: CCSecureHashAlgorithm {
     func testIETFTestSuite() {
         for (key, checksum) in cases {
-            expect(Hash<Algorithm>(data: key.value).hexdigest) == checksum
+            expect(Hash<Algorithm>(input: key.value).hexdigest) == checksum
         }
     }
 }

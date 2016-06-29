@@ -154,12 +154,7 @@ extension NSData: DataConvertible {
 
 extension Array: DataConvertible {
     public func convert(encoding: NSStringEncoding?) -> NSData? {
-        if let array = self as? Any as? [UInt8] {
-            return NSData(bytes: array)
-        }
-        else {
-            return NSData()
-        }
+        return NSData(bytes: UInt8(i))
     }
 }
 

@@ -18,9 +18,9 @@ struct PBKDF2TestData {
     var keyLength: Int
 
     var key: [UInt8] {
-        let saltData = salt.dataUsingEncoding(NSASCIIStringEncoding)
-        return try! PBKDF2SHA1.key(password: password, salt: saltData, rounds: rounds, keySize: keyLength) {
-            return $0.key
+        // TODO: PBKDF2SHA1 key method should allow NSASCIIStringEncoding
+        return try! PBKDF2SHA1.key(password: password, salt: salt, rounds: rounds, keySize: keyLength) {
+            return [UInt8](data: $0.key)
         }
     }
 }

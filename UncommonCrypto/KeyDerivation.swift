@@ -15,13 +15,22 @@ enum KeyDerivationError: ErrorType {
     case InvalidParameters
 }
 
-protocol Int8Protocol { }
+public protocol Int8Protocol { }
 extension Int8: Int8Protocol {}
 
-extension Array where Element: Int8Protocol {
+public protocol UInt8Protocol { }
+extension UInt8: UInt8Protocol {}
+
+public extension Array where Element: Int8Protocol {
     var pointer: UnsafePointer<Int8> {
         var copy = self
         return UnsafePointer<Int8>(withUnsafeMutablePointer(&copy) { $0 })
+    }
+}
+
+public extension Array where Element: UInt8Protocol {
+    init(data: NSData) {
+        self = Array(UnsafeMutableBufferPointer(start: UnsafeMutablePointer<Element>(data.bytes), count: data.length))
     }
 }
 
@@ -36,20 +45,22 @@ extension String {
  Hash is used to determine the PRF.
  */
 public struct PBKDF2<Algorithm, Hash where Algorithm: CCKeySizeProtocol, Hash: CCPseudoRandomHmacAlgorithmProtocol, Algorithm.KeySize: KeySizeContainer> {
-    public static func key<T>(password password: String, saltLength: Int, rounds: Int = 10000, keySize: Algorithm.KeySize, @noescape completion: (key: [UInt8], salt: NSData) -> T) throws -> T {
+    public static func key<T>(password password: String, saltLength: Int, rounds: Int = 10000, keySize: Algorithm.KeySize, @noescape completion: (key: NSData, salt: NSData) -> T) throws -> T {
         let salt: NSData = try Random<NSData>.generate(saltLength)
         return try key(password: password, salt: salt, rounds: rounds, keySize: keySize, completion: completion)
     }
 
-    public static func key<T>(password password: DataConvertible, salt: DataConvertible, rounds: Int, keySize: Algorithm.KeySize, @noescape completion: (key: [UInt8], salt: NSData) -> T) throws -> T {
+    public static func key<T>(password password: DataConvertible, salt: DataConvertible, rounds: Int, keySize: Algorithm.KeySize, @noescape completion: (key: NSData, salt: NSData) -> T) throws -> T {
         let salt = salt.convert()
         let saltPtr = UnsafePointer<UInt8>(salt.bytes)
 
-        var key = [UInt8](count: keySize.value, repeatedValue: 0)
+        var key = NSMutableData(bytes: nil, length: keySize.value)
+        var keyPtr = UnsafeMutablePointer<UInt8>(key.mutableBytes)
+
         let passwordData = password.convert()
         let passwordPtr = UnsafePointer<Int8>(passwordData.bytes)
 
-        let result = CCKeyDerivationPBKDF(CCPBKDFAlgorithm(kCCPBKDF2), passwordPtr, passwordData.length, saltPtr, salt.length, CCPseudoRandomAlgorithm(Hash.pseudoRandomAlgorithm), UInt32(rounds), &key, key.count)
+        let result = CCKeyDerivationPBKDF(CCPBKDFAlgorithm(kCCPBKDF2), passwordPtr, passwordData.length, saltPtr, salt.length, CCPseudoRandomAlgorithm(Hash.pseudoRandomAlgorithm), UInt32(rounds), keyPtr, key.length)
 
         if Int(result) == kCCParamError {
             throw KeyDerivationError.InvalidParameters

@@ -17,8 +17,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
 
-        let h = Hash<SHA1>(text: "testing 123")
+        let data = NSData(hexString: "b8dfb080bc33fb564249e34252bf143d88fc018f")
+        let h = Hash<SHA1>(input: "testing 123")
         print(h.hexdigest)
+//        let key = try! PBKDF2<AES128, SHA1>.key(password: "test", saltLeng) { $0.key }
+//        let x = Cryptor<AES128>(input: NSData(bytes: key))
+//        let result: [UInt8] = try! x.encrypt(data: "hey".dataUsingEncoding(NSUTF8StringEncoding)!)
 
         let d = "testing 123".dataUsingEncoding(NSUTF8StringEncoding)!
 
@@ -30,4 +34,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 }
-
