@@ -16,17 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
 
-        let result = Hmac<MD5>(key: "", message: "")
-        print(result.hexdigest)
-        print(result.bytes)
-        print(result)
-
-        let data = NSData(hexString: "")
-
-        let result2 = Hash<MD5>("test")
-        print(result2.hexdigest)
-        print(result2.bytes)
-        print(result2)
+        let hash = Hash<MD5>("message")
+        hash.update(" digest")
+        print(hash)
 
         return true
     }
