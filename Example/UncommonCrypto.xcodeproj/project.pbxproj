@@ -84,6 +84,7 @@
 		37AC88561D237FB900FA4FEA /* CFB128KeySbox256.rsp in Resources */ = {isa = PBXBuildFile; fileRef = 37AC880E1D237FB900FA4FEA /* CFB128KeySbox256.rsp */; };
 		37AC88581D2387CA00FA4FEA /* NISTEncryptionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AC88571D2387CA00FA4FEA /* NISTEncryptionTests.swift */; };
 		37B78ABC1D2086AF007DF94D /* UncommonCrypto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37B78ABA1D2085C5007DF94D /* UncommonCrypto.framework */; };
+		37F2991B1D24048800AF7AB4 /* HmacTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F2991A1D24048800AF7AB4 /* HmacTests.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -188,6 +189,7 @@
 		37AC880E1D237FB900FA4FEA /* CFB128KeySbox256.rsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CFB128KeySbox256.rsp; sourceTree = "<group>"; };
 		37AC88571D2387CA00FA4FEA /* NISTEncryptionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NISTEncryptionTests.swift; sourceTree = "<group>"; };
 		37B78ABA1D2085C5007DF94D /* UncommonCrypto.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UncommonCrypto.framework; path = "../../../../Library/Developer/Xcode/DerivedData/UncommonCrypto-bqefayrwsdcfncfcrnpjtizdjgry/Build/Products/Debug-iphonesimulator/UncommonCrypto/UncommonCrypto.framework"; sourceTree = "<group>"; };
+		37F2991A1D24048800AF7AB4 /* HmacTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HmacTests.swift; sourceTree = "<group>"; };
 		5801473D8E78F0D071924936 /* UncommonCrypto.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = UncommonCrypto.podspec; path = ../UncommonCrypto.podspec; sourceTree = "<group>"; };
 		5E70624F58ACCC7267962E0C /* Pods-UncommonCrypto_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UncommonCrypto_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-UncommonCrypto_Example/Pods-UncommonCrypto_Example.release.xcconfig"; sourceTree = "<group>"; };
 		607B46EE9C5728F5C1B3E863 /* Pods-UncommonCrypto_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UncommonCrypto_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UncommonCrypto_Tests/Pods-UncommonCrypto_Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -379,6 +381,7 @@
 				607FACEB1AFB9204008FA782 /* HashTests.swift */,
 				37A65EAC1D22BA3F0051F1FD /* EncryptionTests.swift */,
 				37AC88571D2387CA00FA4FEA /* NISTEncryptionTests.swift */,
+				37F2991A1D24048800AF7AB4 /* HmacTests.swift */,
 				372E96541D2156C4006D99A0 /* KeyDerivationTests.swift */,
 				37AC86A51D23768A00FA4FEA /* NIST Test Vectors */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
@@ -696,6 +699,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37F2991B1D24048800AF7AB4 /* HmacTests.swift in Sources */,
 				37AC88581D2387CA00FA4FEA /* NISTEncryptionTests.swift in Sources */,
 				37A65EAD1D22BA3F0051F1FD /* EncryptionTests.swift in Sources */,
 				372E96551D2156C4006D99A0 /* KeyDerivationTests.swift in Sources */,
