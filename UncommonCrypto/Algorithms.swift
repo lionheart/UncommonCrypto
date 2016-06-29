@@ -91,27 +91,27 @@ extension SHA512: CCSecureHashAlgorithm {
 // MARK: - HMAC
 
 extension MD5: CCHMACAlgorithmProtocol {
-    static var hmac: Int = kCCHmacAlgMD5
+    public static var hmac: Int = kCCHmacAlgMD5
 }
 
 extension SHA1: CCHMACAlgorithmProtocol {
-    static var hmac: Int = kCCHmacAlgSHA1
+    public static var hmac: Int = kCCHmacAlgSHA1
 }
 
 extension SHA224: CCHMACAlgorithmProtocol {
-    static var hmac: Int = kCCHmacAlgSHA224
+    public static var hmac: Int = kCCHmacAlgSHA224
 }
 
 extension SHA256: CCHMACAlgorithmProtocol {
-    static var hmac: Int = kCCHmacAlgSHA256
+    public static var hmac: Int = kCCHmacAlgSHA256
 }
 
 extension SHA384: CCHMACAlgorithmProtocol {
-    static var hmac: Int = kCCHmacAlgSHA384
+    public static var hmac: Int = kCCHmacAlgSHA384
 }
 
 extension SHA512: CCHMACAlgorithmProtocol {
-    static var hmac: Int = kCCHmacAlgSHA512
+    public static var hmac: Int = kCCHmacAlgSHA512
 }
 
 // MARK: - Encryption

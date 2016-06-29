@@ -39,7 +39,7 @@ public protocol ZLibHashAlgorithm: HashAlgorithm {
 //    static var fun: ZLibHashAlgorithmTypeSignature { get }
 }
 
-protocol CCHMACAlgorithmProtocol: HashAlgorithm {
+public protocol CCHMACAlgorithmProtocol: HashAlgorithm {
     static var hmac: Int { get }
     static var hmacAlgorithm: CCHmacAlgorithm { get }
 }
@@ -100,7 +100,7 @@ public enum VariableKeySize<T where T: VariableKeySizeContainer>: KeySizeContain
 // MARK: - Protocol Extensions
 
 extension CCHMACAlgorithmProtocol {
-    static var hmacAlgorithm: UInt32 { return CCHmacAlgorithm(hmac) }
+    public static var hmacAlgorithm: UInt32 { return CCHmacAlgorithm(hmac) }
 }
 
 extension Int8: ZeroBit {

@@ -16,8 +16,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
 
-        "message digest".MD2
-        "message digest".MD4
+        let result = Hmac<MD5>(key: "", message: "")
+        print(result.hexdigest)
+        print(result.bytes)
+        print(result.data)
 
         return true
     }
