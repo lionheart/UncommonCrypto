@@ -8,7 +8,6 @@
 
 import Foundation
 import CommonCrypto
-import ZLib
 
 public struct Hash<Algorithm: HashAlgorithm> {
     public var data: NSMutableData
@@ -19,25 +18,25 @@ public struct Hash<Algorithm: HashAlgorithm> {
 
     // MARK: - 🚀 Initializers
 
-    public init?(input: DataConvertible, textEncoding encoding: UInt) {
+    public init?(_ input: DataConvertible, textEncoding encoding: UInt) {
         guard let theData = input.convert(encoding) else {
             return nil
         }
 
-        self.init(input: theData)
+        self.init(theData)
     }
 
-    public init(input: DataConvertible) {
+    public init(_ input: DataConvertible) {
         data = NSMutableData(data: input.convert())
     }
 
     // MARK: -
 
-    public mutating func update(input: DataConvertible) {
+    public mutating func update(_ input: DataConvertible) {
         data.appendData(input.convert())
     }
 
-    public mutating func update(input: DataConvertible, textEncoding encoding: UInt) throws {
+    public mutating func update(_ input: DataConvertible, textEncoding encoding: UInt) throws {
         guard let theData = input.convert(encoding) else {
             throw ChecksumError.DataConversionError
         }
@@ -64,6 +63,7 @@ extension Hash where Algorithm: CCSecureHashAlgorithm {
     }
 }
 
+/*
 extension Hash where Algorithm: ZLibHashAlgorithm {
     public var checksum: UInt32 {
         var NULL: [Bytef] = [0]
@@ -74,3 +74,4 @@ extension Hash where Algorithm: ZLibHashAlgorithm {
         return UInt32(hash)
     }
 }
+ */

@@ -23,6 +23,6 @@ public extension String {
     var SHA512: SHA512Hash { return checksum() }
 
     private func checksum<T: HashAlgorithm>() -> Hash<T> {
-        return Hash<T>(input: self)
+        return Hash<T>(self)
     }
 }

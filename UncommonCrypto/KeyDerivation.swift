@@ -54,7 +54,7 @@ public struct PBKDF2<Algorithm, Hash where Algorithm: CCKeySizeProtocol, Hash: C
         let salt = salt.convert()
         let saltPtr = UnsafePointer<UInt8>(salt.bytes)
 
-        var key = NSMutableData(bytes: nil, length: keySize.value)
+        var key = NSMutableData(length: keySize.value)!
         var keyPtr = UnsafeMutablePointer<UInt8>(key.mutableBytes)
 
         let passwordData = password.convert()

@@ -8,7 +8,6 @@
 
 import UIKit
 import UncommonCrypto
-import ZLib
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
 
         let data = NSData(hexString: "b8dfb080bc33fb564249e34252bf143d88fc018f")
-        let h = Hash<SHA1>(input: "testing 123")
+        let h = Hash<SHA1>("testing 123")
         print(h.hexdigest)
 //        let key = try! PBKDF2<AES128, SHA1>.key(password: "test", saltLeng) { $0.key }
 //        let x = Cryptor<AES128>(input: NSData(bytes: key))

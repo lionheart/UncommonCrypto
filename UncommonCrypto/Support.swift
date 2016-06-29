@@ -8,10 +8,9 @@
 
 import Foundation
 import CommonCrypto
-import ZLib
 
 public typealias CCSecureHashAlgorithmTypeSignature = (UnsafePointer<Void>, CC_LONG, UnsafeMutablePointer<UInt8>) -> UnsafeMutablePointer<UInt8>
-public typealias ZLibHashAlgorithmTypeSignature = (uLong, UnsafePointer<Bytef>, uInt) -> uLong
+//public typealias ZLibHashAlgorithmTypeSignature = (uLong, UnsafePointer<Bytef>, uInt) -> uLong
 public typealias CCAlgorithmParameters = (fun: CCSecureHashAlgorithmTypeSignature, length: Int32)
 
 // MARK: - CryptoDefaults
@@ -37,7 +36,7 @@ public protocol CCSecureHashAlgorithm: HashAlgorithm {
 }
 
 public protocol ZLibHashAlgorithm: HashAlgorithm {
-    static var fun: ZLibHashAlgorithmTypeSignature { get }
+//    static var fun: ZLibHashAlgorithmTypeSignature { get }
 }
 
 protocol CCHMACAlgorithmProtocol: HashAlgorithm {
@@ -154,12 +153,49 @@ extension NSData: DataConvertible {
 
 extension Array: DataConvertible {
     public func convert(encoding: NSStringEncoding?) -> NSData? {
-        return NSData(bytes: UInt8(i))
+        let bytes: [UInt8] = map { UInt8($0 as? Int ?? 0) }
+        return NSData(bytes: bytes)
     }
 }
 
 extension String: DataConvertible {
     public func convert(encoding: NSStringEncoding?) -> NSData? {
         return dataUsingEncoding(encoding ?? CryptoDefaults.encoding)
+    }
+}
+
+// MARK: - CCRandomContainer
+
+public protocol CCRandomContainer {
+    associatedtype CCRandomContainerType
+
+    static func handler(bytes: [UInt8]) -> CCRandomContainerType
+}
+
+extension String: CCRandomContainer {
+    public typealias CCRandomContainerType = String
+
+    public static func handler(bytes: [UInt8]) -> String {
+        var result = String()
+        for byte in bytes {
+            result.append(UnicodeScalar(byte))
+        }
+        return result
+    }
+}
+
+extension NSData: CCRandomContainer {
+    public typealias CCRandomContainerType = NSData
+
+    public static func handler(bytes: [UInt8]) -> NSData {
+        return NSData(bytes: bytes)
+    }
+}
+
+extension Array: CCRandomContainer {
+    public typealias CCRandomContainerType = [UInt8]
+
+    public static func handler(bytes: [UInt8]) -> CCRandomContainerType {
+        return bytes.map { UInt8($0) }
     }
 }

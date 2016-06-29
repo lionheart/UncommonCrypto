@@ -40,7 +40,7 @@ struct Hmac<Algorithm: CCHMACAlgorithmProtocol> {
 
     // MARK: -
 
-    mutating func update(input: DataConvertible, textEncoding encoding: UInt = NSUTF8StringEncoding) throws {
+    mutating func update(_ input: DataConvertible, textEncoding encoding: UInt = NSUTF8StringEncoding) throws {
         if let theData = input.convert(encoding) {
             messageData.appendData(theData)
         }
@@ -49,7 +49,7 @@ struct Hmac<Algorithm: CCHMACAlgorithmProtocol> {
         }
     }
 
-    mutating func update(data: DataConvertible) {
-        messageData.appendData(data.convert())
+    mutating func update(_ input: DataConvertible) {
+        messageData.appendData(input.convert())
     }
 }

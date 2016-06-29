@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import ZLib
 import CommonCrypto
 
 // MARK: - Full List
@@ -36,6 +35,7 @@ typealias AES = AES128
 // MARK: - Hash
 
 // MARK: TODO
+/*
 extension Adler32 {
     public static var fun: ZLibHashAlgorithmTypeSignature { return adler32 }
     public static var length: Int32 { return 32 }
@@ -46,6 +46,7 @@ extension CRC32 {
     public static var fun: ZLibHashAlgorithmTypeSignature { return crc32 }
     public static var length: Int32 { return 32 }
 }
+ */
 
 extension MD2: CCSecureHashAlgorithm {
     public static var fun: CCSecureHashAlgorithmTypeSignature { return CC_MD2 }

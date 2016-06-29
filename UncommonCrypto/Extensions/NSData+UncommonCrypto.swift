@@ -23,7 +23,7 @@ public extension NSData {
     var SHA512: SHA512Hash { return checksum() }
 
     private func checksum<T: HashAlgorithm>() -> Hash<T> {
-        return Hash<T>(input: self)
+        return Hash<T>(self)
     }
 
     public convenience init(bytes: [UInt8]) {
