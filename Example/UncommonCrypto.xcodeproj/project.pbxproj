@@ -227,16 +227,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		37AC86A51D23768A00FA4FEA /* Test Vectors */ = {
+		37AC86A51D23768A00FA4FEA /* NIST Test Vectors */ = {
 			isa = PBXGroup;
 			children = (
-				37AC86A61D2376C600FA4FEA /* NIST AES KAT Vectors */,
+				37AC86A61D2376C600FA4FEA /* AES KAT Vectors */,
 			);
-			name = "Test Vectors";
+			name = "NIST Test Vectors";
 			path = "../Test Vectors";
 			sourceTree = "<group>";
 		};
-		37AC86A61D2376C600FA4FEA /* NIST AES KAT Vectors */ = {
+		37AC86A61D2376C600FA4FEA /* AES KAT Vectors */ = {
 			isa = PBXGroup;
 			children = (
 				37AC87C71D237FB900FA4FEA /* CFB1GFSbox128.rsp */,
@@ -312,7 +312,7 @@
 				37AC880D1D237FB900FA4FEA /* CFB128KeySbox192.rsp */,
 				37AC880E1D237FB900FA4FEA /* CFB128KeySbox256.rsp */,
 			);
-			name = "NIST AES KAT Vectors";
+			name = "AES KAT Vectors";
 			path = KAT_AES;
 			sourceTree = "<group>";
 		};
@@ -380,7 +380,7 @@
 				37A65EAC1D22BA3F0051F1FD /* EncryptionTests.swift */,
 				37AC88571D2387CA00FA4FEA /* NISTEncryptionTests.swift */,
 				372E96541D2156C4006D99A0 /* KeyDerivationTests.swift */,
-				37AC86A51D23768A00FA4FEA /* Test Vectors */,
+				37AC86A51D23768A00FA4FEA /* NIST Test Vectors */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
 			path = Tests;

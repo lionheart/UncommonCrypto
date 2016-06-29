@@ -53,7 +53,9 @@ extension Hash where Algorithm: CCSecureHashAlgorithm {
     }
 
     public var digest: String {
-        return String(bytes)
+        var result = ""
+        bytes.forEach { result.append(UnicodeScalar($0)) }
+        return result
     }
 
     public var hexdigest: String {

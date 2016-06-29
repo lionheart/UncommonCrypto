@@ -22,6 +22,7 @@
 		263465A57520B440C99D428CE2E51AE9 /* NimbleEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8483CD654E71C33C32F8D1507A0FC1DA /* NimbleEnvironment.swift */; };
 		35D652066DCECCD13936234E8463AF71 /* NSData+UncommonCrypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = B228DBE0A4BCB8E18996CE50C4D1C873 /* NSData+UncommonCrypto.swift */; };
 		35E0EBA7AA92E190AB5B4ACFCF0F61C4 /* AssertionDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB89D917D6A9BDA9CC67DF76904D3292 /* AssertionDispatcher.swift */; };
+		37BCD31F1D23F5B4006B91B1 /* Array+UncommongCrypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BCD31E1D23F5B4006B91B1 /* Array+UncommongCrypto.swift */; };
 		39007AD3711A35BCFA1D853E7AB79510 /* BeLessThanOrEqual.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA0EF3044829671324501FDF5AC248A /* BeLessThanOrEqual.swift */; };
 		3B78C4F35C369FBABE62D4622A67E7DF /* DSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F27609750EC444A9FB40D6E4069F812 /* DSL.swift */; };
 		3C918E40C04067FAF57B447C0BC52B04 /* BeGreaterThanOrEqualTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A869928B4E56D11FF1CB69FD81510B28 /* BeGreaterThanOrEqualTo.swift */; };
@@ -128,6 +129,7 @@
 		31AD4F2BA2461A8E593E7CCA25359DBC /* AdapterProtocols.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AdapterProtocols.swift; path = Sources/Nimble/Adapters/AdapterProtocols.swift; sourceTree = "<group>"; };
 		3299828E196EF639687C11D102A96199 /* Hash.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Hash.swift; sourceTree = "<group>"; };
 		3379DEEA005E43FE434406CB8EB8CE44 /* Errors.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Errors.swift; path = Sources/Nimble/Utils/Errors.swift; sourceTree = "<group>"; };
+		37BCD31E1D23F5B4006B91B1 /* Array+UncommongCrypto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+UncommongCrypto.swift"; sourceTree = "<group>"; };
 		3CBD92C518FC6A8F5EF67C504AC122B6 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		40C849CDC6C2268142E9AAB0ECE02ECC /* ThrowError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ThrowError.swift; path = Sources/Nimble/Matchers/ThrowError.swift; sourceTree = "<group>"; };
 		41E1C7F67199477872E80F7109E923F4 /* BeLogical.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeLogical.swift; path = Sources/Nimble/Matchers/BeLogical.swift; sourceTree = "<group>"; };
@@ -333,6 +335,7 @@
 			isa = PBXGroup;
 			children = (
 				B228DBE0A4BCB8E18996CE50C4D1C873 /* NSData+UncommonCrypto.swift */,
+				37BCD31E1D23F5B4006B91B1 /* Array+UncommongCrypto.swift */,
 				E62A45439F0AB9AFFDF9BCA8900151D4 /* NSString+UncommonCrypto.swift */,
 				5F29C77B6543BCE1C493BF7811FFB3C9 /* String+UncommonCrypto.swift */,
 			);
@@ -668,6 +671,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37BCD31F1D23F5B4006B91B1 /* Array+UncommongCrypto.swift in Sources */,
 				1DF4FA5A60BD3C25D6EFDA943E7D0461 /* Algorithms.swift in Sources */,
 				47583B68C6377C0E0BCDEF0C418D3B67 /* Cryptor.swift in Sources */,
 				A1721424100FD4E4D7415A8BE8CDD22C /* Hash.swift in Sources */,

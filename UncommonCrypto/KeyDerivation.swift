@@ -15,31 +15,6 @@ enum KeyDerivationError: ErrorType {
     case InvalidParameters
 }
 
-public protocol Int8Protocol { }
-extension Int8: Int8Protocol {}
-
-public protocol UInt8Protocol { }
-extension UInt8: UInt8Protocol {}
-
-public extension Array where Element: Int8Protocol {
-    var pointer: UnsafePointer<Int8> {
-        var copy = self
-        return UnsafePointer<Int8>(withUnsafeMutablePointer(&copy) { $0 })
-    }
-}
-
-public extension Array where Element: UInt8Protocol {
-    init(data: NSData) {
-        self = Array(UnsafeMutableBufferPointer(start: UnsafeMutablePointer<Element>(data.bytes), count: data.length))
-    }
-}
-
-extension String {
-    var pointer: UnsafePointer<CChar> {
-        return withCString { $0 }
-    }
-}
-
 /*
  Algorithm is used to determine key length.
  Hash is used to determine the PRF.

@@ -25,4 +25,8 @@ public extension String {
     private func checksum<T: HashAlgorithm>() -> Hash<T> {
         return Hash<T>(self)
     }
+
+    var pointer: UnsafePointer<CChar> {
+        return withCString { $0 }
+    }
 }
