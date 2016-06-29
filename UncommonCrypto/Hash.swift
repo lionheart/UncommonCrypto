@@ -10,7 +10,7 @@ import Foundation
 import CommonCrypto
 
 public struct Hash<Algorithm: HashAlgorithm> {
-    public var data: NSMutableData
+    var data: NSMutableData
 
     public typealias StringLiteralType = String
     public typealias UnicodeScalarLiteralType = StringLiteralType
@@ -52,7 +52,11 @@ extension Hash where Algorithm: CCSecureHashAlgorithm {
         return value
     }
 
-    public var digest: String {
+    public var data: NSData {
+        return NSData(bytes: bytes)
+    }
+
+    public var string: String {
         var result = ""
         bytes.forEach { result.append(UnicodeScalar($0)) }
         return result

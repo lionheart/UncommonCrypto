@@ -56,7 +56,7 @@ public extension Hmac where Algorithm: CCSecureHashAlgorithm {
         return NSData(bytes: bytes)
     }
 
-    var digest: String {
+    var string: String {
         var result = ""
         bytes.forEach { result.append(UnicodeScalar($0)) }
         return result
