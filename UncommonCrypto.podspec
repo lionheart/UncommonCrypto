@@ -22,6 +22,14 @@ TODO: Add long description of the pod here.
   s.preserve_paths = "Frameworks", "modulemap.sh"
   s.prepare_command = <<-CMD
     sh ./modulemap.sh
+
+    require 'xcodeproj'
+    path_to_project = "${SOURCE_ROOT}/${PROJECT_NAME}.xcodeproj"
+    project = Xcodeproj::Project.open(path_to_project)
+    main_target = project.targets.first
+    phase = main_target.new_shell_script_build_phase("Name of your Phase")
+    phase.shell_script = "TAGS="TODO:|FIXME:" && find "${SRCROOT}" \( -name "*.h" -or -name "*.m" \) -print0 | xargs -0 egrep --with-filename --line-number --only-matching "($TAGS).*\$" | perl -p -e "s/($TAGS)/ warning: \$1/""
+    project.save()
   CMD
 
   # add the new module to Import Paths
