@@ -27,12 +27,27 @@ public enum ChecksumError: ErrorType {
 
 // MARK: - Protocols
 
+public protocol ByteOutput {
+    var bytes: [UInt8] { get }
+}
+
 public protocol HashAlgorithm {
     static var length: Int32 { get }
 }
 
 public protocol CCSecureHashAlgorithm: HashAlgorithm {
     static var fun: CCSecureHashAlgorithmTypeSignature { get }
+    static func process(data: NSData) -> [UInt8]
+}
+
+extension CCSecureHashAlgorithm {
+    typealias Arguments = NSData
+
+    public static func process(data: NSData) -> [UInt8] {
+        var value = [UInt8](count: Int(Self.length), repeatedValue: 0)
+        Self.fun(data.bytes, CC_LONG(data.length), &value)
+        return value
+    }
 }
 
 public protocol ZLibHashAlgorithm: HashAlgorithm {
@@ -42,6 +57,16 @@ public protocol ZLibHashAlgorithm: HashAlgorithm {
 public protocol CCHMACAlgorithmProtocol: HashAlgorithm {
     static var hmac: Int { get }
     static var hmacAlgorithm: CCHmacAlgorithm { get }
+}
+
+extension CCHMACAlgorithmProtocol {
+    typealias Arguments = (NSData, NSData)
+
+    public static func process(data: (NSData, NSData)) -> [UInt8] {
+        var value: [UInt8] = pointer(Int(Self.length))
+        CCHmac(Self.hmacAlgorithm, data.0.bytes, data.0.length, data.1.bytes, data.1.length, &value)
+        return value
+    }
 }
 
 public protocol CCKeySizeProtocol {
@@ -197,5 +222,26 @@ extension Array: CCRandomContainer {
 
     public static func handler(bytes: [UInt8]) -> CCRandomContainerType {
         return bytes.map { UInt8($0) }
+    }
+}
+
+// MARK: - ByteOutput
+
+
+extension ByteOutput {
+    public var data: NSData {
+        return NSData(bytes: bytes)
+    }
+
+    public var string: String {
+        var result = ""
+        bytes.forEach { result.append(UnicodeScalar($0)) }
+        return result
+    }
+
+    public var hexdigest: String {
+        return bytes.reduce("") { carry, byte in
+            return carry + String(format: "%02x", byte)
+        }
     }
 }

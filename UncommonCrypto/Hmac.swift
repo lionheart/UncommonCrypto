@@ -45,26 +45,8 @@ public struct Hmac<Algorithm: CCHMACAlgorithmProtocol> {
     }
 }
 
-public extension Hmac where Algorithm: CCSecureHashAlgorithm {
-    var bytes: [UInt8] {
-        var hmac: [UInt8] = pointer(Int(Algorithm.length))
-        CCHmac(Algorithm.hmacAlgorithm, keyData.bytes, keyData.length, messageData.bytes, messageData.length, &hmac)
-        return hmac
-    }
-
-    var data: NSData {
-        return NSData(bytes: bytes)
-    }
-
-    var string: String {
-        var result = ""
-        bytes.forEach { result.append(UnicodeScalar($0)) }
-        return result
-    }
-
-    var hexdigest: String {
-        return bytes.reduce("") { carry, byte in
-            return carry + String(format: "%02x", byte)
-        }
+extension Hmac: ByteOutput {
+    public var bytes: [UInt8] {
+        return Algorithm.process((keyData, messageData))
     }
 }

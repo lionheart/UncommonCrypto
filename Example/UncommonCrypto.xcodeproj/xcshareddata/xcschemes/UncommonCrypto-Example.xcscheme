@@ -53,6 +53,30 @@
             </BuildableReference>
             <SkippedTests>
                <Test
+                  Identifier = "NISTBlockCipherSpec/testCFB1GFSbox128()">
+               </Test>
+               <Test
+                  Identifier = "NISTBlockCipherSpec/testCFB1KeySbox128()">
+               </Test>
+               <Test
+                  Identifier = "NISTBlockCipherSpec/testCFB1VarKey128()">
+               </Test>
+               <Test
+                  Identifier = "NISTBlockCipherSpec/testCFB1VarTxt128()">
+               </Test>
+               <Test
+                  Identifier = "NISTBlockCipherSpec/testCFB8GFSbox128()">
+               </Test>
+               <Test
+                  Identifier = "NISTBlockCipherSpec/testCFB8KeySbox128()">
+               </Test>
+               <Test
+                  Identifier = "NISTBlockCipherSpec/testCFB8VarKey128()">
+               </Test>
+               <Test
+                  Identifier = "NISTBlockCipherSpec/testCFB8VarTxt128()">
+               </Test>
+               <Test
                   Identifier = "NISTTestVectorSpec/testCFB1GFSbox128()">
                </Test>
                <Test

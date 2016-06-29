@@ -141,6 +141,9 @@ class NISTBlockCipherSpec: XCTestCase {
         _test("CFB128VarTxt256")
     }
 
+    // MARK: TODO -
+
+    /*
     func testCFB1GFSbox128() {
         _test("CFB1GFSbox128")
     }
@@ -172,6 +175,7 @@ class NISTBlockCipherSpec: XCTestCase {
     func testCFB8VarTxt128() {
         _test("CFB8VarTxt128")
     }
+ */
 
     func testECBGFSbox128() {
         _test("ECBGFSbox128")

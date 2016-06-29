@@ -9,7 +9,7 @@
 import Foundation
 import CommonCrypto
 
-public struct Hash<Algorithm: HashAlgorithm> {
+public struct Hash<Algorithm: CCSecureHashAlgorithm> {
     var data: NSMutableData
 
     public typealias StringLiteralType = String
@@ -45,27 +45,9 @@ public struct Hash<Algorithm: HashAlgorithm> {
     }
 }
 
-extension Hash where Algorithm: CCSecureHashAlgorithm {
+extension Hash: ByteOutput {
     public var bytes: [UInt8] {
-        var value = [UInt8](count: Int(Algorithm.length), repeatedValue: 0)
-        Algorithm.fun(data.bytes, CC_LONG(data.length), &value)
-        return value
-    }
-
-    public var data: NSData {
-        return NSData(bytes: bytes)
-    }
-
-    public var string: String {
-        var result = ""
-        bytes.forEach { result.append(UnicodeScalar($0)) }
-        return result
-    }
-
-    public var hexdigest: String {
-        return bytes.reduce("") { carry, byte in
-            return carry + String(format: "%02x", byte)
-        }
+        return Algorithm.process(data)
     }
 }
 
