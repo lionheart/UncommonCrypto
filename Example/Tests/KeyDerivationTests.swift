@@ -37,7 +37,7 @@ let PBKDF2_TEST6: [UInt8] = [0x56, 0xfa, 0x6a, 0xa7, 0x55, 0x48, 0x09, 0x9d, 0xc
 
  - seealso: https://tools.ietf.org/html/rfc6070
  */
-class KeyDerivationTest: XCTestCase {
+class PBKDF2Spec: XCTestCase {
     func test1Round20Bit() {
         expect(PBKDF2TestData(password: "password", salt: "salt", rounds: 1, keyLength: 20).key) == PBKDF2_TEST1
     }

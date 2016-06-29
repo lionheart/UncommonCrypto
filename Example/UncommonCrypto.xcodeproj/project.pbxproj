@@ -10,6 +10,79 @@
 		372854971D21D3E800071B98 /* NSData+CRC32.m in Sources */ = {isa = PBXBuildFile; fileRef = 372854961D21D3E800071B98 /* NSData+CRC32.m */; };
 		372E96551D2156C4006D99A0 /* KeyDerivationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372E96541D2156C4006D99A0 /* KeyDerivationTests.swift */; };
 		37A65EAD1D22BA3F0051F1FD /* EncryptionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A65EAC1D22BA3F0051F1FD /* EncryptionTests.swift */; };
+		37AC880F1D237FB900FA4FEA /* CFB1GFSbox128.rsp in Resources */ = {isa = PBXBuildFile; fileRef = 37AC87C71D237FB900FA4FEA /* CFB1GFSbox128.rsp */; };
+		37AC88101D237FB900FA4FEA /* CFB1GFSbox192.rsp in Resources */ = {isa = PBXBuildFile; fileRef = 37AC87C81D237FB900FA4FEA /* CFB1GFSbox192.rsp */; };
+		37AC88111D237FB900FA4FEA /* CFB1GFSbox256.rsp in Resources */ = {isa = PBXBuildFile; fileRef = 37AC87C91D237FB900FA4FEA /* CFB1GFSbox256.rsp */; };
+		37AC88121D237FB900FA4FEA /* CFB1KeySbox128.rsp in Resources */ = {isa = PBXBuildFile; fileRef = 37AC87CA1D237FB900FA4FEA /* CFB1KeySbox128.rsp */; };
+		37AC88131D237FB900FA4FEA /* CFB1KeySbox192.rsp in Resources */ = {isa = PBXBuildFile; fileRef = 37AC87CB1D237FB900FA4FEA /* CFB1KeySbox192.rsp */; };
+		37AC88141D237FB900FA4FEA /* CFB1KeySbox256.rsp in Resources */ = {isa = PBXBuildFile; fileRef = 37AC87CC1D237FB900FA4FEA /* CFB1KeySbox256.rsp */; };
+		37AC88151D237FB900FA4FEA /* CFB1VarKey128.rsp in Resources */ = {isa = PBXBuildFile; fileRef = 37AC87CD1D237FB900FA4FEA /* CFB1VarKey128.rsp */; };
+		37AC88161D237FB900FA4FEA /* CFB1VarKey192.rsp in Resources */ = {isa = PBXBuildFile; fileRef = 37AC87CE1D237FB900FA4FEA /* CFB1VarKey192.rsp */; };
+		37AC88171D237FB900FA4FEA /* CFB1VarKey256.rsp in Resources */ = {isa = PBXBuildFile; fileRef = 37AC87CF1D237FB900FA4FEA /* CFB1VarKey256.rsp */; };
+		37AC88181D237FB900FA4FEA /* CFB1VarTxt128.rsp in Resources */ = {isa = PBXBuildFile; fileRef = 37AC87D01D237FB900FA4FEA /* CFB1VarTxt128.rsp */; };
+		37AC88191D237FB900FA4FEA /* CFB1VarTxt192.rsp in Resources */ = {isa = PBXBuildFile; fileRef = 37AC87D11D237FB900FA4FEA /* CFB1VarTxt192.rsp */; };
+		37AC881A1D237FB900FA4FEA /* CFB1VarTxt256.rsp in Resources */ = {isa = PBXBuildFile; fileRef = 37AC87D21D237FB900FA4FEA /* CFB1VarTxt256.rsp */; };
+		37AC881B1D237FB900FA4FEA /* CFB8GFSbox128.rsp in Resources */ = {isa = PBXBuildFile; fileRef = 37AC87D31D237FB900FA4FEA /* CFB8GFSbox128.rsp */; };
+		37AC881C1D237FB900FA4FEA /* CFB8GFSbox192.rsp in Resources */ = {isa = PBXBuildFile; fileRef = 37AC87D41D237FB900FA4FEA /* CFB8GFSbox192.rsp */; };
+		37AC881D1D237FB900FA4FEA /* CFB8GFSbox256.rsp in Resources */ = {isa = PBXBuildFile; fileRef = 37AC87D51D237FB900FA4FEA /* CFB8GFSbox256.rsp */; };
+		37AC881E1D237FB900FA4FEA /* CFB8KeySbox128.rsp in Resources */ = {isa = PBXBuildFile; fileRef = 37AC87D61D237FB900FA4FEA /* CFB8KeySbox128.rsp */; };
+		37AC881F1D237FB900FA4FEA /* CFB8KeySbox192.rsp in Resources */ = {isa = PBXBuildFile; fileRef = 37AC87D71D237FB900FA4FEA /* CFB8KeySbox192.rsp */; };
+		37AC88201D237FB900FA4FEA /* CFB8KeySbox256.rsp in Resources */ = {isa = PBXBuildFile; fileRef = 37AC87D81D237FB900FA4FEA /* CFB8KeySbox256.rsp */; };
+		37AC88211D237FB900FA4FEA /* CFB8VarKey128.rsp in Resources */ = {isa = PBXBuildFile; fileRef = 37AC87D91D237FB900FA4FEA /* CFB8VarKey128.rsp */; };
+		37AC88221D237FB900FA4FEA /* CFB8VarKey192.rsp in Resources */ = {isa = PBXBuildFile; fileRef = 37AC87DA1D237FB900FA4FEA /* CFB8VarKey192.rsp */; };
+		37AC88231D237FB900FA4FEA /* CFB8VarKey256.rsp in Resources */ = {isa = PBXBuildFile; fileRef = 37AC87DB1D237FB900FA4FEA /* CFB8VarKey256.rsp */; };
+		37AC88241D237FB900FA4FEA /* CFB8VarTxt128.rsp in Resources */ = {isa = PBXBuildFile; fileRef = 37AC87DC1D237FB900FA4FEA /* CFB8VarTxt128.rsp */; };
+		37AC88251D237FB900FA4FEA /* CFB8VarTxt192.rsp in Resources */ = {isa = PBXBuildFile; fileRef = 37AC87DD1D237FB900FA4FEA /* CFB8VarTxt192.rsp */; };
+		37AC88261D237FB900FA4FEA /* CFB8VarTxt256.rsp in Resources */ = {isa = PBXBuildFile; fileRef = 37AC87DE1D237FB900FA4FEA /* CFB8VarTxt256.rsp */; };
+		37AC88271D237FB900FA4FEA /* CFB128VarKey128.rsp in Resources */ = {isa = PBXBuildFile; fileRef = 37AC87DF1D237FB900FA4FEA /* CFB128VarKey128.rsp */; };
+		37AC88281D237FB900FA4FEA /* CFB128VarKey192.rsp in Resources */ = {isa = PBXBuildFile; fileRef = 37AC87E01D237FB900FA4FEA /* CFB128VarKey192.rsp */; };
+		37AC88291D237FB900FA4FEA /* CFB128VarKey256.rsp in Resources */ = {isa = PBXBuildFile; fileRef = 37AC87E11D237FB900FA4FEA /* CFB128VarKey256.rsp */; };
+		37AC882A1D237FB900FA4FEA /* CFB128VarTxt128.rsp in Resources */ = {isa = PBXBuildFile; fileRef = 37AC87E21D237FB900FA4FEA /* CFB128VarTxt128.rsp */; };
+		37AC882B1D237FB900FA4FEA /* CFB128VarTxt192.rsp in Resources */ = {isa = PBXBuildFile; fileRef = 37AC87E31D237FB900FA4FEA /* CFB128VarTxt192.rsp */; };
+		37AC882C1D237FB900FA4FEA /* CFB128VarTxt256.rsp in Resources */ = {isa = PBXBuildFile; fileRef = 37AC87E41D237FB900FA4FEA /* CFB128VarTxt256.rsp */; };
+		37AC882D1D237FB900FA4FEA /* ECBGFSbox128.rsp in Resources */ = {isa = PBXBuildFile; fileRef = 37AC87E51D237FB900FA4FEA /* ECBGFSbox128.rsp */; };
+		37AC882E1D237FB900FA4FEA /* ECBGFSbox192.rsp in Resources */ = {isa = PBXBuildFile; fileRef = 37AC87E61D237FB900FA4FEA /* ECBGFSbox192.rsp */; };
+		37AC882F1D237FB900FA4FEA /* ECBGFSbox256.rsp in Resources */ = {isa = PBXBuildFile; fileRef = 37AC87E71D237FB900FA4FEA /* ECBGFSbox256.rsp */; };
+		37AC88301D237FB900FA4FEA /* ECBKeySbox128.rsp in Resources */ = {isa = PBXBuildFile; fileRef = 37AC87E81D237FB900FA4FEA /* ECBKeySbox128.rsp */; };
+		37AC88311D237FB900FA4FEA /* ECBKeySbox192.rsp in Resources */ = {isa = PBXBuildFile; fileRef = 37AC87E91D237FB900FA4FEA /* ECBKeySbox192.rsp */; };
+		37AC88321D237FB900FA4FEA /* ECBKeySbox256.rsp in Resources */ = {isa = PBXBuildFile; fileRef = 37AC87EA1D237FB900FA4FEA /* ECBKeySbox256.rsp */; };
+		37AC88331D237FB900FA4FEA /* ECBVarKey128.rsp in Resources */ = {isa = PBXBuildFile; fileRef = 37AC87EB1D237FB900FA4FEA /* ECBVarKey128.rsp */; };
+		37AC88341D237FB900FA4FEA /* ECBVarKey192.rsp in Resources */ = {isa = PBXBuildFile; fileRef = 37AC87EC1D237FB900FA4FEA /* ECBVarKey192.rsp */; };
+		37AC88351D237FB900FA4FEA /* ECBVarKey256.rsp in Resources */ = {isa = PBXBuildFile; fileRef = 37AC87ED1D237FB900FA4FEA /* ECBVarKey256.rsp */; };
+		37AC88361D237FB900FA4FEA /* ECBVarTxt128.rsp in Resources */ = {isa = PBXBuildFile; fileRef = 37AC87EE1D237FB900FA4FEA /* ECBVarTxt128.rsp */; };
+		37AC88371D237FB900FA4FEA /* ECBVarTxt192.rsp in Resources */ = {isa = PBXBuildFile; fileRef = 37AC87EF1D237FB900FA4FEA /* ECBVarTxt192.rsp */; };
+		37AC88381D237FB900FA4FEA /* ECBVarTxt256.rsp in Resources */ = {isa = PBXBuildFile; fileRef = 37AC87F01D237FB900FA4FEA /* ECBVarTxt256.rsp */; };
+		37AC88391D237FB900FA4FEA /* OFBGFSbox128.rsp in Resources */ = {isa = PBXBuildFile; fileRef = 37AC87F11D237FB900FA4FEA /* OFBGFSbox128.rsp */; };
+		37AC883A1D237FB900FA4FEA /* OFBGFSbox192.rsp in Resources */ = {isa = PBXBuildFile; fileRef = 37AC87F21D237FB900FA4FEA /* OFBGFSbox192.rsp */; };
+		37AC883B1D237FB900FA4FEA /* OFBGFSbox256.rsp in Resources */ = {isa = PBXBuildFile; fileRef = 37AC87F31D237FB900FA4FEA /* OFBGFSbox256.rsp */; };
+		37AC883C1D237FB900FA4FEA /* OFBKeySbox128.rsp in Resources */ = {isa = PBXBuildFile; fileRef = 37AC87F41D237FB900FA4FEA /* OFBKeySbox128.rsp */; };
+		37AC883D1D237FB900FA4FEA /* OFBKeySbox192.rsp in Resources */ = {isa = PBXBuildFile; fileRef = 37AC87F51D237FB900FA4FEA /* OFBKeySbox192.rsp */; };
+		37AC883E1D237FB900FA4FEA /* OFBKeySbox256.rsp in Resources */ = {isa = PBXBuildFile; fileRef = 37AC87F61D237FB900FA4FEA /* OFBKeySbox256.rsp */; };
+		37AC883F1D237FB900FA4FEA /* OFBVarKey128.rsp in Resources */ = {isa = PBXBuildFile; fileRef = 37AC87F71D237FB900FA4FEA /* OFBVarKey128.rsp */; };
+		37AC88401D237FB900FA4FEA /* OFBVarKey192.rsp in Resources */ = {isa = PBXBuildFile; fileRef = 37AC87F81D237FB900FA4FEA /* OFBVarKey192.rsp */; };
+		37AC88411D237FB900FA4FEA /* OFBVarKey256.rsp in Resources */ = {isa = PBXBuildFile; fileRef = 37AC87F91D237FB900FA4FEA /* OFBVarKey256.rsp */; };
+		37AC88421D237FB900FA4FEA /* OFBVarTxt128.rsp in Resources */ = {isa = PBXBuildFile; fileRef = 37AC87FA1D237FB900FA4FEA /* OFBVarTxt128.rsp */; };
+		37AC88431D237FB900FA4FEA /* OFBVarTxt192.rsp in Resources */ = {isa = PBXBuildFile; fileRef = 37AC87FB1D237FB900FA4FEA /* OFBVarTxt192.rsp */; };
+		37AC88441D237FB900FA4FEA /* OFBVarTxt256.rsp in Resources */ = {isa = PBXBuildFile; fileRef = 37AC87FC1D237FB900FA4FEA /* OFBVarTxt256.rsp */; };
+		37AC88451D237FB900FA4FEA /* CBCGFSbox128.rsp in Resources */ = {isa = PBXBuildFile; fileRef = 37AC87FD1D237FB900FA4FEA /* CBCGFSbox128.rsp */; };
+		37AC88461D237FB900FA4FEA /* CBCGFSbox192.rsp in Resources */ = {isa = PBXBuildFile; fileRef = 37AC87FE1D237FB900FA4FEA /* CBCGFSbox192.rsp */; };
+		37AC88471D237FB900FA4FEA /* CBCGFSbox256.rsp in Resources */ = {isa = PBXBuildFile; fileRef = 37AC87FF1D237FB900FA4FEA /* CBCGFSbox256.rsp */; };
+		37AC88481D237FB900FA4FEA /* CBCKeySbox128.rsp in Resources */ = {isa = PBXBuildFile; fileRef = 37AC88001D237FB900FA4FEA /* CBCKeySbox128.rsp */; };
+		37AC88491D237FB900FA4FEA /* CBCKeySbox192.rsp in Resources */ = {isa = PBXBuildFile; fileRef = 37AC88011D237FB900FA4FEA /* CBCKeySbox192.rsp */; };
+		37AC884A1D237FB900FA4FEA /* CBCKeySbox256.rsp in Resources */ = {isa = PBXBuildFile; fileRef = 37AC88021D237FB900FA4FEA /* CBCKeySbox256.rsp */; };
+		37AC884B1D237FB900FA4FEA /* CBCVarKey128.rsp in Resources */ = {isa = PBXBuildFile; fileRef = 37AC88031D237FB900FA4FEA /* CBCVarKey128.rsp */; };
+		37AC884C1D237FB900FA4FEA /* CBCVarKey192.rsp in Resources */ = {isa = PBXBuildFile; fileRef = 37AC88041D237FB900FA4FEA /* CBCVarKey192.rsp */; };
+		37AC884D1D237FB900FA4FEA /* CBCVarKey256.rsp in Resources */ = {isa = PBXBuildFile; fileRef = 37AC88051D237FB900FA4FEA /* CBCVarKey256.rsp */; };
+		37AC884E1D237FB900FA4FEA /* CBCVarTxt128.rsp in Resources */ = {isa = PBXBuildFile; fileRef = 37AC88061D237FB900FA4FEA /* CBCVarTxt128.rsp */; };
+		37AC884F1D237FB900FA4FEA /* CBCVarTxt192.rsp in Resources */ = {isa = PBXBuildFile; fileRef = 37AC88071D237FB900FA4FEA /* CBCVarTxt192.rsp */; };
+		37AC88501D237FB900FA4FEA /* CBCVarTxt256.rsp in Resources */ = {isa = PBXBuildFile; fileRef = 37AC88081D237FB900FA4FEA /* CBCVarTxt256.rsp */; };
+		37AC88511D237FB900FA4FEA /* CFB128GFSbox128.rsp in Resources */ = {isa = PBXBuildFile; fileRef = 37AC88091D237FB900FA4FEA /* CFB128GFSbox128.rsp */; };
+		37AC88521D237FB900FA4FEA /* CFB128GFSbox192.rsp in Resources */ = {isa = PBXBuildFile; fileRef = 37AC880A1D237FB900FA4FEA /* CFB128GFSbox192.rsp */; };
+		37AC88531D237FB900FA4FEA /* CFB128GFSbox256.rsp in Resources */ = {isa = PBXBuildFile; fileRef = 37AC880B1D237FB900FA4FEA /* CFB128GFSbox256.rsp */; };
+		37AC88541D237FB900FA4FEA /* CFB128KeySbox128.rsp in Resources */ = {isa = PBXBuildFile; fileRef = 37AC880C1D237FB900FA4FEA /* CFB128KeySbox128.rsp */; };
+		37AC88551D237FB900FA4FEA /* CFB128KeySbox192.rsp in Resources */ = {isa = PBXBuildFile; fileRef = 37AC880D1D237FB900FA4FEA /* CFB128KeySbox192.rsp */; };
+		37AC88561D237FB900FA4FEA /* CFB128KeySbox256.rsp in Resources */ = {isa = PBXBuildFile; fileRef = 37AC880E1D237FB900FA4FEA /* CFB128KeySbox256.rsp */; };
+		37AC88581D2387CA00FA4FEA /* NISTEncryptionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AC88571D2387CA00FA4FEA /* NISTEncryptionTests.swift */; };
 		37B78ABC1D2086AF007DF94D /* UncommonCrypto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37B78ABA1D2085C5007DF94D /* UncommonCrypto.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
@@ -41,6 +114,79 @@
 		372E96541D2156C4006D99A0 /* KeyDerivationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyDerivationTests.swift; sourceTree = "<group>"; };
 		373611991D1F44EF006409A4 /* UncommonCrypto.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UncommonCrypto.framework; path = "../../../../Library/Developer/Xcode/DerivedData/UncommonCrypto-eowpgnrvclcoemhdrpohpmfhpdjc/Build/Products/Debug-iphonesimulator/UncommonCrypto/UncommonCrypto.framework"; sourceTree = "<group>"; };
 		37A65EAC1D22BA3F0051F1FD /* EncryptionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EncryptionTests.swift; sourceTree = "<group>"; };
+		37AC87C71D237FB900FA4FEA /* CFB1GFSbox128.rsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CFB1GFSbox128.rsp; sourceTree = "<group>"; };
+		37AC87C81D237FB900FA4FEA /* CFB1GFSbox192.rsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CFB1GFSbox192.rsp; sourceTree = "<group>"; };
+		37AC87C91D237FB900FA4FEA /* CFB1GFSbox256.rsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CFB1GFSbox256.rsp; sourceTree = "<group>"; };
+		37AC87CA1D237FB900FA4FEA /* CFB1KeySbox128.rsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CFB1KeySbox128.rsp; sourceTree = "<group>"; };
+		37AC87CB1D237FB900FA4FEA /* CFB1KeySbox192.rsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CFB1KeySbox192.rsp; sourceTree = "<group>"; };
+		37AC87CC1D237FB900FA4FEA /* CFB1KeySbox256.rsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CFB1KeySbox256.rsp; sourceTree = "<group>"; };
+		37AC87CD1D237FB900FA4FEA /* CFB1VarKey128.rsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CFB1VarKey128.rsp; sourceTree = "<group>"; };
+		37AC87CE1D237FB900FA4FEA /* CFB1VarKey192.rsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CFB1VarKey192.rsp; sourceTree = "<group>"; };
+		37AC87CF1D237FB900FA4FEA /* CFB1VarKey256.rsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CFB1VarKey256.rsp; sourceTree = "<group>"; };
+		37AC87D01D237FB900FA4FEA /* CFB1VarTxt128.rsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CFB1VarTxt128.rsp; sourceTree = "<group>"; };
+		37AC87D11D237FB900FA4FEA /* CFB1VarTxt192.rsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CFB1VarTxt192.rsp; sourceTree = "<group>"; };
+		37AC87D21D237FB900FA4FEA /* CFB1VarTxt256.rsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CFB1VarTxt256.rsp; sourceTree = "<group>"; };
+		37AC87D31D237FB900FA4FEA /* CFB8GFSbox128.rsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CFB8GFSbox128.rsp; sourceTree = "<group>"; };
+		37AC87D41D237FB900FA4FEA /* CFB8GFSbox192.rsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CFB8GFSbox192.rsp; sourceTree = "<group>"; };
+		37AC87D51D237FB900FA4FEA /* CFB8GFSbox256.rsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CFB8GFSbox256.rsp; sourceTree = "<group>"; };
+		37AC87D61D237FB900FA4FEA /* CFB8KeySbox128.rsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CFB8KeySbox128.rsp; sourceTree = "<group>"; };
+		37AC87D71D237FB900FA4FEA /* CFB8KeySbox192.rsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CFB8KeySbox192.rsp; sourceTree = "<group>"; };
+		37AC87D81D237FB900FA4FEA /* CFB8KeySbox256.rsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CFB8KeySbox256.rsp; sourceTree = "<group>"; };
+		37AC87D91D237FB900FA4FEA /* CFB8VarKey128.rsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CFB8VarKey128.rsp; sourceTree = "<group>"; };
+		37AC87DA1D237FB900FA4FEA /* CFB8VarKey192.rsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CFB8VarKey192.rsp; sourceTree = "<group>"; };
+		37AC87DB1D237FB900FA4FEA /* CFB8VarKey256.rsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CFB8VarKey256.rsp; sourceTree = "<group>"; };
+		37AC87DC1D237FB900FA4FEA /* CFB8VarTxt128.rsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CFB8VarTxt128.rsp; sourceTree = "<group>"; };
+		37AC87DD1D237FB900FA4FEA /* CFB8VarTxt192.rsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CFB8VarTxt192.rsp; sourceTree = "<group>"; };
+		37AC87DE1D237FB900FA4FEA /* CFB8VarTxt256.rsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CFB8VarTxt256.rsp; sourceTree = "<group>"; };
+		37AC87DF1D237FB900FA4FEA /* CFB128VarKey128.rsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CFB128VarKey128.rsp; sourceTree = "<group>"; };
+		37AC87E01D237FB900FA4FEA /* CFB128VarKey192.rsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CFB128VarKey192.rsp; sourceTree = "<group>"; };
+		37AC87E11D237FB900FA4FEA /* CFB128VarKey256.rsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CFB128VarKey256.rsp; sourceTree = "<group>"; };
+		37AC87E21D237FB900FA4FEA /* CFB128VarTxt128.rsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CFB128VarTxt128.rsp; sourceTree = "<group>"; };
+		37AC87E31D237FB900FA4FEA /* CFB128VarTxt192.rsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CFB128VarTxt192.rsp; sourceTree = "<group>"; };
+		37AC87E41D237FB900FA4FEA /* CFB128VarTxt256.rsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CFB128VarTxt256.rsp; sourceTree = "<group>"; };
+		37AC87E51D237FB900FA4FEA /* ECBGFSbox128.rsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ECBGFSbox128.rsp; sourceTree = "<group>"; };
+		37AC87E61D237FB900FA4FEA /* ECBGFSbox192.rsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ECBGFSbox192.rsp; sourceTree = "<group>"; };
+		37AC87E71D237FB900FA4FEA /* ECBGFSbox256.rsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ECBGFSbox256.rsp; sourceTree = "<group>"; };
+		37AC87E81D237FB900FA4FEA /* ECBKeySbox128.rsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ECBKeySbox128.rsp; sourceTree = "<group>"; };
+		37AC87E91D237FB900FA4FEA /* ECBKeySbox192.rsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ECBKeySbox192.rsp; sourceTree = "<group>"; };
+		37AC87EA1D237FB900FA4FEA /* ECBKeySbox256.rsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ECBKeySbox256.rsp; sourceTree = "<group>"; };
+		37AC87EB1D237FB900FA4FEA /* ECBVarKey128.rsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ECBVarKey128.rsp; sourceTree = "<group>"; };
+		37AC87EC1D237FB900FA4FEA /* ECBVarKey192.rsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ECBVarKey192.rsp; sourceTree = "<group>"; };
+		37AC87ED1D237FB900FA4FEA /* ECBVarKey256.rsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ECBVarKey256.rsp; sourceTree = "<group>"; };
+		37AC87EE1D237FB900FA4FEA /* ECBVarTxt128.rsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ECBVarTxt128.rsp; sourceTree = "<group>"; };
+		37AC87EF1D237FB900FA4FEA /* ECBVarTxt192.rsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ECBVarTxt192.rsp; sourceTree = "<group>"; };
+		37AC87F01D237FB900FA4FEA /* ECBVarTxt256.rsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ECBVarTxt256.rsp; sourceTree = "<group>"; };
+		37AC87F11D237FB900FA4FEA /* OFBGFSbox128.rsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFBGFSbox128.rsp; sourceTree = "<group>"; };
+		37AC87F21D237FB900FA4FEA /* OFBGFSbox192.rsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFBGFSbox192.rsp; sourceTree = "<group>"; };
+		37AC87F31D237FB900FA4FEA /* OFBGFSbox256.rsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFBGFSbox256.rsp; sourceTree = "<group>"; };
+		37AC87F41D237FB900FA4FEA /* OFBKeySbox128.rsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFBKeySbox128.rsp; sourceTree = "<group>"; };
+		37AC87F51D237FB900FA4FEA /* OFBKeySbox192.rsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFBKeySbox192.rsp; sourceTree = "<group>"; };
+		37AC87F61D237FB900FA4FEA /* OFBKeySbox256.rsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFBKeySbox256.rsp; sourceTree = "<group>"; };
+		37AC87F71D237FB900FA4FEA /* OFBVarKey128.rsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFBVarKey128.rsp; sourceTree = "<group>"; };
+		37AC87F81D237FB900FA4FEA /* OFBVarKey192.rsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFBVarKey192.rsp; sourceTree = "<group>"; };
+		37AC87F91D237FB900FA4FEA /* OFBVarKey256.rsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFBVarKey256.rsp; sourceTree = "<group>"; };
+		37AC87FA1D237FB900FA4FEA /* OFBVarTxt128.rsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFBVarTxt128.rsp; sourceTree = "<group>"; };
+		37AC87FB1D237FB900FA4FEA /* OFBVarTxt192.rsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFBVarTxt192.rsp; sourceTree = "<group>"; };
+		37AC87FC1D237FB900FA4FEA /* OFBVarTxt256.rsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFBVarTxt256.rsp; sourceTree = "<group>"; };
+		37AC87FD1D237FB900FA4FEA /* CBCGFSbox128.rsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CBCGFSbox128.rsp; sourceTree = "<group>"; };
+		37AC87FE1D237FB900FA4FEA /* CBCGFSbox192.rsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CBCGFSbox192.rsp; sourceTree = "<group>"; };
+		37AC87FF1D237FB900FA4FEA /* CBCGFSbox256.rsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CBCGFSbox256.rsp; sourceTree = "<group>"; };
+		37AC88001D237FB900FA4FEA /* CBCKeySbox128.rsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CBCKeySbox128.rsp; sourceTree = "<group>"; };
+		37AC88011D237FB900FA4FEA /* CBCKeySbox192.rsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CBCKeySbox192.rsp; sourceTree = "<group>"; };
+		37AC88021D237FB900FA4FEA /* CBCKeySbox256.rsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CBCKeySbox256.rsp; sourceTree = "<group>"; };
+		37AC88031D237FB900FA4FEA /* CBCVarKey128.rsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CBCVarKey128.rsp; sourceTree = "<group>"; };
+		37AC88041D237FB900FA4FEA /* CBCVarKey192.rsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CBCVarKey192.rsp; sourceTree = "<group>"; };
+		37AC88051D237FB900FA4FEA /* CBCVarKey256.rsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CBCVarKey256.rsp; sourceTree = "<group>"; };
+		37AC88061D237FB900FA4FEA /* CBCVarTxt128.rsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CBCVarTxt128.rsp; sourceTree = "<group>"; };
+		37AC88071D237FB900FA4FEA /* CBCVarTxt192.rsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CBCVarTxt192.rsp; sourceTree = "<group>"; };
+		37AC88081D237FB900FA4FEA /* CBCVarTxt256.rsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CBCVarTxt256.rsp; sourceTree = "<group>"; };
+		37AC88091D237FB900FA4FEA /* CFB128GFSbox128.rsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CFB128GFSbox128.rsp; sourceTree = "<group>"; };
+		37AC880A1D237FB900FA4FEA /* CFB128GFSbox192.rsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CFB128GFSbox192.rsp; sourceTree = "<group>"; };
+		37AC880B1D237FB900FA4FEA /* CFB128GFSbox256.rsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CFB128GFSbox256.rsp; sourceTree = "<group>"; };
+		37AC880C1D237FB900FA4FEA /* CFB128KeySbox128.rsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CFB128KeySbox128.rsp; sourceTree = "<group>"; };
+		37AC880D1D237FB900FA4FEA /* CFB128KeySbox192.rsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CFB128KeySbox192.rsp; sourceTree = "<group>"; };
+		37AC880E1D237FB900FA4FEA /* CFB128KeySbox256.rsp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CFB128KeySbox256.rsp; sourceTree = "<group>"; };
+		37AC88571D2387CA00FA4FEA /* NISTEncryptionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NISTEncryptionTests.swift; sourceTree = "<group>"; };
 		37B78ABA1D2085C5007DF94D /* UncommonCrypto.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UncommonCrypto.framework; path = "../../../../Library/Developer/Xcode/DerivedData/UncommonCrypto-bqefayrwsdcfncfcrnpjtizdjgry/Build/Products/Debug-iphonesimulator/UncommonCrypto/UncommonCrypto.framework"; sourceTree = "<group>"; };
 		5801473D8E78F0D071924936 /* UncommonCrypto.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = UncommonCrypto.podspec; path = ../UncommonCrypto.podspec; sourceTree = "<group>"; };
 		5E70624F58ACCC7267962E0C /* Pods-UncommonCrypto_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UncommonCrypto_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-UncommonCrypto_Example/Pods-UncommonCrypto_Example.release.xcconfig"; sourceTree = "<group>"; };
@@ -81,6 +227,95 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		37AC86A51D23768A00FA4FEA /* Test Vectors */ = {
+			isa = PBXGroup;
+			children = (
+				37AC86A61D2376C600FA4FEA /* NIST AES KAT Vectors */,
+			);
+			name = "Test Vectors";
+			path = "../Test Vectors";
+			sourceTree = "<group>";
+		};
+		37AC86A61D2376C600FA4FEA /* NIST AES KAT Vectors */ = {
+			isa = PBXGroup;
+			children = (
+				37AC87C71D237FB900FA4FEA /* CFB1GFSbox128.rsp */,
+				37AC87C81D237FB900FA4FEA /* CFB1GFSbox192.rsp */,
+				37AC87C91D237FB900FA4FEA /* CFB1GFSbox256.rsp */,
+				37AC87CA1D237FB900FA4FEA /* CFB1KeySbox128.rsp */,
+				37AC87CB1D237FB900FA4FEA /* CFB1KeySbox192.rsp */,
+				37AC87CC1D237FB900FA4FEA /* CFB1KeySbox256.rsp */,
+				37AC87CD1D237FB900FA4FEA /* CFB1VarKey128.rsp */,
+				37AC87CE1D237FB900FA4FEA /* CFB1VarKey192.rsp */,
+				37AC87CF1D237FB900FA4FEA /* CFB1VarKey256.rsp */,
+				37AC87D01D237FB900FA4FEA /* CFB1VarTxt128.rsp */,
+				37AC87D11D237FB900FA4FEA /* CFB1VarTxt192.rsp */,
+				37AC87D21D237FB900FA4FEA /* CFB1VarTxt256.rsp */,
+				37AC87D31D237FB900FA4FEA /* CFB8GFSbox128.rsp */,
+				37AC87D41D237FB900FA4FEA /* CFB8GFSbox192.rsp */,
+				37AC87D51D237FB900FA4FEA /* CFB8GFSbox256.rsp */,
+				37AC87D61D237FB900FA4FEA /* CFB8KeySbox128.rsp */,
+				37AC87D71D237FB900FA4FEA /* CFB8KeySbox192.rsp */,
+				37AC87D81D237FB900FA4FEA /* CFB8KeySbox256.rsp */,
+				37AC87D91D237FB900FA4FEA /* CFB8VarKey128.rsp */,
+				37AC87DA1D237FB900FA4FEA /* CFB8VarKey192.rsp */,
+				37AC87DB1D237FB900FA4FEA /* CFB8VarKey256.rsp */,
+				37AC87DC1D237FB900FA4FEA /* CFB8VarTxt128.rsp */,
+				37AC87DD1D237FB900FA4FEA /* CFB8VarTxt192.rsp */,
+				37AC87DE1D237FB900FA4FEA /* CFB8VarTxt256.rsp */,
+				37AC87DF1D237FB900FA4FEA /* CFB128VarKey128.rsp */,
+				37AC87E01D237FB900FA4FEA /* CFB128VarKey192.rsp */,
+				37AC87E11D237FB900FA4FEA /* CFB128VarKey256.rsp */,
+				37AC87E21D237FB900FA4FEA /* CFB128VarTxt128.rsp */,
+				37AC87E31D237FB900FA4FEA /* CFB128VarTxt192.rsp */,
+				37AC87E41D237FB900FA4FEA /* CFB128VarTxt256.rsp */,
+				37AC87E51D237FB900FA4FEA /* ECBGFSbox128.rsp */,
+				37AC87E61D237FB900FA4FEA /* ECBGFSbox192.rsp */,
+				37AC87E71D237FB900FA4FEA /* ECBGFSbox256.rsp */,
+				37AC87E81D237FB900FA4FEA /* ECBKeySbox128.rsp */,
+				37AC87E91D237FB900FA4FEA /* ECBKeySbox192.rsp */,
+				37AC87EA1D237FB900FA4FEA /* ECBKeySbox256.rsp */,
+				37AC87EB1D237FB900FA4FEA /* ECBVarKey128.rsp */,
+				37AC87EC1D237FB900FA4FEA /* ECBVarKey192.rsp */,
+				37AC87ED1D237FB900FA4FEA /* ECBVarKey256.rsp */,
+				37AC87EE1D237FB900FA4FEA /* ECBVarTxt128.rsp */,
+				37AC87EF1D237FB900FA4FEA /* ECBVarTxt192.rsp */,
+				37AC87F01D237FB900FA4FEA /* ECBVarTxt256.rsp */,
+				37AC87F11D237FB900FA4FEA /* OFBGFSbox128.rsp */,
+				37AC87F21D237FB900FA4FEA /* OFBGFSbox192.rsp */,
+				37AC87F31D237FB900FA4FEA /* OFBGFSbox256.rsp */,
+				37AC87F41D237FB900FA4FEA /* OFBKeySbox128.rsp */,
+				37AC87F51D237FB900FA4FEA /* OFBKeySbox192.rsp */,
+				37AC87F61D237FB900FA4FEA /* OFBKeySbox256.rsp */,
+				37AC87F71D237FB900FA4FEA /* OFBVarKey128.rsp */,
+				37AC87F81D237FB900FA4FEA /* OFBVarKey192.rsp */,
+				37AC87F91D237FB900FA4FEA /* OFBVarKey256.rsp */,
+				37AC87FA1D237FB900FA4FEA /* OFBVarTxt128.rsp */,
+				37AC87FB1D237FB900FA4FEA /* OFBVarTxt192.rsp */,
+				37AC87FC1D237FB900FA4FEA /* OFBVarTxt256.rsp */,
+				37AC87FD1D237FB900FA4FEA /* CBCGFSbox128.rsp */,
+				37AC87FE1D237FB900FA4FEA /* CBCGFSbox192.rsp */,
+				37AC87FF1D237FB900FA4FEA /* CBCGFSbox256.rsp */,
+				37AC88001D237FB900FA4FEA /* CBCKeySbox128.rsp */,
+				37AC88011D237FB900FA4FEA /* CBCKeySbox192.rsp */,
+				37AC88021D237FB900FA4FEA /* CBCKeySbox256.rsp */,
+				37AC88031D237FB900FA4FEA /* CBCVarKey128.rsp */,
+				37AC88041D237FB900FA4FEA /* CBCVarKey192.rsp */,
+				37AC88051D237FB900FA4FEA /* CBCVarKey256.rsp */,
+				37AC88061D237FB900FA4FEA /* CBCVarTxt128.rsp */,
+				37AC88071D237FB900FA4FEA /* CBCVarTxt192.rsp */,
+				37AC88081D237FB900FA4FEA /* CBCVarTxt256.rsp */,
+				37AC88091D237FB900FA4FEA /* CFB128GFSbox128.rsp */,
+				37AC880A1D237FB900FA4FEA /* CFB128GFSbox192.rsp */,
+				37AC880B1D237FB900FA4FEA /* CFB128GFSbox256.rsp */,
+				37AC880C1D237FB900FA4FEA /* CFB128KeySbox128.rsp */,
+				37AC880D1D237FB900FA4FEA /* CFB128KeySbox192.rsp */,
+				37AC880E1D237FB900FA4FEA /* CFB128KeySbox256.rsp */,
+			);
+			name = "NIST AES KAT Vectors";
+			path = KAT_AES;
+			sourceTree = "<group>";
+		};
 		48A3BACD64CEED9709907A81 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -143,7 +378,9 @@
 			children = (
 				607FACEB1AFB9204008FA782 /* HashTests.swift */,
 				37A65EAC1D22BA3F0051F1FD /* EncryptionTests.swift */,
+				37AC88571D2387CA00FA4FEA /* NISTEncryptionTests.swift */,
 				372E96541D2156C4006D99A0 /* KeyDerivationTests.swift */,
+				37AC86A51D23768A00FA4FEA /* Test Vectors */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
 			path = Tests;
@@ -274,6 +511,78 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37AC881F1D237FB900FA4FEA /* CFB8KeySbox192.rsp in Resources */,
+				37AC88341D237FB900FA4FEA /* ECBVarKey192.rsp in Resources */,
+				37AC88441D237FB900FA4FEA /* OFBVarTxt256.rsp in Resources */,
+				37AC884F1D237FB900FA4FEA /* CBCVarTxt192.rsp in Resources */,
+				37AC883F1D237FB900FA4FEA /* OFBVarKey128.rsp in Resources */,
+				37AC88311D237FB900FA4FEA /* ECBKeySbox192.rsp in Resources */,
+				37AC88151D237FB900FA4FEA /* CFB1VarKey128.rsp in Resources */,
+				37AC882E1D237FB900FA4FEA /* ECBGFSbox192.rsp in Resources */,
+				37AC884B1D237FB900FA4FEA /* CBCVarKey128.rsp in Resources */,
+				37AC88321D237FB900FA4FEA /* ECBKeySbox256.rsp in Resources */,
+				37AC884C1D237FB900FA4FEA /* CBCVarKey192.rsp in Resources */,
+				37AC88371D237FB900FA4FEA /* ECBVarTxt192.rsp in Resources */,
+				37AC88111D237FB900FA4FEA /* CFB1GFSbox256.rsp in Resources */,
+				37AC88171D237FB900FA4FEA /* CFB1VarKey256.rsp in Resources */,
+				37AC88141D237FB900FA4FEA /* CFB1KeySbox256.rsp in Resources */,
+				37AC88561D237FB900FA4FEA /* CFB128KeySbox256.rsp in Resources */,
+				37AC88361D237FB900FA4FEA /* ECBVarTxt128.rsp in Resources */,
+				37AC88221D237FB900FA4FEA /* CFB8VarKey192.rsp in Resources */,
+				37AC881C1D237FB900FA4FEA /* CFB8GFSbox192.rsp in Resources */,
+				37AC881D1D237FB900FA4FEA /* CFB8GFSbox256.rsp in Resources */,
+				37AC88541D237FB900FA4FEA /* CFB128KeySbox128.rsp in Resources */,
+				37AC88461D237FB900FA4FEA /* CBCGFSbox192.rsp in Resources */,
+				37AC88411D237FB900FA4FEA /* OFBVarKey256.rsp in Resources */,
+				37AC88281D237FB900FA4FEA /* CFB128VarKey192.rsp in Resources */,
+				37AC882F1D237FB900FA4FEA /* ECBGFSbox256.rsp in Resources */,
+				37AC881B1D237FB900FA4FEA /* CFB8GFSbox128.rsp in Resources */,
+				37AC88201D237FB900FA4FEA /* CFB8KeySbox256.rsp in Resources */,
+				37AC88481D237FB900FA4FEA /* CBCKeySbox128.rsp in Resources */,
+				37AC88511D237FB900FA4FEA /* CFB128GFSbox128.rsp in Resources */,
+				37AC88211D237FB900FA4FEA /* CFB8VarKey128.rsp in Resources */,
+				37AC88381D237FB900FA4FEA /* ECBVarTxt256.rsp in Resources */,
+				37AC88181D237FB900FA4FEA /* CFB1VarTxt128.rsp in Resources */,
+				37AC88471D237FB900FA4FEA /* CBCGFSbox256.rsp in Resources */,
+				37AC881E1D237FB900FA4FEA /* CFB8KeySbox128.rsp in Resources */,
+				37AC882B1D237FB900FA4FEA /* CFB128VarTxt192.rsp in Resources */,
+				37AC88551D237FB900FA4FEA /* CFB128KeySbox192.rsp in Resources */,
+				37AC884E1D237FB900FA4FEA /* CBCVarTxt128.rsp in Resources */,
+				37AC88531D237FB900FA4FEA /* CFB128GFSbox256.rsp in Resources */,
+				37AC88491D237FB900FA4FEA /* CBCKeySbox192.rsp in Resources */,
+				37AC884A1D237FB900FA4FEA /* CBCKeySbox256.rsp in Resources */,
+				37AC88241D237FB900FA4FEA /* CFB8VarTxt128.rsp in Resources */,
+				37AC88521D237FB900FA4FEA /* CFB128GFSbox192.rsp in Resources */,
+				37AC88231D237FB900FA4FEA /* CFB8VarKey256.rsp in Resources */,
+				37AC88121D237FB900FA4FEA /* CFB1KeySbox128.rsp in Resources */,
+				37AC880F1D237FB900FA4FEA /* CFB1GFSbox128.rsp in Resources */,
+				37AC88271D237FB900FA4FEA /* CFB128VarKey128.rsp in Resources */,
+				37AC88301D237FB900FA4FEA /* ECBKeySbox128.rsp in Resources */,
+				37AC883E1D237FB900FA4FEA /* OFBKeySbox256.rsp in Resources */,
+				37AC88101D237FB900FA4FEA /* CFB1GFSbox192.rsp in Resources */,
+				37AC88291D237FB900FA4FEA /* CFB128VarKey256.rsp in Resources */,
+				37AC883D1D237FB900FA4FEA /* OFBKeySbox192.rsp in Resources */,
+				37AC88161D237FB900FA4FEA /* CFB1VarKey192.rsp in Resources */,
+				37AC88191D237FB900FA4FEA /* CFB1VarTxt192.rsp in Resources */,
+				37AC881A1D237FB900FA4FEA /* CFB1VarTxt256.rsp in Resources */,
+				37AC88421D237FB900FA4FEA /* OFBVarTxt128.rsp in Resources */,
+				37AC88501D237FB900FA4FEA /* CBCVarTxt256.rsp in Resources */,
+				37AC88391D237FB900FA4FEA /* OFBGFSbox128.rsp in Resources */,
+				37AC883A1D237FB900FA4FEA /* OFBGFSbox192.rsp in Resources */,
+				37AC882A1D237FB900FA4FEA /* CFB128VarTxt128.rsp in Resources */,
+				37AC883C1D237FB900FA4FEA /* OFBKeySbox128.rsp in Resources */,
+				37AC88351D237FB900FA4FEA /* ECBVarKey256.rsp in Resources */,
+				37AC882C1D237FB900FA4FEA /* CFB128VarTxt256.rsp in Resources */,
+				37AC88331D237FB900FA4FEA /* ECBVarKey128.rsp in Resources */,
+				37AC882D1D237FB900FA4FEA /* ECBGFSbox128.rsp in Resources */,
+				37AC88261D237FB900FA4FEA /* CFB8VarTxt256.rsp in Resources */,
+				37AC88251D237FB900FA4FEA /* CFB8VarTxt192.rsp in Resources */,
+				37AC88131D237FB900FA4FEA /* CFB1KeySbox192.rsp in Resources */,
+				37AC88451D237FB900FA4FEA /* CBCGFSbox128.rsp in Resources */,
+				37AC88431D237FB900FA4FEA /* OFBVarTxt192.rsp in Resources */,
+				37AC88401D237FB900FA4FEA /* OFBVarKey192.rsp in Resources */,
+				37AC883B1D237FB900FA4FEA /* OFBGFSbox256.rsp in Resources */,
+				37AC884D1D237FB900FA4FEA /* CBCVarKey256.rsp in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,6 +696,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37AC88581D2387CA00FA4FEA /* NISTEncryptionTests.swift in Sources */,
 				37A65EAD1D22BA3F0051F1FD /* EncryptionTests.swift in Sources */,
 				372E96551D2156C4006D99A0 /* KeyDerivationTests.swift in Sources */,
 				607FACEC1AFB9204008FA782 /* HashTests.swift in Sources */,

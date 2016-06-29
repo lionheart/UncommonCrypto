@@ -57,36 +57,36 @@ public struct Key {
 }
 
 public struct Cryptor<Algorithm: CCEncryptionAlgorithmProtocol where Algorithm: CCKeySizeProtocol, Algorithm.KeySize: KeySizeContainer> {
-    var keyData: NSData
+    var key: NSData
 
     // MARK: - 🚀 Initializers
 
-    public init(key: DataConvertible) {
-        keyData = key.convert()
+    public init(key theKey: DataConvertible) {
+        key = theKey.convert()
     }
 
     // MARK: -
 
     public func encrypt<T: CCRandomContainer where T.CCRandomContainerType == T>(data theData: DataConvertible, mode: CCEncryptionOption = .PKCS7) throws -> T {
-        let iv = try Random<NSData>.generate(Algorithm.blockSize)
-        return try encrypt(data: theData, iv: iv, mode: mode)
+        let iv = NSData(bytes: [0])
+        return try encrypt(theData, iv: iv, mode: mode)
     }
 
-    public func encrypt<T: CCRandomContainer where T.CCRandomContainerType == T>(data theData: DataConvertible, iv: DataConvertible, mode: CCEncryptionOption) throws -> T {
-        var theData = theData.convert()
+    public func encrypt<T: CCRandomContainer where T.CCRandomContainerType == T>(data: DataConvertible, iv: DataConvertible, mode: CCEncryptionOption) throws -> T {
+        var data = data.convert()
         var iv = iv.convert()
 
-        let dataOutAvailable = theData.length + Algorithm.blockSize
-        var dataOut = [UInt8](count: dataOutAvailable, repeatedValue: 0)
+        var dataOut = [UInt8](count: data.length + Algorithm.blockSize, repeatedValue: 0)
         var dataOutMoved = 0
 
-        let status = CCCrypt(CCOperation(kCCEncrypt), CCAlgorithm(Algorithm.fun), CCOptions(mode.value), keyData.bytes, keyData.length, iv.bytes, theData.bytes, theData.length, &dataOut, dataOut.count, &dataOutMoved)
+        let status = CCCrypt(CCOperation(kCCEncrypt), CCAlgorithm(Algorithm.fun), CCOptions(mode.value), key.bytes, key.length, iv.bytes, data.bytes, data.length, &dataOut, dataOut.count, &dataOutMoved)
 
         if let error = CryptorError(status: status) {
             throw error
         }
 
-        return T.handler(dataOut)
+        let result = T.handler(Array(dataOut[0..<dataOutMoved/2]))
+        return result
     }
 
     public mutating func update() {

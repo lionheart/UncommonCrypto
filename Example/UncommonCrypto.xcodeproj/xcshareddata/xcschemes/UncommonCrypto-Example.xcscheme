@@ -51,6 +51,59 @@
                BlueprintName = "UncommonCrypto_Tests"
                ReferencedContainer = "container:UncommonCrypto.xcodeproj">
             </BuildableReference>
+            <SkippedTests>
+               <Test
+                  Identifier = "NISTTestVectorSpec/testCFB1GFSbox128()">
+               </Test>
+               <Test
+                  Identifier = "NISTTestVectorSpec/testCFB1KeySbox128()">
+               </Test>
+               <Test
+                  Identifier = "NISTTestVectorSpec/testCFB1VarKey128()">
+               </Test>
+               <Test
+                  Identifier = "NISTTestVectorSpec/testCFB1VarTxt128()">
+               </Test>
+               <Test
+                  Identifier = "NISTTestVectorSpec/testCFB8GFSbox128()">
+               </Test>
+               <Test
+                  Identifier = "NISTTestVectorSpec/testCFB8KeySbox128()">
+               </Test>
+               <Test
+                  Identifier = "NISTTestVectorSpec/testCFB8VarKey128()">
+               </Test>
+               <Test
+                  Identifier = "NISTTestVectorSpec/testCFB8VarTxt128()">
+               </Test>
+               <Test
+                  Identifier = "NISTValidationTest">
+               </Test>
+               <Test
+                  Identifier = "NISTValidationTest/testCFB1GFSbox128()">
+               </Test>
+               <Test
+                  Identifier = "NISTValidationTest/testCFB1KeySbox128()">
+               </Test>
+               <Test
+                  Identifier = "NISTValidationTest/testCFB1VarKey128()">
+               </Test>
+               <Test
+                  Identifier = "NISTValidationTest/testCFB1VarTxt128()">
+               </Test>
+               <Test
+                  Identifier = "NISTValidationTest/testCFB8GFSbox128()">
+               </Test>
+               <Test
+                  Identifier = "NISTValidationTest/testCFB8KeySbox128()">
+               </Test>
+               <Test
+                  Identifier = "NISTValidationTest/testCFB8VarKey128()">
+               </Test>
+               <Test
+                  Identifier = "NISTValidationTest/testCFB8VarTxt128()">
+               </Test>
+            </SkippedTests>
          </TestableReference>
       </Testables>
       <MacroExpansion>

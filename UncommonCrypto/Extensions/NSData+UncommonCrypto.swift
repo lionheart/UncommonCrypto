@@ -32,12 +32,24 @@ public extension NSData {
     }
 
     public convenience init(hexString: String) {
+        let characterSet = NSCharacterSet(charactersInString: "0123456789abcdefABCDEF")
+        var scalars = hexString.unicodeScalars.filter { characterSet.characterIsMember(UInt16($0.value)) }
+        var hexString = ""
+        for scalar in scalars {
+            hexString.append(scalar)
+        }
+
+        if hexString.characters.count % 2 == 1 {
+            hexString = "0" + hexString
+        }
+
         var index = hexString.startIndex
         var bytes: [UInt8] = []
         repeat {
             bytes.append(hexString[index...index.advancedBy(1)].withCString {
                 return UInt8(strtoul($0, nil, 16))
             })
+
             index = index.advancedBy(2)
         } while index.distanceTo(hexString.endIndex) != 0
 
