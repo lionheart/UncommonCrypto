@@ -9,11 +9,11 @@
 import Foundation
 import CommonCrypto
 
-public struct Hmac<Algorithm: CCHMACAlgorithmProtocol> {
+public struct Hmac<Algorithm: CCHMACAlgorithmProtocol>: CustomStringConvertible, CustomReflectable, ByteOutput {
     var keyData: NSMutableData
     var messageData: NSMutableData
 
-    // MARK: - 🚀 Initializers
+    // MARK: 🚀 Initializers
 
     public init?(key theKey: DataConvertible, message: DataConvertible?, messageEncoding encoding: UInt) {
         guard let theKeyData = theKey.convert(encoding),
@@ -43,9 +43,22 @@ public struct Hmac<Algorithm: CCHMACAlgorithmProtocol> {
     public mutating func update(_ input: DataConvertible) {
         messageData.appendData(input.convert())
     }
-}
 
-extension Hmac: ByteOutput {
+    // MARK: CustomStringConvertible
+    public var description: String {
+        return "HMAC-" + Algorithm.name
+    }
+
+    // MARK: CustomReflectable
+    public func customMirror() -> Mirror {
+        return Mirror(self, children: [
+            "hexdigest": hexdigest,
+            "bytes": String(bytes),
+            "string": string
+        ])
+    }
+
+    // MARK: ByteOutput
     public var bytes: [UInt8] {
         return Algorithm.process((keyData, messageData))
     }

@@ -51,11 +51,13 @@ extension CRC32 {
 extension MD2: CCSecureHashAlgorithm {
     public static var fun: CCSecureHashAlgorithmTypeSignature { return CC_MD2 }
     public static var length: Int32 { return CC_MD2_DIGEST_LENGTH }
+    public static var name: String = "MD2"
 }
 
 extension MD4: CCSecureHashAlgorithm {
     public static var fun: CCSecureHashAlgorithmTypeSignature { return CC_MD4 }
     public static var length: Int32 { return CC_MD4_DIGEST_LENGTH }
+    public static var name: String = "MD2"
 }
 
 extension MD5: CCSecureHashAlgorithm {
@@ -92,26 +94,32 @@ extension SHA512: CCSecureHashAlgorithm {
 
 extension MD5: CCHMACAlgorithmProtocol {
     public static var hmac: Int = kCCHmacAlgMD5
+    public static var name: String = "MD5"
 }
 
 extension SHA1: CCHMACAlgorithmProtocol {
     public static var hmac: Int = kCCHmacAlgSHA1
+    public static var name: String = "SHA1"
 }
 
 extension SHA224: CCHMACAlgorithmProtocol {
     public static var hmac: Int = kCCHmacAlgSHA224
+    public static var name: String = "SHA224"
 }
 
 extension SHA256: CCHMACAlgorithmProtocol {
     public static var hmac: Int = kCCHmacAlgSHA256
+    public static var name: String = "SHA256"
 }
 
 extension SHA384: CCHMACAlgorithmProtocol {
     public static var hmac: Int = kCCHmacAlgSHA384
+    public static var name: String = "SHA384"
 }
 
 extension SHA512: CCHMACAlgorithmProtocol {
     public static var hmac: Int = kCCHmacAlgSHA512
+    public static var name: String = "SHA512"
 }
 
 // MARK: - Encryption

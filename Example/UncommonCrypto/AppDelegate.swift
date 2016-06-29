@@ -19,7 +19,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let result = Hmac<MD5>(key: "", message: "")
         print(result.hexdigest)
         print(result.bytes)
-        print(result.data)
+        print(result)
+
+        let data = NSData(hexString: "")
+
+        let result2 = Hash<MD5>("test")
+        print(result2.hexdigest)
+        print(result2.bytes)
+        print(result2)
 
         return true
     }

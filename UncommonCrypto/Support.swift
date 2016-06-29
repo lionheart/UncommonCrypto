@@ -33,6 +33,7 @@ public protocol ByteOutput {
 
 public protocol HashAlgorithm {
     static var length: Int32 { get }
+    static var name: String { get }
 }
 
 public protocol CCSecureHashAlgorithm: HashAlgorithm {

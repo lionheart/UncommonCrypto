@@ -26,21 +26,41 @@ public extension NSData {
         return Hash<T>(self)
     }
 
+    // MARK: 🚀 Initializers
+
     public convenience init(bytes: [UInt8]) {
         var bytes = bytes
         self.init(bytes: &bytes, length: bytes.count)
     }
 
-    public convenience init(hexString: String) {
+    public convenience init?(hexString theHexString: String, force: Bool) {
         let characterSet = NSCharacterSet(charactersInString: "0123456789abcdefABCDEF")
-        var scalars = hexString.unicodeScalars.filter { characterSet.characterIsMember(UInt16($0.value)) }
         var hexString = ""
-        for scalar in scalars {
-            hexString.append(scalar)
+        for scalar in theHexString.unicodeScalars {
+            if characterSet.characterIsMember(UInt16(scalar.value)) {
+                hexString.append(scalar)
+            }
+            else if !force {
+                return nil
+            }
         }
 
         if hexString.characters.count % 2 == 1 {
-            hexString = "0" + hexString
+            if force {
+                hexString = "0" + hexString
+            }
+            else {
+                return nil
+            }
+        }
+
+        if hexString.characters.count == 0 {
+            if force {
+                hexString = "00"
+            }
+            else {
+                return nil
+            }
         }
 
         var index = hexString.startIndex
@@ -54,6 +74,10 @@ public extension NSData {
         } while index.distanceTo(hexString.endIndex) != 0
 
         self.init(bytes: bytes)
+    }
+
+    public convenience init(hexString: String) {
+        self.init(hexString: hexString, force: true)!
     }
 
     public var hexdigest: String {

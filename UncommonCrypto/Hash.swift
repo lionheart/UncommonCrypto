@@ -9,14 +9,14 @@
 import Foundation
 import CommonCrypto
 
-public struct Hash<Algorithm: CCSecureHashAlgorithm> {
-    var data: NSMutableData
+public struct Hash<Algorithm: CCSecureHashAlgorithm>: CustomStringConvertible, CustomReflectable, ByteOutput {
+    private var data: NSMutableData
 
     public typealias StringLiteralType = String
     public typealias UnicodeScalarLiteralType = StringLiteralType
     public typealias ExtendedGraphemeClusterLiteralType = StringLiteralType
 
-    // MARK: - 🚀 Initializers
+    // MARK: 🚀 Initializers
 
     public init?(_ input: DataConvertible, textEncoding encoding: UInt) {
         guard let theData = input.convert(encoding) else {
@@ -43,11 +43,24 @@ public struct Hash<Algorithm: CCSecureHashAlgorithm> {
 
         update(theData)
     }
-}
 
-extension Hash: ByteOutput {
+    // MARK: ByteOutput
     public var bytes: [UInt8] {
         return Algorithm.process(data)
+    }
+
+    // MARK: CustomStringConvertible
+    public var description: String {
+        return Algorithm.name
+    }
+
+    // MARK: CustomReflectable
+    public func customMirror() -> Mirror {
+        return Mirror(self, children: [
+            "hexdigest": hexdigest,
+            "bytes": String(bytes),
+            "string": string
+        ])
     }
 }
 
