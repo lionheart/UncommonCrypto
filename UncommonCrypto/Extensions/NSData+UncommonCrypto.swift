@@ -23,11 +23,31 @@ public extension NSData {
     var SHA512: SHA512Hash { return checksum() }
 
     private func checksum<T: HashAlgorithm>() -> Hash<T> {
-        return Hash<T>(data: self)
+        return Hash<T>(input: self)
     }
 
-    convenience init(bytes: [UInt8]) {
+    public convenience init(bytes: [UInt8]) {
         var bytes = bytes
         self.init(bytes: &bytes, length: bytes.count)
+    }
+
+    public convenience init(hexString: String) {
+        var index = hexString.startIndex
+        var bytes: [UInt8] = []
+        repeat {
+            bytes.append(hexString[index...index.advancedBy(1)].withCString {
+                return UInt8(strtoul($0, nil, 16))
+            })
+            index = index.advancedBy(2)
+        } while index.distanceTo(hexString.endIndex) != 0
+
+        self.init(bytes: bytes)
+    }
+
+    public var hexdigest: String {
+        let pointer = UnsafeBufferPointer(start: UnsafePointer<UInt8>(bytes), count: length)
+        return pointer.reduce("") { carry, byte in
+            return carry + String(format: "%02x", byte)
+        }
     }
 }

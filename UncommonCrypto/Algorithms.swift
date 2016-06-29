@@ -155,16 +155,16 @@ extension Blowfish: CCEncryptionAlgorithmProtocol {
 // MARK: - Key Size
 
 extension SHA1: CCKeySizeProtocol {
-    typealias KeySize = Int
+    public typealias KeySize = Int
 }
 
 extension AES128: CCKeySizeProtocol {
-    enum KeySize: KeySizeContainer {
+    public enum KeySize: KeySizeContainer {
         case Size128
         case Size192
         case Size256
 
-        var value: Int {
+        public var value: Int {
             switch self {
             case .Size128: return kCCKeySizeAES128
             case .Size192: return kCCKeySizeAES192
@@ -175,79 +175,79 @@ extension AES128: CCKeySizeProtocol {
 }
 
 extension DES: CCKeySizeProtocol {
-    enum KeySize: KeySizeContainer {
+    public enum KeySize: KeySizeContainer {
         case Default
 
-        var value: Int {
+        public var value: Int {
             return kCCKeySizeDES
         }
     }
 }
 
 extension TripleDES: CCKeySizeProtocol {
-    enum KeySize: KeySizeContainer {
+    public enum KeySize: KeySizeContainer {
         case Default
 
-        var value: Int {
+        public var value: Int {
             return kCCKeySize3DES
         }
     }
 }
 
 extension CAST: CCKeySizeProtocol {
-    struct KeySizeContainer: VariableKeySizeContainer {
-        static var minValue: Int { return kCCKeySizeMinCAST }
-        static var maxValue: Int { return kCCKeySizeMaxCAST }
+    public struct KeySizeContainer: VariableKeySizeContainer {
+        public static var minValue: Int { return kCCKeySizeMinCAST }
+        public static var maxValue: Int { return kCCKeySizeMaxCAST }
     }
 
-    typealias KeySize = VariableKeySize<KeySizeContainer>
+    public typealias KeySize = VariableKeySize<KeySizeContainer>
 }
 
 extension RC4: CCKeySizeProtocol {
-    struct KeySizeContainer: VariableKeySizeContainer {
-        static var minValue: Int { return kCCKeySizeMinRC4 }
-        static var maxValue: Int { return kCCKeySizeMaxRC4 }
+    public struct KeySizeContainer: VariableKeySizeContainer {
+        public static var minValue: Int { return kCCKeySizeMinRC4 }
+        public static var maxValue: Int { return kCCKeySizeMaxRC4 }
     }
 
-    typealias KeySize = VariableKeySize<KeySizeContainer>
+    public typealias KeySize = VariableKeySize<KeySizeContainer>
 }
 
 extension RC2: CCKeySizeProtocol {
-    struct KeySizeContainer: VariableKeySizeContainer {
-        static var minValue: Int { return kCCKeySizeMinRC2 }
-        static var maxValue: Int { return kCCKeySizeMaxRC2 }
+    public struct KeySizeContainer: VariableKeySizeContainer {
+        public static var minValue: Int { return kCCKeySizeMinRC2 }
+        public static var maxValue: Int { return kCCKeySizeMaxRC2 }
     }
 
-    typealias KeySize = VariableKeySize<KeySizeContainer>
+    public typealias KeySize = VariableKeySize<KeySizeContainer>
 }
 
 extension Blowfish: CCKeySizeProtocol {
-    struct KeySizeContainer: VariableKeySizeContainer {
-        static var minValue: Int { return kCCKeySizeMinBlowfish }
-        static var maxValue: Int { return kCCKeySizeMaxBlowfish }
+    public struct KeySizeContainer: VariableKeySizeContainer {
+        public static var minValue: Int { return kCCKeySizeMinBlowfish }
+        public static var maxValue: Int { return kCCKeySizeMaxBlowfish }
     }
 
-    typealias KeySize = VariableKeySize<KeySizeContainer>
+    public typealias KeySize = VariableKeySize<KeySizeContainer>
 }
 
 // MARK: - Pseudo Random
 
 extension SHA1: CCPseudoRandomHmacAlgorithmProtocol {
-    static var pseudoRandomAlgorithm = kCCPRFHmacAlgSHA1
+    public static var pseudoRandomAlgorithm = kCCPRFHmacAlgSHA1
 }
 
 extension SHA224: CCPseudoRandomHmacAlgorithmProtocol {
-    static var pseudoRandomAlgorithm = kCCPRFHmacAlgSHA224
+    public static var pseudoRandomAlgorithm = kCCPRFHmacAlgSHA224
 }
 
 extension SHA256: CCPseudoRandomHmacAlgorithmProtocol {
-    static var pseudoRandomAlgorithm = kCCPRFHmacAlgSHA256
+    public static var pseudoRandomAlgorithm = kCCPRFHmacAlgSHA256
 }
 
 extension SHA384: CCPseudoRandomHmacAlgorithmProtocol {
-    static var pseudoRandomAlgorithm = kCCPRFHmacAlgSHA384
+    public static var pseudoRandomAlgorithm = kCCPRFHmacAlgSHA384
 }
 
 extension SHA512: CCPseudoRandomHmacAlgorithmProtocol {
-    static var pseudoRandomAlgorithm = kCCPRFHmacAlgSHA512
+    public static var pseudoRandomAlgorithm = kCCPRFHmacAlgSHA512
 }

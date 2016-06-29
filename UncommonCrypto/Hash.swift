@@ -19,45 +19,30 @@ public struct Hash<Algorithm: HashAlgorithm> {
 
     // MARK: - 🚀 Initializers
 
-    public init?(text: String, textEncoding encoding: UInt) {
-        guard let theData = text.dataUsingEncoding(encoding) else {
+    public init?(input: DataConvertible, textEncoding encoding: UInt) {
+        guard let theData = input.convert(encoding) else {
             return nil
         }
 
-        self.init(data: theData)
+        self.init(input: theData)
     }
 
-    public init(text: String) {
-        // All text can be UTF8-encoded, so this won't be an optional.
-        self.init(text: text, textEncoding: NSUTF8StringEncoding)!
-    }
-
-    public init(bytes: [UInt8]) {
-        self.init(data: NSData(bytes: bytes))
-    }
-
-    public init(data theData: NSData) {
-        data = NSMutableData(data: theData)
+    public init(input: DataConvertible) {
+        data = NSMutableData(data: input.convert())
     }
 
     // MARK: -
 
-    public mutating func update(text: String) {
-        // All text can be UTF8-encoded, so this won't be an optional.
-        try! update(text, textEncoding: NSUTF8StringEncoding)
+    public mutating func update(input: DataConvertible) {
+        data.appendData(input.convert())
     }
 
-    public mutating func update(text: String, textEncoding encoding: UInt) throws {
-        if let theData = text.dataUsingEncoding(encoding) {
-            data.appendData(theData)
-        }
-        else {
+    public mutating func update(input: DataConvertible, textEncoding encoding: UInt) throws {
+        guard let theData = input.convert(encoding) else {
             throw ChecksumError.DataConversionError
         }
-    }
 
-    public mutating func update(data theData: NSData) {
-        data.appendData(theData)
+        update(theData)
     }
 }
 
@@ -84,7 +69,6 @@ extension Hash where Algorithm: ZLibHashAlgorithm {
         var NULL: [Bytef] = [0]
         let hash = Algorithm.fun(0, &NULL, 0)
         var bytes = Array(UnsafeBufferPointer(start: UnsafePointer<UInt8>(data.bytes), count: data.length))
-//        buffer
         let ptr = UnsafePointer<Bytef>(data.bytes)
         adler32(hash, &bytes, UInt32(bytes.count))
         return UInt32(hash)

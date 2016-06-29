@@ -45,7 +45,7 @@ protocol CCHMACAlgorithmProtocol: HashAlgorithm {
     static var hmacAlgorithm: CCHmacAlgorithm { get }
 }
 
-protocol CCKeySizeProtocol {
+public protocol CCKeySizeProtocol {
     associatedtype KeySize
 }
 
@@ -54,7 +54,7 @@ public protocol CCEncryptionAlgorithmProtocol {
     static var blockSize: Int { get }
 }
 
-protocol CCPseudoRandomHmacAlgorithmProtocol {
+public protocol CCPseudoRandomHmacAlgorithmProtocol {
     static var pseudoRandomAlgorithm: Int { get }
 }
 
@@ -62,16 +62,16 @@ public protocol ZeroBit {
     static var zero: Self { get }
 }
 
-protocol KeySizeContainer {
+public protocol KeySizeContainer {
     var value: Int { get }
 }
 
-protocol VariableKeySizeContainer {
+public protocol VariableKeySizeContainer {
     static var minValue: Int { get }
     static var maxValue: Int { get }
 }
 
-enum VariableKeySize<T where T: VariableKeySizeContainer>: KeySizeContainer {
+public enum VariableKeySize<T where T: VariableKeySizeContainer>: KeySizeContainer {
     case Min
     case Max
     case Variable(Int)
@@ -113,7 +113,7 @@ extension UInt8: ZeroBit {
 }
 
 extension Int: KeySizeContainer {
-    var value: Int { return self }
+    public var value: Int { return self }
 }
 
 // MARK: - Functions
@@ -132,3 +132,39 @@ public typealias SHA224Hash = Hash<SHA224>
 public typealias SHA256Hash = Hash<SHA256>
 public typealias SHA384Hash = Hash<SHA384>
 public typealias SHA512Hash = Hash<SHA512>
+
+// MARK: - Data Convertible
+
+public protocol DataConvertible {
+    func convert(encoding: NSStringEncoding?) -> NSData?
+    func convert() -> NSData
+}
+
+extension DataConvertible {
+    public func convert() -> NSData {
+        return convert(nil)!
+    }
+}
+
+extension NSData: DataConvertible {
+    public func convert(encoding: NSStringEncoding?) -> NSData? {
+        return self
+    }
+}
+
+extension Array: DataConvertible {
+    public func convert(encoding: NSStringEncoding?) -> NSData? {
+        if let array = self as? Any as? [UInt8] {
+            return NSData(bytes: array)
+        }
+        else {
+            return NSData()
+        }
+    }
+}
+
+extension String: DataConvertible {
+    public func convert(encoding: NSStringEncoding?) -> NSData? {
+        return dataUsingEncoding(encoding ?? CryptoDefaults.encoding)
+    }
+}

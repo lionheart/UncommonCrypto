@@ -21,41 +21,27 @@ struct Hmac<Algorithm: CCHMACAlgorithmProtocol> {
 
     // MARK: - 🚀 Initializers
 
-    init?(key theKey: String, message: String, messageEncoding encoding: UInt = NSUTF8StringEncoding) {
-        guard let theKeyData = theKey.dataUsingEncoding(encoding) else {
+    /**
+
+     */
+    init?(key theKey: DataConvertible, message: DataConvertible?, messageEncoding encoding: UInt) {
+        guard let theKeyData = theKey.convert(encoding),
+            let theMessageData = (message ?? NSData()).convert(encoding) else {
             return nil
         }
 
-        if let theMessageData = message.dataUsingEncoding(encoding) {
-            self.init(keyData: theKeyData, messageData: theMessageData)
-        }
-        else {
-            self.init(keyData: theKeyData)
-        }
+        self.init(key: theKeyData, message: theMessageData)
     }
 
-    init?(key theKey: String, encoding: UInt = NSUTF8StringEncoding) {
-        guard let theKeyData = theKey.dataUsingEncoding(encoding) else {
-            return nil
-        }
-
-        self.init(keyData: theKeyData)
-    }
-
-    init(keyData theKeyData: NSData, messageData theMessageData: NSData) {
-        keyData = NSMutableData(data: theKeyData)
-        messageData = NSMutableData(data: theMessageData)
-    }
-
-    init(keyData theKeyData: NSData) {
-        keyData = NSMutableData(data: theKeyData)
-        messageData = NSMutableData()
+    init(key theKey: DataConvertible, message: DataConvertible? = nil) {
+        keyData = NSMutableData(data: theKey.convert())
+        messageData = NSMutableData(data: (message ?? NSData()).convert())
     }
 
     // MARK: -
 
-    mutating func update(text: String, textEncoding encoding: UInt = NSUTF8StringEncoding) throws {
-        if let theData = text.dataUsingEncoding(encoding) {
+    mutating func update(input: DataConvertible, textEncoding encoding: UInt = NSUTF8StringEncoding) throws {
+        if let theData = input.convert(encoding) {
             messageData.appendData(theData)
         }
         else {
@@ -63,7 +49,7 @@ struct Hmac<Algorithm: CCHMACAlgorithmProtocol> {
         }
     }
 
-    mutating func update(data: NSData) {
-        messageData.appendData(data)
+    mutating func update(data: DataConvertible) {
+        messageData.appendData(data.convert())
     }
 }
