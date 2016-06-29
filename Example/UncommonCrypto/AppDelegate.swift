@@ -16,7 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
 
-        let hash = Hash<AES128>("message digest")
+        "message digest".MD2
+        "message digest".MD4
 
         return true
     }
