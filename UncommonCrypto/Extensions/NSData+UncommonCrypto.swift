@@ -8,6 +8,10 @@
 
 import Foundation
 
+enum NSDataError: ErrorType {
+    case ConversionError
+}
+
 public extension NSData {
     @available(*, deprecated, message="Obsoleted in IETF RFC 6149")
     var MD2: MD2Hash { return checksum() }
@@ -33,7 +37,7 @@ public extension NSData {
         self.init(bytes: &bytes, length: bytes.count)
     }
 
-    public convenience init?(hexString theHexString: String, force: Bool) {
+    public convenience init(hexString theHexString: String, force: Bool) throws {
         let characterSet = NSCharacterSet(charactersInString: "0123456789abcdefABCDEF")
         var hexString = ""
         for scalar in theHexString.unicodeScalars {
@@ -41,7 +45,7 @@ public extension NSData {
                 hexString.append(scalar)
             }
             else if !force {
-                return nil
+                throw NSDataError.ConversionError
             }
         }
 
@@ -50,7 +54,7 @@ public extension NSData {
                 hexString = "0" + hexString
             }
             else {
-                return nil
+                throw NSDataError.ConversionError
             }
         }
 
@@ -59,7 +63,7 @@ public extension NSData {
                 hexString = "00"
             }
             else {
-                return nil
+                throw NSDataError.ConversionError
             }
         }
 
@@ -77,7 +81,7 @@ public extension NSData {
     }
 
     public convenience init(hexString: String) {
-        self.init(hexString: hexString, force: true)!
+        try! self.init(hexString: hexString, force: true)
     }
 
     public var hexdigest: String {
