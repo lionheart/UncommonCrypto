@@ -245,4 +245,8 @@ extension ByteOutput {
             return carry + String(format: "%02x", byte)
         }
     }
+
+    public var base64: String {
+        return data.base64EncodedStringWithOptions(NSDataBase64EncodingOptions())
+    }
 }

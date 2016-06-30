@@ -59,7 +59,8 @@ public struct Hash<Algorithm: CCSecureHashAlgorithm>: CustomStringConvertible, C
         return Mirror(self, children: [
             "hexdigest": hexdigest,
             "bytes": String(bytes),
-            "string": string
+            "string": string,
+            "base64": base64
         ])
     }
 }

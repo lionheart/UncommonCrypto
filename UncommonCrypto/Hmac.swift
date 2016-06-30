@@ -54,7 +54,8 @@ public struct Hmac<Algorithm: CCHMACAlgorithmProtocol>: CustomStringConvertible,
         return Mirror(self, children: [
             "hexdigest": hexdigest,
             "bytes": String(bytes),
-            "string": string
+            "string": string,
+            "base64": base64
         ])
     }
 

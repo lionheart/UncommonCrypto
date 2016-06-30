@@ -16,15 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
 
-        var hash = Hash<MD5>("message")
-        do {
-            try hash.update(" digest", textEncoding: NSASCIIStringEncoding)
-        } catch ChecksumError.DataConversionError {
-            // Uh oh.
-        } catch {
-            // Well, this is awkward.
-        }
-        print(hash)
+        let hash = Hmac<MD5>(key: "", message: "")
+        print(hash.base64)
 
         return true
     }
