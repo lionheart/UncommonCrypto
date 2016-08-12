@@ -61,18 +61,28 @@ public struct Cryptor<Algorithm: CCEncryptionAlgorithmProtocol where Algorithm: 
 
     // MARK: - 🚀 Initializers
 
+    public init?(key theKey: DataConvertible, encoding: NSStringEncoding) {
+        guard let theKey = theKey.convert(encoding) else {
+            return nil
+        }
+
+        key = theKey
+    }
+
     public init(key theKey: DataConvertible) {
         key = theKey.convert()
+
+        DES.KeySize.Default
     }
 
     // MARK: -
 
-    public func encrypt<T: CCRandomContainer where T.CCRandomContainerType == T>(data theData: DataConvertible, mode: CCEncryptionOption = .PKCS7) throws -> T {
+    public func encrypt<T: CCByteContainer where T.CCByteContainerType == T>(data theData: DataConvertible, mode: CCEncryptionOption = .PKCS7) throws -> T {
         let iv = NSData(bytes: [0])
         return try encrypt(theData, iv: iv, mode: mode)
     }
 
-    public func encrypt<T: CCRandomContainer where T.CCRandomContainerType == T>(data: DataConvertible, iv: DataConvertible, mode: CCEncryptionOption) throws -> T {
+    public func encrypt<T: CCByteContainer where T.CCByteContainerType == T>(data: DataConvertible, iv: DataConvertible, mode: CCEncryptionOption) throws -> T {
         var data = data.convert()
         var iv = iv.convert()
 

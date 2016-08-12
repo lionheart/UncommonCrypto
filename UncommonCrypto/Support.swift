@@ -194,12 +194,38 @@ extension String: DataConvertible {
 
 public protocol CCRandomContainer {
     associatedtype CCRandomContainerType
+}
 
-    static func handler(bytes: [UInt8]) -> CCRandomContainerType
+extension Int: CCRandomContainer {
+    public typealias CCRandomContainerType = Int
+}
+
+extension Double: CCRandomContainer {
+    public typealias CCRandomContainerType = Double
 }
 
 extension String: CCRandomContainer {
     public typealias CCRandomContainerType = String
+}
+
+extension NSData: CCRandomContainer {
+    public typealias CCRandomContainerType = NSData
+}
+
+extension Array: CCRandomContainer {
+    public typealias CCRandomContainerType = [UInt8]
+}
+
+// MARK: - CCByteContainer
+
+public protocol CCByteContainer {
+    associatedtype CCByteContainerType
+
+    static func handler(bytes: [UInt8]) -> CCByteContainerType
+}
+
+extension String: CCByteContainer {
+    public typealias CCByteContainerType = String
 
     public static func handler(bytes: [UInt8]) -> String {
         var result = String()
@@ -210,18 +236,18 @@ extension String: CCRandomContainer {
     }
 }
 
-extension NSData: CCRandomContainer {
-    public typealias CCRandomContainerType = NSData
+extension NSData: CCByteContainer {
+    public typealias CCByteContainerType = NSData
 
     public static func handler(bytes: [UInt8]) -> NSData {
         return NSData(bytes: bytes)
     }
 }
 
-extension Array: CCRandomContainer {
-    public typealias CCRandomContainerType = [UInt8]
+extension Array: CCByteContainer {
+    public typealias CCByteContainerType = [UInt8]
 
-    public static func handler(bytes: [UInt8]) -> CCRandomContainerType {
+    public static func handler(bytes: [UInt8]) -> CCByteContainerType {
         return bytes.map { UInt8($0) }
     }
 }
