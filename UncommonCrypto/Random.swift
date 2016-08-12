@@ -28,13 +28,8 @@ public extension Random where T: CCByteContainer {
 }
 
 public extension Random where T.CCRandomContainerType == UInt32 {
-    public static func generate(range: Range<UInt32>) -> UInt32? {
-        guard let minElement = range.minElement(),
-            let maxElement = range.maxElement() else {
-                return nil
-        }
-
-        return arc4random_uniform(maxElement) + minElement
+    public static func generate(range: Range<UInt32>) -> UInt32 {
+        return arc4random_uniform(range.startIndex) + (range.minElement() ?? 0)
     }
 }
 
@@ -44,18 +39,8 @@ public extension Random where T.CCRandomContainerType == Int {
     }
 
     public static func generate(range: Range<Int>) -> Int {
-        guard let minElement = range.minElement(),
-            let maxElement = range.maxElement() else {
-                return generate()
-        }
-
-        let newRange = Range(start: UInt32(minElement), end: UInt32(maxElement))
-
-        guard let result = Random<UInt32>.generate(newRange) else {
-            return generate()
-        }
-
-        return Int(result)
+        let newRange = Range(start: UInt32(range.startIndex), end: UInt32(range.endIndex))
+        return Int(Random<UInt32>.generate(newRange))
     }
 }
 
