@@ -200,6 +200,10 @@ extension Int: CCRandomContainer {
     public typealias CCRandomContainerType = Int
 }
 
+extension UInt32: CCRandomContainer {
+    public typealias CCRandomContainerType = UInt32
+}
+
 extension Double: CCRandomContainer {
     public typealias CCRandomContainerType = Double
 }
