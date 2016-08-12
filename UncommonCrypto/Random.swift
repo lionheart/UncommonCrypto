@@ -32,13 +32,22 @@ public extension Random where T.CCRandomContainerType == Int {
         return random()
     }
 
-    public static func generate(range: Range<UInt32>) -> Int {
-        if let maxElement = range.maxElement() {
-            let minElement = range.minElement() ?? 0
-            return Int(arc4random_uniform(maxElement) + minElement)
+    public static func generate(range: Range<Int>) -> Int {
+        guard let minElement = range.minElement(),
+            let maxElement = range.maxElement() else {
+                return generate()
         }
 
-        return generate()
+        return Int(generate(Range(start: UInt32(minElement), end: UInt32(maxElement))))
+    }
+
+    public static func generate(range: Range<UInt32>) -> UInt32 {
+        guard let minElement = range.minElement(),
+            let maxElement = range.maxElement() else {
+                return generate()
+        }
+
+        return arc4random_uniform(maxElement) + minElement
     }
 }
 
