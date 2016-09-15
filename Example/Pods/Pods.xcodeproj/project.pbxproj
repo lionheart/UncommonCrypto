@@ -67,7 +67,7 @@
 		BEA76FA499D5899BD98DBD891FF921D4 /* SatisfyAnyOf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0A78DFD5A21EAEF18C86289E68CC95 /* SatisfyAnyOf.swift */; };
 		C10896B1EEB0291A92FBA848007CD7CF /* NMBExpectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76C795E807090B7AC3FC5A44E533C12 /* NMBExpectation.swift */; };
 		C24DD0EDAA97828712CC0A3D7712C1B8 /* KeyDerivation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C74C76796466B496461D523311950C /* KeyDerivation.swift */; };
-		C548D32FD6C580670AD25ED8B123EE5E /* Array+UncommongCrypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75134A2FD8356B485D99D2EE7FEF3CC /* Array+UncommongCrypto.swift */; };
+		C548D32FD6C580670AD25ED8B123EE5E /* Array+UncommonCrypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75134A2FD8356B485D99D2EE7FEF3CC /* Array+UncommonCrypto.swift */; };
 		C755136BFCDFA000C44C8BBCA065E4BE /* HaveCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5F08B0126FE77C62D6CADE040F57E3 /* HaveCount.swift */; };
 		C81BEDE79545C013BEBBA0363480FD47 /* DSL+Wait.swift in Sources */ = {isa = PBXBuildFile; fileRef = C921692AD3BDEE00A4889D84A7EEFE9E /* DSL+Wait.swift */; };
 		C9A5769BF177A2E8643A268F2E858215 /* Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C11C61B30C2E73C68EA66864AA74CCD /* Random.swift */; };
@@ -200,7 +200,7 @@
 		E77BDD27A6C21226E60B6EACE608F591 /* Pods-UncommonCrypto_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-UncommonCrypto_Example-dummy.m"; sourceTree = "<group>"; };
 		E9C909FA71AC017170AACE61B875AD58 /* AssertionDispatcher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AssertionDispatcher.swift; path = Sources/Nimble/Adapters/AssertionDispatcher.swift; sourceTree = "<group>"; };
 		E9CDBE7CF45C7B82C3B3F459B51E7E5A /* Expectation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Expectation.swift; path = Sources/Nimble/Expectation.swift; sourceTree = "<group>"; };
-		F75134A2FD8356B485D99D2EE7FEF3CC /* Array+UncommongCrypto.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Array+UncommongCrypto.swift"; sourceTree = "<group>"; };
+		F75134A2FD8356B485D99D2EE7FEF3CC /* Array+UncommonCrypto.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Array+UncommonCrypto.swift"; sourceTree = "<group>"; };
 		F7C53DFB8EB9FF0455FE80CF8FE5205B /* XCTestObservationCenter+Register.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "XCTestObservationCenter+Register.m"; path = "Sources/NimbleObjectiveC/XCTestObservationCenter+Register.m"; sourceTree = "<group>"; };
 		FA333BB70977553008A76B3DB2CFAA35 /* Hash.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Hash.swift; sourceTree = "<group>"; };
 		FBB1397E74F9F12016CA045C5772A90D /* Hmac.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Hmac.swift; sourceTree = "<group>"; };
@@ -297,7 +297,7 @@
 		64DC3898BE10707681D60857E97A91CE /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				F75134A2FD8356B485D99D2EE7FEF3CC /* Array+UncommongCrypto.swift */,
+				F75134A2FD8356B485D99D2EE7FEF3CC /* Array+UncommonCrypto.swift */,
 				2D9E5F302FBBD1CEDF266AD69364DA92 /* NSData+UncommonCrypto.swift */,
 				2A87E21EAC1C4EAA26F9AD546DFC09A5 /* NSString+UncommonCrypto.swift */,
 				79548EDA291398877339E5B5EFB82A07 /* String+UncommonCrypto.swift */,
@@ -616,7 +616,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				35FD327F77F0169B5710985C988EF17E /* Algorithms.swift in Sources */,
-				C548D32FD6C580670AD25ED8B123EE5E /* Array+UncommongCrypto.swift in Sources */,
+				C548D32FD6C580670AD25ED8B123EE5E /* Array+UncommonCrypto.swift in Sources */,
 				98653B164BCE57A57E198FC64D9210C7 /* Cryptor.swift in Sources */,
 				6320ACE1586A8F643237508B48A3189C /* Hash.swift in Sources */,
 				8AEB979FF7F469EB244B2C3F9EBB7F92 /* Hmac.swift in Sources */,
