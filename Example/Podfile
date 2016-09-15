@@ -7,5 +7,7 @@ target 'UncommonCrypto_Example' do
 
   target 'UncommonCrypto_Tests' do
     inherit! :search_paths
+
+    pod 'Nimble', :git => "https://github.com/Quick/Nimble.git", :commit => "197a46a"
   end
 end
