@@ -47,24 +47,24 @@ class AES128EncryptionSpec: XCTestCase {
         let iv   = [0x6b, 0x64, 0x66, 0x36, 0x37, 0x33, 0x39, 0x38, 0x44, 0x46, 0x37, 0x33, 0x38, 0x33, 0x66, 0x64]
         let data = [0x62, 0x72, 0x61, 0x64, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00]
         let cryptor = Cryptor<AES128>(key: key)
-        let result: [UInt8] = try! cryptor.encrypt(data, iv: iv, mode: .PKCS7)
+        let result: [UInt8] = try! cryptor.encrypt(data: data, iv: iv, mode: .pkcs7)
         expect(result) == [0xae,0x8c,0x59,0x95,0xb2,0x6f,0x8e,0x3d,0xb0,0x6f,0x0a,0xa5,0xfe,0xc4,0xf0,0xc2]
     }
 
     func test2() {
-        let key = NSData(hexString: "2b7e151628aed2a6abf7158809cf4f3c")
-        let data = NSData(hexString: "6bc1bee22e409f96e93d7e117393172a")
+        let key = Data(hexString: "2b7e151628aed2a6abf7158809cf4f3c")
+        let data = Data(hexString: "6bc1bee22e409f96e93d7e117393172a")
         let cryptor = Cryptor<AES128>(key: key)
-        let result: NSData = try! cryptor.encrypt(data: data)
-        expect(result) == NSData(hexString: "3ad77bb40d7a3660a89ecaf32466ef97")
+        let result: Data = try! cryptor.encrypt(data: data)
+        expect(result) == Data(hexString: "3ad77bb40d7a3660a89ecaf32466ef97")
     }
 
     func test3() {
-        let key = NSData(hexString: "00000000000000000000000000000000")
-        let data = NSData(hexString: "80000000000000000000000000000000")
+        let key = Data(hexString: "00000000000000000000000000000000")
+        let data = Data(hexString: "80000000000000000000000000000000")
         let cryptor = Cryptor<AES128>(key: key)
-        let result: NSData = try! cryptor.encrypt(data: data)
+        let result: Data = try! cryptor.encrypt(data: data)
         print(result)
-        expect(result) == NSData(hexString: "3AD78E726C1EC02B7EBFE92B23D9EC34")
+        expect(result) == Data(hexString: "3AD78E726C1EC02B7EBFE92B23D9EC34")
     }
 }

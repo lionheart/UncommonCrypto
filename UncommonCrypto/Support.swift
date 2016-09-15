@@ -9,20 +9,20 @@
 import Foundation
 import CommonCrypto
 
-public typealias CCSecureHashAlgorithmTypeSignature = (UnsafePointer<Void>, CC_LONG, UnsafeMutablePointer<UInt8>) -> UnsafeMutablePointer<UInt8>
+public typealias CCSecureHashAlgorithmTypeSignature = (UnsafeRawPointer?, CC_LONG, UnsafeMutablePointer<UInt8>?) -> UnsafeMutablePointer<UInt8>?
 //public typealias ZLibHashAlgorithmTypeSignature = (uLong, UnsafePointer<Bytef>, uInt) -> uLong
 public typealias CCAlgorithmParameters = (fun: CCSecureHashAlgorithmTypeSignature, length: Int32)
 
 // MARK: - CryptoDefaults
 
 public struct CryptoDefaults {
-    static var encoding = NSUTF8StringEncoding
+    static var encoding = String.Encoding.utf8
 }
 
 // MARK: - Errors
 
-public enum ChecksumError: ErrorType {
-    case DataConversionError
+public enum ChecksumError: Error {
+    case dataConversionError
 }
 
 // MARK: - Protocols
@@ -37,16 +37,17 @@ public protocol HashAlgorithm {
 }
 
 public protocol CCSecureHashAlgorithm: HashAlgorithm {
-    static var fun: CCSecureHashAlgorithmTypeSignature { get }
-    static func process(data: NSData) -> [UInt8]
+    static func process(_ data: Data) -> [UInt8]
+    static func fun(data: UnsafeRawPointer, len: CC_LONG, md: UnsafeMutablePointer<UInt8>) -> UnsafeMutablePointer<UInt8>
 }
 
 extension CCSecureHashAlgorithm {
-    typealias Arguments = NSData
+    typealias Arguments = Data
 
-    public static func process(data: NSData) -> [UInt8] {
-        var value = [UInt8](count: Int(Self.length), repeatedValue: 0)
-        Self.fun(data.bytes, CC_LONG(data.length), &value)
+    public static func process(_ data: Data) -> [UInt8] {
+        var value = [UInt8](repeating: 0, count: Int(Self.length))
+        let newData = data as NSData
+        Self.fun(data: newData.bytes, len: CC_LONG(newData.length), md: &value)
         return value
     }
 }
@@ -61,11 +62,13 @@ public protocol CCHMACAlgorithmProtocol: HashAlgorithm {
 }
 
 extension CCHMACAlgorithmProtocol {
-    typealias Arguments = (NSData, NSData)
+    typealias Arguments = (Data, Data)
 
-    public static func process(data: (NSData, NSData)) -> [UInt8] {
+    public static func process(_ data: (Data, Data)) -> [UInt8] {
         var value: [UInt8] = pointer(Int(Self.length))
-        CCHmac(Self.hmacAlgorithm, data.0.bytes, data.0.length, data.1.bytes, data.1.length, &value)
+        let newData1 = data.0 as NSData
+        let newData2 = data.1 as NSData
+        CCHmac(Self.hmacAlgorithm, newData1.bytes, newData1.length, newData2.bytes, newData2.length, &value)
         return value
     }
 }
@@ -88,7 +91,7 @@ public protocol ZeroBit {
 }
 
 public protocol KeySizeContainer {
-    var value: Int { get }
+    var value: Int? { get }
 }
 
 public protocol VariableKeySizeContainer {
@@ -96,25 +99,25 @@ public protocol VariableKeySizeContainer {
     static var maxValue: Int { get }
 }
 
-public enum VariableKeySize<T where T: VariableKeySizeContainer>: KeySizeContainer {
-    case Min
-    case Max
-    case Variable(Int)
+public enum VariableKeySize<T>: KeySizeContainer where T: VariableKeySizeContainer {
+    case min
+    case max
+    case variable(Int)
 
-    public var value: Int {
+    public var value: Int? {
         switch self {
-        case .Min:
+        case .min:
             return T.minValue
 
-        case .Max:
+        case .max:
             return T.maxValue
 
-        case .Variable(let v):
+        case .variable(let v):
             if v < T.minValue {
-                return T.minValue
+                return nil
             }
             else if v > T.maxValue {
-                return T.maxValue
+                return nil
             }
             else {
                 return v
@@ -138,13 +141,13 @@ extension UInt8: ZeroBit {
 }
 
 extension Int: KeySizeContainer {
-    public var value: Int { return self }
+    public var value: Int? { return self }
 }
 
 // MARK: - Functions
 
-func pointer<T where T: ZeroBit>(length: Int) -> [T] {
-    return [T](count: length, repeatedValue: T.zero)
+func pointer<T>(_ length: Int) -> [T] where T: ZeroBit {
+    return [T](repeating: T.zero, count: length)
 }
 
 // MARK: - Type Aliases
@@ -161,32 +164,32 @@ public typealias SHA512Hash = Hash<SHA512>
 // MARK: - Data Convertible
 
 public protocol DataConvertible {
-    func convert(encoding: NSStringEncoding?) -> NSData?
-    func convert() -> NSData
+    func convert(_ encoding: String.Encoding?) -> Data?
+    func convert() -> Data
 }
 
 extension DataConvertible {
-    public func convert() -> NSData {
+    public func convert() -> Data {
         return convert(nil)!
     }
 }
 
-extension NSData: DataConvertible {
-    public func convert(encoding: NSStringEncoding?) -> NSData? {
+extension Data: DataConvertible {
+    public func convert(_ encoding: String.Encoding?) -> Data? {
         return self
     }
 }
 
 extension Array: DataConvertible {
-    public func convert(encoding: NSStringEncoding?) -> NSData? {
+    public func convert(_ encoding: String.Encoding?) -> Data? {
         let bytes: [UInt8] = map { UInt8($0 as? Int ?? 0) }
-        return NSData(bytes: bytes)
+        return Data(bytes: bytes)
     }
 }
 
 extension String: DataConvertible {
-    public func convert(encoding: NSStringEncoding?) -> NSData? {
-        return dataUsingEncoding(encoding ?? CryptoDefaults.encoding)
+    public func convert(_ encoding: String.Encoding?) -> Data? {
+        return data(using: encoding ?? CryptoDefaults.encoding)
     }
 }
 
@@ -212,8 +215,8 @@ extension String: CCRandomContainer {
     public typealias CCRandomContainerType = String
 }
 
-extension NSData: CCRandomContainer {
-    public typealias CCRandomContainerType = NSData
+extension Data: CCRandomContainer {
+    public typealias CCRandomContainerType = Data
 }
 
 extension Array: CCRandomContainer {
@@ -225,33 +228,33 @@ extension Array: CCRandomContainer {
 public protocol CCByteContainer {
     associatedtype CCByteContainerType
 
-    static func handler(bytes: [UInt8]) -> CCByteContainerType
+    static func handler(_ bytes: [UInt8]) -> CCByteContainerType
 }
 
 extension String: CCByteContainer {
     public typealias CCByteContainerType = String
 
-    public static func handler(bytes: [UInt8]) -> String {
+    public static func handler(_ bytes: [UInt8]) -> String {
         var result = String()
         for byte in bytes {
-            result.append(UnicodeScalar(byte))
+            result.append(String(UnicodeScalar(byte)))
         }
         return result
     }
 }
 
-extension NSData: CCByteContainer {
-    public typealias CCByteContainerType = NSData
+extension Data: CCByteContainer {
+    public typealias CCByteContainerType = Data
 
-    public static func handler(bytes: [UInt8]) -> NSData {
-        return NSData(bytes: bytes)
+    public static func handler(_ bytes: [UInt8]) -> Data {
+        return Data(bytes: bytes)
     }
 }
 
 extension Array: CCByteContainer {
     public typealias CCByteContainerType = [UInt8]
 
-    public static func handler(bytes: [UInt8]) -> CCByteContainerType {
+    public static func handler(_ bytes: [UInt8]) -> CCByteContainerType {
         return bytes.map { UInt8($0) }
     }
 }
@@ -260,13 +263,13 @@ extension Array: CCByteContainer {
 
 
 extension ByteOutput {
-    public var data: NSData {
-        return NSData(bytes: bytes)
+    public var data: Data {
+        return Data(bytes: bytes)
     }
 
     public var string: String {
         var result = ""
-        bytes.forEach { result.append(UnicodeScalar($0)) }
+        bytes.forEach { result.append(String(UnicodeScalar($0))) }
         return result
     }
 
@@ -277,6 +280,6 @@ extension ByteOutput {
     }
 
     public var base64: String {
-        return data.base64EncodedStringWithOptions(NSDataBase64EncodingOptions())
+        return data.base64EncodedString(options: Data.Base64EncodingOptions())
     }
 }

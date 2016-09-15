@@ -49,45 +49,69 @@ extension CRC32 {
  */
 
 extension MD2: CCSecureHashAlgorithm {
-    public static var fun: CCSecureHashAlgorithmTypeSignature { return CC_MD2 }
     public static var length: Int32 { return CC_MD2_DIGEST_LENGTH }
     public static var name: String = "MD2"
+
+    public static func fun(data: UnsafeRawPointer, len: CC_LONG, md: UnsafeMutablePointer<UInt8>) -> UnsafeMutablePointer<UInt8> {
+        return CC_MD2(data, len, md)
+    }
 }
 
 extension MD4: CCSecureHashAlgorithm {
-    public static var fun: CCSecureHashAlgorithmTypeSignature { return CC_MD4 }
     public static var length: Int32 { return CC_MD4_DIGEST_LENGTH }
     public static var name: String = "MD2"
+
+    public static func fun(data: UnsafeRawPointer, len: CC_LONG, md: UnsafeMutablePointer<UInt8>) -> UnsafeMutablePointer<UInt8> {
+        return CC_MD4(data, len, md)
+    }
 }
 
 extension MD5: CCSecureHashAlgorithm {
-    public static var fun: CCSecureHashAlgorithmTypeSignature { return CC_MD5 }
     public static var length: Int32 { return CC_MD5_DIGEST_LENGTH }
+
+    public static func fun(data: UnsafeRawPointer, len: CC_LONG, md: UnsafeMutablePointer<UInt8>) -> UnsafeMutablePointer<UInt8> {
+        return CC_MD5(data, len, md)
+    }
 }
 
 extension SHA1: CCSecureHashAlgorithm {
-    public static var fun: CCSecureHashAlgorithmTypeSignature { return CC_SHA1 }
     public static var length: Int32 { return CC_SHA1_DIGEST_LENGTH }
+
+    public static func fun(data: UnsafeRawPointer, len: CC_LONG, md: UnsafeMutablePointer<UInt8>) -> UnsafeMutablePointer<UInt8> {
+        return CC_SHA1(data, len, md)
+    }
 }
 
 extension SHA224: CCSecureHashAlgorithm {
-    public static var fun: CCSecureHashAlgorithmTypeSignature { return CC_SHA224 }
     public static var length: Int32 { return CC_SHA224_DIGEST_LENGTH }
+
+    public static func fun(data: UnsafeRawPointer, len: CC_LONG, md: UnsafeMutablePointer<UInt8>) -> UnsafeMutablePointer<UInt8> {
+        return CC_SHA224(data, len, md)
+    }
 }
 
 extension SHA256: CCSecureHashAlgorithm {
-    public static var fun: CCSecureHashAlgorithmTypeSignature { return CC_SHA256 }
     public static var length: Int32 { return CC_SHA256_DIGEST_LENGTH }
+
+    public static func fun(data: UnsafeRawPointer, len: CC_LONG, md: UnsafeMutablePointer<UInt8>) -> UnsafeMutablePointer<UInt8> {
+        return CC_SHA256(data, len, md)
+    }
 }
 
 extension SHA384: CCSecureHashAlgorithm {
-    public static var fun: CCSecureHashAlgorithmTypeSignature { return CC_SHA384 }
     public static var length: Int32 { return CC_SHA384_DIGEST_LENGTH }
+
+    public static func fun(data: UnsafeRawPointer, len: CC_LONG, md: UnsafeMutablePointer<UInt8>) -> UnsafeMutablePointer<UInt8> {
+        return CC_SHA384(data, len, md)
+    }
 }
 
 extension SHA512: CCSecureHashAlgorithm {
-    public static var fun: CCSecureHashAlgorithmTypeSignature { return CC_SHA512 }
     public static var length: Int32 { return CC_SHA512_DIGEST_LENGTH }
+
+    public static func fun(data: UnsafeRawPointer, len: CC_LONG, md: UnsafeMutablePointer<UInt8>) -> UnsafeMutablePointer<UInt8> {
+        return CC_SHA512(data, len, md)
+    }
 }
 
 // MARK: - HMAC
@@ -169,15 +193,15 @@ extension SHA1: CCKeySizeProtocol {
 
 extension AES128: CCKeySizeProtocol {
     public enum KeySize: KeySizeContainer {
-        case Size128
-        case Size192
-        case Size256
+        case size128
+        case size192
+        case size256
 
-        public var value: Int {
+        public var value: Int? {
             switch self {
-            case .Size128: return kCCKeySizeAES128
-            case .Size192: return kCCKeySizeAES192
-            case .Size256: return kCCKeySizeAES256
+            case .size128: return kCCKeySizeAES128
+            case .size192: return kCCKeySizeAES192
+            case .size256: return kCCKeySizeAES256
             }
         }
     }
@@ -185,9 +209,9 @@ extension AES128: CCKeySizeProtocol {
 
 extension DES: CCKeySizeProtocol {
     public enum KeySize: KeySizeContainer {
-        case Default
+        case `default`
 
-        public var value: Int {
+        public var value: Int? {
             return kCCKeySizeDES
         }
     }
@@ -195,9 +219,9 @@ extension DES: CCKeySizeProtocol {
 
 extension TripleDES: CCKeySizeProtocol {
     public enum KeySize: KeySizeContainer {
-        case Default
+        case `default`
 
-        public var value: Int {
+        public var value: Int? {
             return kCCKeySize3DES
         }
     }

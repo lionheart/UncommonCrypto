@@ -10,14 +10,14 @@ import Foundation
 import CommonCrypto
 
 public struct Hmac<Algorithm: CCHMACAlgorithmProtocol>: CustomStringConvertible, CustomReflectable, ByteOutput {
-    var keyData: NSMutableData
-    var messageData: NSMutableData
+    var keyData: Data
+    var messageData: Data
 
     // MARK: 🚀 Initializers
 
-    public init?(key theKey: DataConvertible, message: DataConvertible?, messageEncoding encoding: UInt) {
+    public init?(key theKey: DataConvertible, message: DataConvertible?, messageEncoding encoding: String.Encoding) {
         guard let theKeyData = theKey.convert(encoding),
-            let theMessageData = (message ?? NSData()).convert(encoding) else {
+            let theMessageData = (message ?? Data()).convert(encoding) else {
             return nil
         }
 
@@ -25,23 +25,23 @@ public struct Hmac<Algorithm: CCHMACAlgorithmProtocol>: CustomStringConvertible,
     }
 
     public init(key theKey: DataConvertible, message: DataConvertible? = nil) {
-        keyData = NSMutableData(data: theKey.convert())
-        messageData = NSMutableData(data: (message ?? NSData()).convert())
+        keyData = theKey.convert()
+        messageData = (message ?? Data()).convert()
     }
 
     // MARK: -
 
-    public mutating func update(_ input: DataConvertible, textEncoding encoding: UInt = NSUTF8StringEncoding) throws {
+    public mutating func update(_ input: DataConvertible, textEncoding encoding: String.Encoding = String.Encoding.utf8) throws {
         if let theData = input.convert(encoding) {
-            messageData.appendData(theData)
+            messageData.append(theData)
         }
         else {
-            throw ChecksumError.DataConversionError
+            throw ChecksumError.dataConversionError
         }
     }
 
     public mutating func update(_ input: DataConvertible) {
-        messageData.appendData(input.convert())
+        messageData.append(input.convert())
     }
 
     // MARK: CustomStringConvertible
@@ -50,10 +50,10 @@ public struct Hmac<Algorithm: CCHMACAlgorithmProtocol>: CustomStringConvertible,
     }
 
     // MARK: CustomReflectable
-    public func customMirror() -> Mirror {
+    public var customMirror: Mirror {
         return Mirror(self, children: [
             "hexdigest": hexdigest,
-            "bytes": String(bytes),
+            "bytes": String(describing: bytes),
             "string": string,
             "base64": base64
         ])
@@ -61,6 +61,6 @@ public struct Hmac<Algorithm: CCHMACAlgorithmProtocol>: CustomStringConvertible,
 
     // MARK: ByteOutput
     public var bytes: [UInt8] {
-        return Algorithm.process((keyData, messageData))
+        return Algorithm.process((keyData as Data, messageData as Data))
     }
 }

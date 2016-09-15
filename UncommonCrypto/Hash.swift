@@ -10,7 +10,7 @@ import Foundation
 import CommonCrypto
 
 public struct Hash<Algorithm: CCSecureHashAlgorithm>: CustomStringConvertible, CustomReflectable, ByteOutput {
-    private var data: NSMutableData
+    fileprivate var data: Data
 
     public typealias StringLiteralType = String
     public typealias UnicodeScalarLiteralType = StringLiteralType
@@ -19,7 +19,7 @@ public struct Hash<Algorithm: CCSecureHashAlgorithm>: CustomStringConvertible, C
     // MARK: 🚀 Initializers
 
     public init?(_ input: DataConvertible, textEncoding encoding: UInt) {
-        guard let theData = input.convert(encoding) else {
+        guard let theData = input.convert(String.Encoding(rawValue: encoding)) else {
             return nil
         }
 
@@ -27,18 +27,18 @@ public struct Hash<Algorithm: CCSecureHashAlgorithm>: CustomStringConvertible, C
     }
 
     public init(_ input: DataConvertible) {
-        data = NSMutableData(data: input.convert())
+        data = input.convert()
     }
 
     // MARK: -
 
     public mutating func update(_ input: DataConvertible) {
-        data.appendData(input.convert())
+        data.append(input.convert())
     }
 
     public mutating func update(_ input: DataConvertible, textEncoding encoding: UInt) throws {
-        guard let theData = input.convert(encoding) else {
-            throw ChecksumError.DataConversionError
+        guard let theData = input.convert(String.Encoding(rawValue: encoding)) else {
+            throw ChecksumError.dataConversionError
         }
 
         update(theData)
@@ -55,10 +55,10 @@ public struct Hash<Algorithm: CCSecureHashAlgorithm>: CustomStringConvertible, C
     }
 
     // MARK: CustomReflectable
-    public func customMirror() -> Mirror {
+    public var customMirror: Mirror {
         return Mirror(self, children: [
             "hexdigest": hexdigest,
-            "bytes": String(bytes),
+            "bytes": String(describing: bytes),
             "string": string,
             "base64": base64
         ])

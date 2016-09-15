@@ -12,35 +12,35 @@ import Nimble
 @testable import UncommonCrypto
 
 struct NISTTestVector {
-    var key: NSData
-    var iv: NSData
-    var plaintext: NSData
-    var cipherText: NSData
+    var key: Data
+    var iv: Data
+    var plaintext: Data
+    var cipherText: Data
 }
 
-func handler(text: String, result: NSTextCheckingResult, idx: Int) -> NSData {
-    return NSData(hexString: (text as NSString).substringWithRange(result.rangeAtIndex(idx)))
+func handler(_ text: String, result: NSTextCheckingResult, idx: Int) -> Data {
+    return Data(hexString: (text as NSString).substring(with: result.rangeAt(idx)))
 }
 
 protocol BundleAble: class {
-    static func testBundle() -> NSBundle
+    static func testBundle() -> Bundle
 }
 
 extension XCTestCase: BundleAble {
-    static func testBundle() -> NSBundle {
-        return NSBundle(forClass: self)
+    static func testBundle() -> Bundle {
+        return Bundle(for: self)
     }
 }
 
-func testVectorsFromFile(path: String) -> [NISTTestVector] {
+func testVectorsFromFile(_ path: String) -> [NISTTestVector] {
     let contents = try! String(contentsOfFile: path)
 
     let nistTestVectorPattern = "COUNT = (\\d*)\r\nKEY = ([a-f0-9]+)\r\nIV = ([a-f0-9]+)\r\nPLAINTEXT = ([a-f0-9]+)\r\nCIPHERTEXT = ([a-f0-9]+)"
-    let nistTestVectorExpression = try! NSRegularExpression(pattern: nistTestVectorPattern, options: NSRegularExpressionOptions())
+    let nistTestVectorExpression = try! NSRegularExpression(pattern: nistTestVectorPattern, options: NSRegularExpression.Options())
     let range = NSMakeRange(0, contents.characters.count)
 
     var vectors: [NISTTestVector] = []
-    nistTestVectorExpression.enumerateMatchesInString(contents, options: NSMatchingOptions(), range: range) { (result, flags, ptr) in
+    nistTestVectorExpression.enumerateMatches(in: contents, options: NSRegularExpression.MatchingOptions(), range: range) { (result, flags, ptr) in
         guard let result = result else { return }
         var results = [2, 3, 4, 5].map { handler(contents, result: result, idx: $0) }
         vectors.append(NISTTestVector(key: results[0], iv: results[1], plaintext: results[2], cipherText: results[3]))
@@ -52,15 +52,15 @@ func testVectorsFromFile(path: String) -> [NISTTestVector] {
 // http://csrc.nist.gov/groups/STM/cavp/documents/aes/KAT_AES.zip
 // http://csrc.nist.gov/groups/STM/cavp/block-ciphers.html#test-vectors
 class NISTBlockCipherSpec: XCTestCase {
-    func path(resource: String) -> String {
+    func path(_ resource: String) -> String {
         let bundle = NISTBlockCipherSpec.testBundle()
-        return bundle.pathForResource(resource, ofType: "rsp")!
+        return bundle.path(forResource: resource, ofType: "rsp")!
     }
 
-    func _test(resource: String) {
+    func _test(_ resource: String) {
         for vector in testVectorsFromFile(path(resource)) {
             let cryptor = Cryptor<AES128>(key: vector.key)
-            let result: NSData = try! cryptor.encrypt(vector.plaintext, iv: vector.iv, mode: .PKCS7)
+            let result: Data = try! cryptor.encrypt(data: vector.plaintext, iv: vector.iv, mode: .pkcs7)
             expect(result) == vector.cipherText
         }
     }

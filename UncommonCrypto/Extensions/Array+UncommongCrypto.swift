@@ -16,21 +16,18 @@ extension UInt8: UInt8Protocol {}
 extension Int: UInt8Protocol { }
 
 public extension Array where Element: Int8Protocol {
-    var pointer: UnsafePointer<Int8> {
+    // MARK: ???
+    var pointer: UnsafeRawPointer {
         var copy = self
-        return UnsafePointer<Int8>(withUnsafeMutablePointer(&copy) { $0 })
+        return UnsafeRawPointer(withUnsafeMutablePointer(to: &copy) { $0 })
     }
 }
 
 public extension Array where Element: UInt8Protocol {
-    init(data: NSData) {
-        self = Array(UnsafeMutableBufferPointer(start: UnsafeMutablePointer<Element>(data.bytes), count: data.length))
-    }
-
-    @available(*, deprecated, message="Obsoleted in IETF RFC 6149")
+    @available(*, deprecated, message: "Obsoleted in IETF RFC 6149")
     var MD2: MD2Hash { return checksum() }
 
-    @available(*, deprecated, message="Obsoleted in IETF RFC 6150")
+    @available(*, deprecated, message: "Obsoleted in IETF RFC 6150")
     var MD4: MD4Hash { return checksum() }
 
     var MD5: MD5Hash { return checksum() }

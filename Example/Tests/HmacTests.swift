@@ -11,9 +11,9 @@ import XCTest
 import Nimble
 @testable import UncommonCrypto
 
-var cases: [(String, NSData, (String, String, String, String, String))] = [(
+var cases: [(String, Data, (String, String, String, String, String))] = [(
     "0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b0b",
-    NSData(hexString: "4869205468657265"), // Hi There
+    Data(hexString: "4869205468657265"), // Hi There
     (
         "B617318655057264E28BC0B6FB378C8EF146BE00",
         "896FB1128ABBDF196832107CD49DF33F47B4B1169912BA4F53684B22",
@@ -23,7 +23,7 @@ var cases: [(String, NSData, (String, String, String, String, String))] = [(
     )
     ),(
         "4a656665", // Jefe
-        NSData(hexString: "7768617420646f2079612077616e7420666f72206e6f7468696e673f"), // what do ya want for nothing?
+        Data(hexString: "7768617420646f2079612077616e7420666f72206e6f7468696e673f"), // what do ya want for nothing?
         (
             "EFFCDF6AE5EB2FA2D27416D5F184DF9C259A7C79",
             "A30E01098BC6DBBF45690F3A7E9E6D0F8BBEA2A39E6148008FD05E44",
@@ -34,7 +34,7 @@ var cases: [(String, NSData, (String, String, String, String, String))] = [(
     ),
       (
         "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-        NSData(hexString: "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"),
+        Data(hexString: "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"),
         (
             "125D7342B9AC11CD91A39AF48AA17B4F63F175D3",
             "7FB3CB3588C6C1F6FFA9694D7D6AD2649365B0C1F65D69D1EC8333EA",
@@ -45,7 +45,7 @@ var cases: [(String, NSData, (String, String, String, String, String))] = [(
     ),
       (
         "0102030405060708090a0b0c0d0e0f10111213141516171819",
-        NSData(hexString: "cdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcd"),
+        Data(hexString: "cdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcd"),
         (
             "4C9007F4026250C6BC8414F9BF50C86C2D7235DA",
             "6C11506874013CAC6A2ABC1BB382627CEC6A90D86EFC012DE7AFEC5A",
@@ -63,13 +63,13 @@ var cases: [(String, NSData, (String, String, String, String, String))] = [(
 class HmacSHA1Spec: XCTestCase {
     func testAllCases() {
         for c in cases {
-            let key = NSData(hexString: c.0)
+            let key = Data(hexString: c.0)
             let message = c.1
-            expect(Hmac<SHA1>(key: key, message: message).hexdigest) == c.2.0.lowercaseString
-            expect(Hmac<SHA224>(key: key, message: message).hexdigest) == c.2.1.lowercaseString
-            expect(Hmac<SHA256>(key: key, message: message).hexdigest) == c.2.2.lowercaseString
-            expect(Hmac<SHA384>(key: key, message: message).hexdigest) == c.2.3.lowercaseString
-            expect(Hmac<SHA512>(key: key, message: message).hexdigest) == c.2.4.lowercaseString
+            expect(Hmac<SHA1>(key: key, message: message).hexdigest) == c.2.0.lowercased()
+            expect(Hmac<SHA224>(key: key, message: message).hexdigest) == c.2.1.lowercased()
+            expect(Hmac<SHA256>(key: key, message: message).hexdigest) == c.2.2.lowercased()
+            expect(Hmac<SHA384>(key: key, message: message).hexdigest) == c.2.3.lowercased()
+            expect(Hmac<SHA512>(key: key, message: message).hexdigest) == c.2.4.lowercased()
         }
     }
 }

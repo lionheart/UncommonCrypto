@@ -8,15 +8,15 @@
 
 import Foundation
 
-enum NSDataError: ErrorType {
-    case ConversionError
+enum NSDataError: Error {
+    case conversionError
 }
 
-public extension NSData {
-    @available(*, deprecated, message="Obsoleted in IETF RFC 6149")
+public extension Data {
+    @available(*, deprecated, message: "Obsoleted in IETF RFC 6149")
     var MD2: MD2Hash { return checksum() }
 
-    @available(*, deprecated, message="Obsoleted in IETF RFC 6150")
+    @available(*, deprecated, message: "Obsoleted in IETF RFC 6150")
     var MD4: MD4Hash { return checksum() }
 
     var MD5: MD5Hash { return checksum() }
@@ -26,26 +26,21 @@ public extension NSData {
     var SHA384: SHA384Hash { return checksum() }
     var SHA512: SHA512Hash { return checksum() }
 
-    private func checksum<T: HashAlgorithm>() -> Hash<T> {
-        return Hash<T>(self)
+    fileprivate func checksum<T: HashAlgorithm>() -> Hash<T> {
+        return Hash<T>(self as DataConvertible)
     }
 
     // MARK: 🚀 Initializers
 
-    public convenience init(bytes: [UInt8]) {
-        var bytes = bytes
-        self.init(bytes: &bytes, length: bytes.count)
-    }
-
-    public convenience init(hexString theHexString: String, force: Bool) throws {
-        let characterSet = NSCharacterSet(charactersInString: "0123456789abcdefABCDEF")
+    public init(hexString theHexString: String, force: Bool) throws {
+        let characterSet = CharacterSet(charactersIn: "0123456789abcdefABCDEF")
         var hexString = ""
         for scalar in theHexString.unicodeScalars {
-            if characterSet.characterIsMember(UInt16(scalar.value)) {
-                hexString.append(scalar)
+            if characterSet.contains(UnicodeScalar(UInt16(scalar.value))!) {
+                hexString.append(String(scalar))
             }
             else if !force {
-                throw NSDataError.ConversionError
+                throw NSDataError.conversionError
             }
         }
 
@@ -54,7 +49,7 @@ public extension NSData {
                 hexString = "0" + hexString
             }
             else {
-                throw NSDataError.ConversionError
+                throw NSDataError.conversionError
             }
         }
 
@@ -63,30 +58,29 @@ public extension NSData {
                 hexString = "00"
             }
             else {
-                throw NSDataError.ConversionError
+                throw NSDataError.conversionError
             }
         }
 
         var index = hexString.startIndex
         var bytes: [UInt8] = []
         repeat {
-            bytes.append(hexString[index...index.advancedBy(1)].withCString {
+            bytes.append(hexString[index...hexString.index(after: index)].withCString {
                 return UInt8(strtoul($0, nil, 16))
             })
 
-            index = index.advancedBy(2)
-        } while index.distanceTo(hexString.endIndex) != 0
+            index = hexString.index(index, offsetBy: 2)
+        } while hexString.distance(from: index, to: hexString.endIndex) != 0
 
         self.init(bytes: bytes)
     }
 
-    public convenience init(hexString: String) {
+    public init(hexString: String) {
         try! self.init(hexString: hexString, force: true)
     }
 
     public var hexdigest: String {
-        let pointer = UnsafeBufferPointer(start: UnsafePointer<UInt8>(bytes), count: length)
-        return pointer.reduce("") { carry, byte in
+        return reduce("") { carry, byte in
             return carry + String(format: "%02x", byte)
         }
     }

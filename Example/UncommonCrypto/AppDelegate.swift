@@ -13,12 +13,19 @@ import UncommonCrypto
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
         // Override point for customization after application launch.
 
         let hash = Hmac<MD5>(key: "", message: "")
         print(hash.base64)
 
+//        let data: (Data, Data) = try! PBKDF2<DES, SHA1>.key(password: "test", saltLength: 8, keySize: .Default) { $0 }
+
+        Hash<MD5>("hey").hexdigest
+
+        for i in 0..<100 {
+            print(Random<Int>.generate(0..<1))
+        }
         return true
     }
 }

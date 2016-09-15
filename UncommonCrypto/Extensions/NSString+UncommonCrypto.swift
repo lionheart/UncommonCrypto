@@ -10,7 +10,7 @@ import Foundation
 
 public extension NSString {
     convenience init(bytes: [UInt8]) {
-        self.init(bytes: bytes, encoding: NSUTF8StringEncoding)!
+        self.init(bytes: bytes, encoding: String.Encoding.utf8.rawValue)!
     }
 
     convenience init?(bytes: [UInt8], encoding: UInt) {

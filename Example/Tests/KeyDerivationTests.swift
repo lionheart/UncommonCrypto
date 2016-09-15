@@ -20,7 +20,9 @@ struct PBKDF2TestData {
     var key: [UInt8] {
         // TODO: PBKDF2SHA1 key method should allow NSASCIIStringEncoding
         return try! PBKDF2SHA1.key(password: password, salt: salt, rounds: rounds, keySize: keyLength) {
-            return [UInt8](data: $0.key)
+            // MARK: ???
+            // [UInt8](data: $0.key)
+            return $0.0.map({ $0 })
         }
     }
 }
