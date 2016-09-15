@@ -1,9 +1,7 @@
 PODS:
-  - Nimble (4.1.0)
   - UncommonCrypto (1.0.0)
 
 DEPENDENCIES:
-  - Nimble
   - UncommonCrypto (from `../`)
 
 EXTERNAL SOURCES:
@@ -11,9 +9,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Nimble: 97a0a4cae5124c117115634b2d055d8c97d0af19
   UncommonCrypto: 3cd354d2ad24cf5ee0b50740bac4add67afe1e9a
 
-PODFILE CHECKSUM: 54e5b22c27729a91702f348d23f1fc8c4fb7491d
+PODFILE CHECKSUM: 656295522a3182872cc0d5b0f19c1911792eda98
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.1.0.rc.2
