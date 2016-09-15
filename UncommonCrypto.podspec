@@ -26,13 +26,7 @@ TODO: Add long description of the pod here.
 
   # add the new module to Import Paths
   s.xcconfig = {
-    "SWIFT_INCLUDE_PATHS" => "$(PODS_ROOT)/Frameworks/$(PLATFORM_NAME)/CommonCrypto.framework/",
-    "FRAMEWORK_SEARCH_PATHS" => "$(PODS_ROOT)/Frameworks/$(PLATFORM_NAME)",
+    "SWIFT_INCLUDE_PATHS" => "$(PODS_ROOT)/UncommonCrypto/Frameworks/$(PLATFORM_NAME)",
+    "FRAMEWORK_SEARCH_PATHS" => "$(PODS_ROOT)/UncommonCrypto/Frameworks/$(PLATFORM_NAME)",
   }
-
-  # add the new module to Import Paths
-#  s.xcconfig = {
-#    "SWIFT_INCLUDE_PATHS" => "$(PODS_ROOT)/UncommonCrypto/Frameworks/$(PLATFORM_NAME)",
-#    "FRAMEWORK_SEARCH_PATHS" => "$(PODS_ROOT)/UncommonCrypto/Frameworks/$(PLATFORM_NAME)",
-#  }
 end
